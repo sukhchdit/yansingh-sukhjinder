@@ -1,0 +1,125 @@
+@mixin dflex($fdir, $aitems, $jcontent) {
+    display:flex;
+    flex-direction:$fdir;
+    align-items:$aitems;
+    justify-content:$jcontent;
+}
+
+.container {
+    width:100%;
+    max-width:1170px;
+    min-width:1170px;
+    margin:0 auto;
+}
+
+header {
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0px;
+
+    @include dflex(column, center, center);
+
+    .headerTop {
+        border-bottom:1px solid #FFFFFF;
+        padding:13px 0px;
+        width:100%;
+
+        .col:first-child {
+            @include dflex(row, center, flex-start);
+        }
+
+        .col:last-child {
+            @include dflex(row, center, flex-end);
+
+            h3 {
+                @include dflex(row, center, flex-end);
+                gap: 20px;
+            }
+        }
+        
+        h3 {
+            color:#fff;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+        }
+
+        a {
+            color:#fff;
+            font-weight: 700;
+            text-decoration:none;
+        }
+
+        .btn {
+            width: 120px;
+            height: 44px;
+            background: #FFFFFF;
+            border-radius: 100px;
+            @include dflex(column, center, center);
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-transform: uppercase;
+
+            color: #00A651;
+        }
+
+        @include dflex(row, center, center);
+
+        .container {
+            .row {
+                @include dflex(row, center, space-between);
+            }
+        }
+    }
+
+    .headerBottom {
+        padding:10px 0px;
+
+        @include dflex(row, center, center);
+
+        .container {
+            .row {
+                @include dflex(row, center, space-between);
+
+                nav {
+                    ul {
+                        @include dflex(row, center, space-between);
+                        gap:15px;
+
+                        li {
+                            list-style-type:none;
+
+                            a {
+                                font-family: 'Inter';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 19px;
+                                color: #FFFFFF;
+                                text-decoration:none;
+                            }
+                        }
+                    }
+                }
+
+                .socialMedia{
+                    ul {
+                        @include dflex(row, center, space-between);
+                        gap:15px;
+
+                        li {
+                            list-style-type:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

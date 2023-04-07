@@ -22,8 +22,9 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css",
-              "src/common.scss",
+              "src/styles.scss",
+              //"src/styles.css",
+              //"src/common.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/quill/dist/quill.core.css",
               "./node_modules/quill/dist/quill.bubble.css",

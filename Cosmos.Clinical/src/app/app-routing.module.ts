@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'home', loadChildren: () => import('./layouts/homepage-layout/homepage-layout.module').then(m => m.HomePageLayoutModule) },
   {
     path: '',
     loadChildren: () =>
