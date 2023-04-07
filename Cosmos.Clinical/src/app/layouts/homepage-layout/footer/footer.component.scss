@@ -1,0 +1,102 @@
+@mixin dflex($fdir, $aitems, $jcontent) {
+    display:flex;
+    flex-direction:$fdir;
+    align-items:$aitems;
+    justify-content:$jcontent;
+}
+
+.container {
+    width:100%;
+    max-width:1170px;
+    min-width:1170px;
+    margin:0 auto;
+}
+
+footer {
+    background: #00A651;
+    padding:80px 0px;
+
+    .container {
+        @include dflex(row, center, center);
+        gap:70px;
+
+        .colLeft {
+            width:35%;
+            @include dflex(column, flex-start, center);
+
+            p {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 28px;
+                color: #FFFFFF;
+                opacity: 0.8;
+                margin:20px 0px;
+            }
+
+            ul {
+                @include dflex(row, center, flex-start);
+                gap:20px;
+
+                li {
+                    list-style-type:none;
+                }
+            }
+        }
+
+        .colRight {
+            width:65%;
+            @include dflex(row, flex-start, flex-end);
+            gap:50px;
+
+            h3 {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 28px;
+                color: #FFFFFF;
+                margin-bottom:20px;
+            }
+
+            ul {
+                @include dflex(column, flex-start, center);
+
+                li {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 28px;
+                    color: #FFFFFF;
+                    opacity: 0.8;
+                    list-style-type:none;
+
+                    a {
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 28px;
+                        color: #FFFFFF;
+                        opacity: 0.8;
+                        text-decoration:none;
+                    }
+                }
+            }
+
+            p {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 26px;
+                color: #FFFFFF;
+                mix-blend-mode: normal;
+                opacity: 0.6;
+                margin-top:50px;
+            }
+        }
+    }
+}
