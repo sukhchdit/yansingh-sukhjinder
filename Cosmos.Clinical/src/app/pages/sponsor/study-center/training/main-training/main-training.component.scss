@@ -1,0 +1,36 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  .tabsElement {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+    width: 33%;
+    p {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 25px;
+      color: rgba(54, 63, 87, 0.5);
+    }
+    &:hover {
+      border-bottom: 3px solid #00a884;
+      border-radius: 3px;
+      cursor: pointer;
+      p {
+        color: #00a884;
+      }
+    }
+  }
+  .activeTab {
+    border-bottom: 3px solid #00a884;
+    border-radius: 3px;
+    cursor: pointer;
+    p {
+      color: #00a884;
+    }
+  }
+}

@@ -1,0 +1,263 @@
+<div class="tableBlock">
+  <div class="headBlock">
+    <button class="customButton" (click)="eManagerModal.openModal()">
+      eConsent Manage
+    </button>
+  </div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ICF Name</th>
+        <th>ICF Version</th>
+        <th>Prot. Version</th>
+        <th>ICF Approved Dt.</th>
+        <th>ICF Type</th>
+        <th>ICF Source</th>
+        <th>IRB Sub Dt.</th>
+        <th>ICF Status</th>
+        <th>Effective Dt.</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let row of eConsentGrid; let i = index">
+        <tr class="tableRow">
+          <td>
+            {{ row.icfName }}
+          </td>
+          <td alt="ICF Version">{{ row.icfVersion }}</td>
+          <td alt="Prot. Version">
+            {{ row.protocalVersion }}
+          </td>
+
+          <td alt="ICF Approved Dt">
+            {{ row.icfApprovedDate | date : "dd-LLL-yyyy" }}
+          </td>
+          <td alt="ICF Type">
+            <span *ngFor="let IcfTypeOption of IcfTypeOptions">
+              <span *ngIf="icfTypeObject[IcfTypeOption] == row.icfType">{{
+                IcfTypeOption
+              }}</span>
+            </span>
+          </td>
+          <td alt="ICF Source">
+            <span *ngFor="let IcfSourceOption of IcfSourceOptions">
+              <span *ngIf="icfSourceObject[IcfSourceOption] == row.icfSource">{{
+                IcfSourceOption
+              }}</span>
+            </span>
+          </td>
+          <td alt="IRB Sub Dt.">
+            <span>{{
+              row.irbSubmittedDate
+                ? (row.irbSubmittedDate | date : "dd-LLL-yyyy")
+                : "NA"
+            }}</span>
+          </td>
+          <td alt="ICF Status">
+            <div
+              style="display: flex; align-items: center"
+              *ngIf="!row.icfStatusEdit; else icfStatusInput"
+              #tableContains
+            >
+              <span *ngFor="let IcfStatusTypeOption of IcfStatusTypeOptions">
+                <span *ngIf="icfStatusTypeObject[IcfStatusTypeOption] == row.icfStatus">{{ IcfStatusTypeOption }}</span>
+              </span>
+              <!-- <fa-icon
+                class="icon"
+                (click)="editCellData(i, 'icfStatus')"
+                [icon]="faPenToSquare"
+              ></fa-icon> -->
+            </div>
+            <ng-template #icfStatusInput>
+              <div class="dropdownsColumn">
+                <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                  <div
+                    class="customDropInput"
+                    [ngClass]="{ active: selectedDropdown == 'status' }"
+                    (click)="openDropdown('status')"
+                  >
+                    <span class="span" [ngClass]="checkActive">ICF Status</span>
+                    <h3>
+                      {{ icfStatusTypeObject[row.icfStatus] }}
+                    </h3>
+                  </div>
+                  <ul>
+                    <li *ngFor="let IcfStatusTypeOption of IcfStatusTypeOptions"
+                      (click)="editedCell(i,'icfStatus',icfStatusTypeObject[IcfStatusTypeOption])">
+                      {{ IcfStatusTypeOption }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ng-template>
+          </td>
+
+          <td alt="Effective Dt.">
+            <div *ngIf="!row.effectiveDateEdit; else effectiveDateInput" style="display: flex; align-items: center">
+              {{row.effectiveDate? (row.effectiveDate | date : "dd-LLL-yyyy"): "NA"}}
+              <!-- <fa-icon
+                class="icon"
+                (click)="editCellData(i, 'effectiveDate')"
+                [icon]="faPenToSquare"
+              ></fa-icon> -->
+            </div>
+            <ng-template #effectiveDateInput>
+              <div class="formField">
+                <div class="customDateInput d-flex">
+                  <input
+                    type="date"
+                    style="padding-right: 0px"
+                    name="Date"
+                    placeholder=" Effective Date"
+                    (change)="editedCell(i, 'effectiveDate', $event)"
+                    [value]="row.effectiveDate | date : 'yyyy-LL-dd'"
+                  />
+                </div>
+              </div>
+            </ng-template>
+          </td>
+          <td>
+            <div class="btn-group">
+              <fa-icon [icon]="faEllipsis" class="icon"></fa-icon>
+
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+                <li class="d-flex">
+                  <a class="dropdown-item" [disabled]="!row.documentUrl" (click)="copyDocumentUrl(row.documentUrl)" >Copy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item">Preview</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="editCellData(i, 'icfStatus')">Update ICF Status</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="editCellData(i, 'effectiveDate')">Update Effective Date</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="showHistory(i)">Audit History</a>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <th colspan="10">
+          <ng-container *ngIf="history == i">
+            <tr class="history">
+              <th>ICF Name</th>
+              <th>Prot. Version</th>
+              <th>Old Value</th>
+              <th>New Value</th>
+              <th>Updated on</th>
+              <th>Action time</th>
+              <th style="display: flex;justify-content: space-between;align-items: center;">
+                Updated by
+                <fa-icon
+                  class="icon"
+                  (click)="showHistory(i)"
+                  [icon]="faCross"
+                ></fa-icon>
+              </th>
+            </tr>
+            <tr
+              *ngFor="let historyData of row.auditDetails; let i = index"
+              class="history"
+              style="width: 100%"
+            >
+              <td>{{ historyData.icfName }}</td>
+              <td alt="ICF Version">{{ historyData.protocalVersion }}</td>
+              <td alt="ICF Approved Dt">{{ historyData.oldValue }}</td>
+              <td>{{ historyData.newValue }}</td>
+              <td alt="ICF Version">{{ historyData.activitytype }}</td>
+              <td alt="ICF Approved Dt">
+                {{ historyData.actionTime | date : "dd LLL yyyy, h:mm a" }}
+              </td>
+              <td>{{ historyData.updatedBy }}</td>
+            </tr>
+          </ng-container>
+        </th>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <div class="paginationBlock">
+    <div class="paginationLeft">
+      <h3>1-20 of 786 Entries</h3>
+    </div>
+    <div class="paginationRight">
+      <!--Page Numbers Block-->
+      <div class="formField pageNumbers" (blur)="closeDropdown()" tabindex="0">
+        <div
+          class="customInput"
+          [ngClass]="{ active: selectedDropdown == 'pageNmsDrop' }"
+          (click)="openDropdown('pageNmsDrop')"
+        >
+          <h3>{{ selectedPageNum }}</h3>
+        </div>
+        <ul>
+          <li
+            *ngFor="let page of pageNumsList"
+            (click)="onSelectDropValueChange(page)"
+          >
+            {{ page }}
+          </li>
+        </ul>
+      </div>
+      <div class="pageArrows">
+        <ul>
+          <li>
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_86_193)">
+                <path
+                  d="M18.2084 10.5417H7.50377L12.1804 5.86502C12.5542 5.49127 12.5542 4.87794 12.1804 4.50419C11.8067 4.13044 11.2029 4.13044 10.8292 4.50419L4.51377 10.8196C4.14002 11.1934 4.14002 11.7971 4.51377 12.1709L10.8292 18.4863C11.2029 18.86 11.8067 18.86 12.1804 18.4863C12.5542 18.1125 12.5542 17.5088 12.1804 17.135L7.50377 12.4584H18.2084C18.7354 12.4584 19.1667 12.0271 19.1667 11.5C19.1667 10.9729 18.7354 10.5417 18.2084 10.5417Z"
+                  fill="#363F57"
+                  fill-opacity="0.5"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_86_193">
+                  <rect width="23" height="23" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </li>
+          <li>
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_86_196)">
+                <path
+                  d="M4.79165 12.4583L15.4962 12.4583L10.8196 17.135C10.4458 17.5087 10.4458 18.1221 10.8196 18.4958C11.1933 18.8696 11.7971 18.8696 12.1708 18.4958L18.4862 12.1804C18.86 11.8066 18.86 11.2029 18.4862 10.8291L12.1708 4.51373C11.7971 4.13998 11.1933 4.13998 10.8196 4.51373C10.4458 4.88748 10.4458 5.49123 10.8196 5.86498L15.4962 10.5416L4.79165 10.5416C4.26456 10.5416 3.83331 10.9729 3.83331 11.5C3.83331 12.0271 4.26456 12.4583 4.79165 12.4583Z"
+                  fill="#363F57"
+                  fill-opacity="0.5"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_86_196">
+                  <rect
+                    width="23"
+                    height="23"
+                    fill="white"
+                    transform="translate(23 23) rotate(-180)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <app-e-manager-modal #eManagerModal (eManagerModalSubmit)="eManagerModalClose($event)"></app-e-manager-modal>
+</div>

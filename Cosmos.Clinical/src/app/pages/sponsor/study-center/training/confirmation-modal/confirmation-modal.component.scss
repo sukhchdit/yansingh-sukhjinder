@@ -1,0 +1,30 @@
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 67.5px;
+      height: 67.5px;
+      margin:20px 0px ;
+    }
+    p {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 25px;
+      text-align: center;
+      color: #5f6983;
+      margin-bottom: 20px;
+    }
+    .customButton{
+      height: 45px;
+      width: 156px;
+    }
+    .cancelButton{
+      width: 100px;
+      margin-left: 20px;
+    }
+  }
+  

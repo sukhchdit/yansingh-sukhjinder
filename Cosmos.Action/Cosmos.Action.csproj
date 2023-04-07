@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.7.7" />
+    <PackageReference Include="ClickSendV3API" Version="5.0.72" />
+    <PackageReference Include="itext7" Version="7.1.16" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
+    <PackageReference Include="itextsharp.xmlworker" Version="5.5.13.2" />
+    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1003" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="21.1.0" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cosmos.IAction\Cosmos.IAction.csproj" />
+    <ProjectReference Include="..\Cosmos.IService\Cosmos.IService.csproj" />
+    <ProjectReference Include="..\Cosmos.Service\Cosmos.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CalendarParticipentActivity\" />
+    <None Remove="eConsent\" />
+    <None Remove="eVault\" />
+    <None Remove="SponsorStudyCDAInvitation\" />
+    <None Remove="eSignature\" />
+    <None Remove="SSUWorkflow\" />
+  </ItemGroup>
+</Project>

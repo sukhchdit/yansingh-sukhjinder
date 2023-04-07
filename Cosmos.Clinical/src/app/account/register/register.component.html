@@ -1,0 +1,273 @@
+<!--<div class="l-right-text">
+  <h2>Create your free Account</h2>
+</div>
+<div class="l-panel">
+  <form class="formStyle" name="form" (ngSubmit)="f.form.valid && save(f)" #f="ngForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="floating-ctrl">
+          <input type="text" [(ngModel)]="obj.firstname" name="firstname" class="form-control lineFld"
+            placeholder="First name" id="firstname" #firstname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">-->
+<!--<span class="valIcon"><i class="fas fa-check-circle"></i></span>-->
+<!--<span class="valIcon text-right"><img src="../../../../assets/images/icons/Green-Tick.png" alt="..." width="20"></span>
+    <span *ngIf="firstname.errors != null && f.submitted && firstname.errors.required" class="error">First Name is
+      required</span>
+    <span *ngIf="firstname.errors != null && f.submitted && firstname.errors.minlength" class="error">Must be 2
+      characters long</span>
+    <span *ngIf="firstname.errors != null && f.submitted && firstname.errors.pattern" class="error">Must be
+      characters</span>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="floating-ctrl">
+    <input type="text" [(ngModel)]="obj.lastname" name="lastname" class="form-control lineFld"
+      placeholder="Last name" id="lastname" #lastname="ngModel" required minlength="2" pattern="^[a-zA-Z ]*$">-->
+<!--<span class="valIcon"><i class="fas fa-check-circle"></i></span>-->
+<!--<span class="valIcon text-right"><img src="../../../../assets/images/icons/Green-Tick.png" alt="..." width="20"></span>
+      <span *ngIf="lastname.errors != null && f.submitted && lastname.errors.required" class="error">Last Name is
+        required</span>
+      <span *ngIf="lastname.errors != null && f.submitted && lastname.errors.minlength" class="error">Must be 2
+        characters long</span>
+      <span *ngIf="lastname.errors != null && f.submitted && lastname.errors.pattern" class="error">Must be
+        characters</span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="floating-ctrl">
+      <input type="email" [(ngModel)]="obj.email" name="email" class="form-control lineFld" placeholder="Work Email"
+        id="email" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">-->
+<!--<span class="valIcon"><i class="fas fa-check-circle"></i></span>-->
+<!--<span class="valIcon text-right"><img src="../../../../assets/images/icons/Green-Tick.png" alt="..." width="20"></span>
+    <span *ngIf="email.errors != null && f.submitted && email.errors.required" class="error"></span>
+    <span *ngIf="email.errors != null && f.submitted && email.errors.pattern" class="error"></span>
+  </div>
+</div>
+<div class="col-md-6">
+  <div class="floating-ctrl">
+    <input type="number" [(ngModel)]="obj.phone" name="phone" class="form-control lineFld"
+      placeholder="Work Phone" id="phone" #phone="ngModel" required>-->
+<!--<span class="valIcon"><i class="fas fa-check-circle"></i></span>-->
+<!--<span class="valIcon text-right"><img src="../../../../assets/images/icons/Green-Tick.png" alt="..." width="20"></span>
+      <span *ngIf="phone.errors != null && f.submitted && phone.errors.required" class="error"></span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="floating-ctrl">
+      <input type="text" [(ngModel)]="obj.organizationName" name="organizationName" class="form-control lineFld"
+        placeholder="Organization Name" id="organizationName" #organizationName="ngModel" required>
+      <span *ngIf="organizationName.errors != null && f.submitted && organizationName.errors.required"
+        class="error"></span>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="floating-ctrl">
+      <select class="form-control" name="organizationType" [(ngModel)]="obj.organizationType" required
+        id="organizationType" #organizationType="ngModel"
+        [ngClass]="{'is-invalid': !organizationType.valid && (organizationType.dirty || organizationType.touched || f.submitted)}">
+        <option value="0" selected="selected">Organization Type</option>
+        <option value="4">CRO</option>-->
+<!--<option value="4">Investigator</option>-->
+<!--<option value="3">Monitor</option>-->
+<!--<option value="1">Site</option>-->
+<!--<option value="6">Site & Investigator</option>-->
+<!--<option value="2">Sponsor</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group text-left">
+      <div class="checkbox">
+        <input type="checkbox" id="checkbox-w-fill-1" [(ngModel)]="obj.enableEmailApproval" name="enableEmailApproval">
+        <label for="checkbox-w-fill-1" class="cr">Enable Email Approval for updates</label>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="checkbox-w-fill-2" [(ngModel)]="obj.termspolicy" name="termspolicy"
+          #termspolicy="ngModel">
+        <label for="checkbox-w-fill-2" class="cr">Agree to the <a href="#" target="_blank">Terms &
+            Conditions</a></label>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary mb-4" type="button" disabled *ngIf="isloader">
+        <span class="spinner-border spinner-border-sm" role="status"></span>
+        Loading...
+      </button>
+      <button class="btn btn-primary shadow-2 mb-4" type="submit" *ngIf="!isloader">Sign up</button>
+    </div>
+    <p class="mb-0 text-muted">Already have an account? <a [routerLink]="['']"> Log in</a></p>
+  </form>
+</div>-->
+<!-- login area start -->
+<!--<header class="login-area">
+  <div class="my-container">
+    <div class="main-login-area">
+      <div class="login-img">
+        <div class="logo-area logo-area2">
+          <a href="#"><img src="../../../../assets/images/logo.png" alt="img"></a>
+        </div>
+        <div class="banner-area banner-area3">
+          <img src="../../../../assets/images/login.png" alt="img">
+        </div>
+      </div>
+      <div class="form-area form-area2">
+        <div class="form-heading">
+          <h2>Optimize & Manage</h2>
+          <p>Your Clinical Trials</p>
+        </div>
+        <div class="form-title">
+          <p>Create your free Account</p>
+        </div>
+        <form name="form" (ngSubmit)="f.form.valid && save(f)" #f="ngForm">
+          <div class="input-main">
+            <input type="text" [(ngModel)]="obj.firstname" name="firstname" placeholder="first name">
+            <input type="text" [(ngModel)]="obj.lastname" name="lastname" placeholder="last name">
+            <input type="email" [(ngModel)]="obj.email" name="email" placeholder="EMAIL">
+            <input type="number" [(ngModel)]="obj.phone" name="phone" placeholder="phone">
+            <input type="text" placeholder="organization name">
+            <select class="form-select" [(ngModel)]="obj.organizationName" name="organizationName" aria-label="Default select example">
+              <option value="0" selected="selected">Organization Type</option>
+              <option value="4">CRO</option>-->
+              <!--<option value="4">Investigator</option>-->
+              <!--<option value="3">Monitor</option>-->
+              <!--<option value="1">Site</option>-->
+              <!--<option value="6">Site & Investigator</option>-->
+              <!--<option value="2">Sponsor</option>
+            </select>
+          </div>
+
+          <div class="check-forget2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="obj.enableEmailApproval" name="enableEmailApproval" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Enable Email Approval for updates
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="obj.termspolicy" name="termspolicy" value="" id="flexCheckDefault2">
+              <label class="form-check-label" for="flexCheckDefault2">
+                Agree to the <a href="https://uat.cosmosclinical.com/">Terms & Conditions</a>
+              </label>
+            </div>
+          </div>
+          <div class="button">
+            <input class="btn1 btn5" type="submit" value="SIGN IN" *ngIf="!isloader">
+            <button class="btn1 btn5" type="button" disabled *ngIf="isloader">
+              <span class="spinner-border spinner-border-sm" role="status"></span>
+              Loading...
+            </button>
+          </div>
+        </form>
+        <div class="form-footer">
+          <p>Already have an account? <a [routerLink]="['']">Sign In  </a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>-->
+<!-- login area end -->
+
+
+<section id="loginWrapper">
+  <aside class="leftSection">
+    <div class="logoBlock">
+      <img src="../../../../assets/images/login/cosmosLogo.svg" alt="Cosmos" />
+    </div>
+    <div class="imgBlock">
+      <img src="../../../../assets/images/login/signUp.svg" alt="Login Image" />
+    </div>
+  </aside>
+  <aside class="rightSection scrollbar-new-design signUp">
+    <h2>Optimize & Manage <span>Your Clinical Trials</span></h2>
+    <h3>Create your free Account</h3>
+
+    <form name="form" (ngSubmit)="f.form.valid && save(f)" #f="ngForm">
+      <div class="twoFieldsWrapper">
+        <div class="formField" tabindex="0">
+          <div class="customInput" [ngClass]="{'customFilled':obj.firstname, 'showError':fNameFieldNewError}">
+            <label for="fNameFieldNew">First Name</label>
+            <input type="text" name="fNameFieldNew" id="fNameFieldNew" [(ngModel)]="obj.firstname" (blur)="onFNameFieldNewBlur()" />
+          </div>
+          <span class="error">Please enter your first name</span>
+        </div>
+
+        <div class="formField" tabindex="0">
+          <div class="customInput" [ngClass]="{'customFilled':obj.lastname, 'showError':lNameFieldNewError}">
+            <label for="lNameFieldNew">Last Name</label>
+            <input type="text" name="lNameFieldNew" id="lNameFieldNew" [(ngModel)]="obj.lastname" (blur)="onLNameFieldNewBlur()" />
+          </div>
+          <span class="error">Please enter your last name</span>
+        </div>
+
+        <div class="formField" tabindex="0">
+          <div class="customInput" [ngClass]="{'customFilled':obj.email, 'showError':emailFieldNewError}">
+            <label for="emailFieldNew">Email</label>
+            <input type="text" name="emailFieldNew" id="emailFieldNew" [(ngModel)]="obj.email" (blur)="onEmailFieldNewBlur()"/>
+          </div>
+          <span class="error">Please enter your email</span>
+        </div>
+
+        <div class="formField" tabindex="0">
+          <div class="customInput" [ngClass]="{'customFilled':obj.phone, 'showError':phoneFieldNewError}">
+            <label for="phoneFieldNew">Phone</label>
+            <input type="text" name="phoneFieldNew" id="phoneFieldNew" [(ngModel)]="obj.phone" (blur)="onPhoneFieldNewBlur()" autocomplete="off" />
+          </div>
+          <span class="error">Please enter your Phone</span>
+        </div>
+
+        <div class="formField" tabindex="0">
+          <div class="customInput" [ngClass]="{'customFilled':obj.organizationName, 'showError':organizationNameNewrror}">
+            <label for="organizationNameNew">Organization Name</label>
+            <input type="text" name="organizationNameNew" id="organizationNameNew" [(ngModel)]="obj.organizationName" (blur)="onOrganizationNameNewBlur()" autocomplete="off" />
+          </div>
+          <span class="error">Please enter Organization Name</span>
+        </div>
+
+        <div class="formField dropdownMain" (blur)="closeDropdown()" tabindex="0">
+          <div class="customInput customFilled" [ngClass]="{'active':openOrganizationDropdown}" (click)="openDropdown()">
+            <label for="organizationTypeNew">Organization Type</label>
+            <h4 class="selectedData">{{selectedOrganizationType}}</h4>
+          </div>
+          <ul>
+            <li *ngFor="let organization of organizationTypeList" (click)="selectDropdownValue(organization)">{{organization.name}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <div class="checkboxBlock">
+            <label class="checkboxContainer">
+              <input type="checkbox" [(ngModel)]="obj.enableEmailApproval" name="enableEmailApproval">
+              <span class="checkmark"></span>
+            </label>
+            <span>Enable Email Approval for updates</span>
+          </div>
+        </li>
+
+        <li>
+          <div class="checkboxBlock">
+            <label class="checkboxContainer">
+              <input type="checkbox" [(ngModel)]="obj.termspolicy" name="termspolicy">
+              <span class="checkmark"></span>
+            </label>
+            <span>Agree to the <a href="https://uat.cosmosclinical.com/">Terms & Conditions</a></span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="sbtBtn">
+        <input type="submit" name="Sign Up" value="Sign Up" *ngIf="!isloader" />
+        <input type="button" name="Proccessing" value="Proccessing..." *ngIf="isloader" />
+      </div>
+    </form>
+
+
+    <h5>Already have an account? <a [routerLink]="['']">Sign In</a></h5>
+    <h6>©2023 COSMOS, Inc. All Rights Reserved. <a href="#">Privacy Policy</a></h6>
+  </aside>
+</section>

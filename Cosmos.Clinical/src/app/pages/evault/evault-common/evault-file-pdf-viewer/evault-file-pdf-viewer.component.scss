@@ -1,0 +1,160 @@
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    .pdfPreviewBlock {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #eaebee;
+      border-radius: 8px;
+      height: 400px;
+      padding: 10px;
+      .icon {
+        &:hover {
+          svg {
+            rect {
+              stroke: #00a884;
+            }
+            path {
+              fill: #00a884;
+            }
+            circle {
+              fill: #00a884;
+            }
+          }
+        }
+      }
+    }
+    .detailsBlock {
+      width: 40%;
+      border: 1px solid #eaebee;
+      border-radius: 8px;
+      margin-left: 15px;
+  
+      .heading {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        border-radius: 8px 8px 0px 0px;
+        align-items: center;
+        align-content: center;
+        .tabs {
+          display: flex;
+          height: 41px;
+          align-items: center;
+          background: rgba(243, 244, 246, 0.5);
+          border: 1px solid #f3f4f6;
+          backdrop-filter: blur(32.5px);
+          border-radius: 8px;
+          margin: 10px 0px 0px 10px;
+          .activeTab {
+            color: white !important;
+            background: #00a884;
+          }
+          .elements {
+            margin-top: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            height: 31px;
+            padding: 0 5px;
+            align-items: center;
+            h3 {
+              padding: 8px 10px;
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 600;
+              border-radius: 8px;
+              font-size: 12px;
+              color: rgba(52, 61, 86, 0.5);
+            }
+          }
+          .elements:hover h3 {
+            color: white;
+            background: #00a884;
+          }
+          .elements:hover .dropdown-menu {
+            display: block;
+            margin-top: 160px;
+          }
+        }
+  
+        .icon {
+          &:hover {
+            fa-icon {
+              color: #00a884;
+            }
+          }
+        }
+        fa-icon {
+          font-size: 24px;
+          display: flex;
+          justify-content: end;
+          color: #5f6983;
+        }
+      }
+  
+      .inputsBlock {
+        padding: 0px 23px 30px 20px;
+        .formField {
+          .customInput {
+            height: 45px;
+            .floating-label {
+              margin-top: -12px;
+              font-size: 10px;
+            }
+            .star {
+              position: absolute;
+              pointer-events: none;
+              font-family: "Poppins";
+              font-style: normal;
+              color: #ff7597;
+              font-size: 6px;
+              margin-left: 2px;
+            }
+          }
+          .customInput input:focus ~ .floating-label,
+          .customInput input:not(:focus):valid ~ .floating-label {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 18px;
+            color: rgba(87, 74, 54, 0.5);
+            top:11px;
+            left: 15px;
+            opacity: 1;
+            .star {
+              margin-top: -4px;
+            }
+          }
+        }
+        .cancelButton{
+          height: 40px;
+          width: 100px;
+        }
+      }
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5f6983;
+      border-radius: 8px;
+      margin-right: 4px;
+      &:hover {
+        background-color: rgba(0, 168, 132, 0.2);
+        fa-icon {
+          color: #00a884;
+        }
+      }
+    }
+  }
+  app-pdf-viewer{
+    width: 100%;
+  }
+  

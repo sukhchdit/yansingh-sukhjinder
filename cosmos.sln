@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{246E5F06-9324-4DE6-91DB-06F4D10925A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebAPI", "WebAPI", "{F2693506-7497-4500-A19C-57A1928ED958}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{B6B2CFF2-ACD8-41D5-887E-86B760BAE07C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.API", "Cosmos.API\Cosmos.API.csproj", "{7B852F09-E658-4901-8128-88AE7663DB41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{29E121BF-93B3-4DAB-8928-9A7DAB00D4CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.DAL", "Cosmos.DAL\Cosmos.DAL.csproj", "{C53F7CA1-35CB-4972-8E46-C75D3C3EBD13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Models", "Cosmos.Models\Cosmos.Models.csproj", "{A459F295-E1B6-485B-B12D-9EDE34AE6584}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Service", "Cosmos.Service\Cosmos.Service.csproj", "{3FA84C4D-AF57-4CD0-939D-C672C46F9A7A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.IService", "Cosmos.IService\Cosmos.IService.csproj", "{614D05F8-4229-498E-9CCD-10971EB22CA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "INFRASTRUCTURE", "INFRASTRUCTURE", "{A6BED76B-5CAA-43FB-80FA-E1B768E34EAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Infrastructure", "Cosmos.Infrastructure\Cosmos.Infrastructure.csproj", "{FD6E5E10-C41B-4FE7-B31D-A380310E921E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Action", "Action", "{CE2D98A2-BE0C-4743-AA72-024E3357E9FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Action", "Cosmos.Action\Cosmos.Action.csproj", "{BC09EC9E-66F3-4B98-8AB2-714D2E714CB0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.IAction", "Cosmos.IAction\Cosmos.IAction.csproj", "{FDC11A63-43DA-4825-99CE-95C820C75FB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CosmosClinical", "CosmosClinical", "{3D604BA9-6C77-465F-AB76-8C1A31D00788}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Cosmos.Clinical", "Cosmos.Clinical\", "{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51198"
+		Debug.AspNetCompiler.PhysicalPath = "Cosmos.Clinical\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51198\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51198"
+		Release.AspNetCompiler.PhysicalPath = "Cosmos.Clinical\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51198\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51198"
+		SlnRelativePath = "Cosmos.Clinical\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B852F09-E658-4901-8128-88AE7663DB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B852F09-E658-4901-8128-88AE7663DB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B852F09-E658-4901-8128-88AE7663DB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B852F09-E658-4901-8128-88AE7663DB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C53F7CA1-35CB-4972-8E46-C75D3C3EBD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C53F7CA1-35CB-4972-8E46-C75D3C3EBD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C53F7CA1-35CB-4972-8E46-C75D3C3EBD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C53F7CA1-35CB-4972-8E46-C75D3C3EBD13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A459F295-E1B6-485B-B12D-9EDE34AE6584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A459F295-E1B6-485B-B12D-9EDE34AE6584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A459F295-E1B6-485B-B12D-9EDE34AE6584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A459F295-E1B6-485B-B12D-9EDE34AE6584}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA84C4D-AF57-4CD0-939D-C672C46F9A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA84C4D-AF57-4CD0-939D-C672C46F9A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA84C4D-AF57-4CD0-939D-C672C46F9A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA84C4D-AF57-4CD0-939D-C672C46F9A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{614D05F8-4229-498E-9CCD-10971EB22CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{614D05F8-4229-498E-9CCD-10971EB22CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{614D05F8-4229-498E-9CCD-10971EB22CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{614D05F8-4229-498E-9CCD-10971EB22CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6E5E10-C41B-4FE7-B31D-A380310E921E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E5E10-C41B-4FE7-B31D-A380310E921E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E5E10-C41B-4FE7-B31D-A380310E921E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E5E10-C41B-4FE7-B31D-A380310E921E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC09EC9E-66F3-4B98-8AB2-714D2E714CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC09EC9E-66F3-4B98-8AB2-714D2E714CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC09EC9E-66F3-4B98-8AB2-714D2E714CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC09EC9E-66F3-4B98-8AB2-714D2E714CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC11A63-43DA-4825-99CE-95C820C75FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC11A63-43DA-4825-99CE-95C820C75FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC11A63-43DA-4825-99CE-95C820C75FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC11A63-43DA-4825-99CE-95C820C75FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B852F09-E658-4901-8128-88AE7663DB41} = {F2693506-7497-4500-A19C-57A1928ED958}
+		{C53F7CA1-35CB-4972-8E46-C75D3C3EBD13} = {246E5F06-9324-4DE6-91DB-06F4D10925A4}
+		{A459F295-E1B6-485B-B12D-9EDE34AE6584} = {B6B2CFF2-ACD8-41D5-887E-86B760BAE07C}
+		{3FA84C4D-AF57-4CD0-939D-C672C46F9A7A} = {29E121BF-93B3-4DAB-8928-9A7DAB00D4CB}
+		{614D05F8-4229-498E-9CCD-10971EB22CA1} = {29E121BF-93B3-4DAB-8928-9A7DAB00D4CB}
+		{FD6E5E10-C41B-4FE7-B31D-A380310E921E} = {A6BED76B-5CAA-43FB-80FA-E1B768E34EAA}
+		{BC09EC9E-66F3-4B98-8AB2-714D2E714CB0} = {CE2D98A2-BE0C-4743-AA72-024E3357E9FF}
+		{FDC11A63-43DA-4825-99CE-95C820C75FB5} = {CE2D98A2-BE0C-4743-AA72-024E3357E9FF}
+		{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0} = {3D604BA9-6C77-465F-AB76-8C1A31D00788}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91B99A7C-FEB1-4EB7-983F-A6E14E5CB008}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,306 @@
+<div class="tableBlock">
+  <div class="headBlock">
+    <button class="customButton" (click)="study_urlModal.openModal()">
+      <svg
+        width="20"
+        height="27"
+        viewBox="0 0 20 27"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.1185 20.2499H15.2987V16.1377C15.304 15.888 15.2115 15.6463 15.0414 15.4654C14.9628 15.377 14.8665 15.3066 14.7589 15.2588C14.6513 15.2111 14.5349 15.1872 14.4174 15.1887C14.2997 15.187 14.183 15.2108 14.0752 15.2586C13.9673 15.3063 13.8708 15.3768 13.7921 15.4654C13.6219 15.6463 13.5294 15.888 13.5348 16.1377V20.2512H9.91095C9.79349 20.2497 9.67706 20.2736 9.56946 20.3214C9.46185 20.3691 9.36555 20.4395 9.28699 20.528C9.11683 20.7088 9.02432 20.9506 9.02967 21.2003C9.02432 21.45 9.11683 21.6917 9.28699 21.8726C9.36555 21.961 9.46185 22.0315 9.56946 22.0792C9.67706 22.1269 9.79349 22.1508 9.91095 22.1493H13.5348V26.0509C13.5294 26.3006 13.6219 26.5423 13.7921 26.7232C13.8708 26.8118 13.9673 26.8823 14.0752 26.93C14.183 26.9778 14.2997 27.0016 14.4174 26.9999C14.6614 26.9999 14.8707 26.9081 15.0414 26.7232C15.2115 26.5423 15.304 26.3006 15.2987 26.0509V22.1493H19.1185C19.2359 22.1507 19.3523 22.1268 19.4599 22.0791C19.5675 22.0313 19.6638 21.961 19.7425 21.8726C19.9126 21.6917 20.0051 21.45 19.9998 21.2003C20.0051 20.9506 19.9126 20.7088 19.7425 20.528C19.6639 20.4395 19.5676 20.3691 19.46 20.3214C19.3524 20.2736 19.236 20.2497 19.1185 20.2512V20.2499ZM19.8065 6.78624L14.4401 0.649099L13.8534 0.00244456H1.70737C1.48071 0.00244456 1.22739 -0.0110555 1.00607 0.0253947C0.740536 0.0635727 0.497846 0.19844 0.32344 0.404747C-0.051208 0.83405 0.00345582 1.3727 0.00345582 1.90056V25.1005C0.00345582 25.6283 -0.0565411 26.1994 0.32344 26.599C0.70342 26.9986 0.958074 26.9986 1.44738 26.9986H8.14704C8.26472 27.0002 8.38138 26.9763 8.48922 26.9286C8.59705 26.8808 8.69358 26.8104 8.77235 26.7218C8.9425 26.541 9.03502 26.2992 9.02967 26.0495C9.03502 25.7998 8.9425 25.5581 8.77235 25.3772C8.69364 25.2886 8.59712 25.2181 8.48927 25.1703C8.38142 25.1226 8.26473 25.0988 8.14704 25.1005H1.79403L1.78603 1.84116H11.4855V6.69174C11.4855 7.21959 11.6882 7.69479 12.0068 8.03634C12.3268 8.3779 12.7668 8.58985 13.2561 8.58985H18.2359V14.2396C18.2305 14.4894 18.323 14.7311 18.4932 14.9119C18.5718 15.0004 18.6681 15.0708 18.7757 15.1185C18.8833 15.1663 18.9997 15.1902 19.1172 15.1887C19.3625 15.1887 19.5705 15.0955 19.7425 14.9119C19.9121 14.7309 20.0042 14.4892 19.9984 14.2396V7.39104L19.9998 7.01439L19.8065 6.78624ZM13.3574 6.55404C13.3028 6.48249 13.2695 6.35693 13.2575 6.17603V2.05176L17.3359 6.69174H13.6801C13.5201 6.67014 13.4134 6.62559 13.3574 6.55404Z"
+          fill="white"
+        />
+      </svg>
+    </button>
+  </div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <thead>
+      <tr>
+        <th>
+          <div class="sortingIcons">
+            #
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="sortingIcons">
+            URL Type
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="sortingIcons">
+            URL Name
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="sortingIcons">
+            URL
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="sortingIcons">
+            Language
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="sortingIcons">
+            Country
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="sortingIcons">
+            Status
+            <div class="icons">
+              <fa-icon class="topIcon" [icon]="faSortUp"></fa-icon>
+              <fa-icon [icon]="faSortDown"></fa-icon>
+            </div>
+          </div>
+        </th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let row of rowData; let i = index">
+        <tr
+          class="tableRow"
+          [ngStyle]="{
+            'background-color': history == i ? 'rgba(0, 168, 132, 0.15)' : null
+          }"
+        >
+          <td>
+            {{ row.id }}
+            <div class="action">
+              <div class="btn-group">
+                <fa-icon [icon]="faEllipsis" class="icon"></fa-icon>
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+                  <li class="d-flex">
+                    <a
+                      class="dropdown-item"
+                      (click)="study_urlModal.openModal()"
+                      >Edit</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" (click)="commentModal.openModal()"
+                      >Comments</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" (click)="showHistory(i)"
+                      >View History</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" (click)="certifyModal.openModal()"
+                      >Certify</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"> Delete</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </td>
+          <td alt="Url Type">{{ row.url_type }}</td>
+          <td alt="Url Name">
+            {{ row.url_name }}
+          </td>
+
+          <td alt="Url">{{ row.url }}</td>
+          <td alt="Language">
+            {{ row.language }}
+          </td>
+          <td alt="Country">
+            {{ row.country }}
+          </td>
+
+          <td alt="Status">
+            {{ row.status }}
+          </td>
+
+          <td>
+            <div class="btn-group">
+              <fa-icon [icon]="faEllipsis" class="icon"></fa-icon>
+
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+                <li class="d-flex">
+                  <a class="dropdown-item" (click)="study_urlModal.openModal()"
+                    >Edit</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="commentModal.openModal()"
+                    >Comments</a
+                  >
+                </li>
+
+                <li>
+                  <a class="dropdown-item" (click)="showHistory(i)"
+                    >View History</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="certifyModal.openModal()"
+                    >Certify</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"> Delete</a>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <th colspan="10">
+          <ng-container *ngIf="history == i">
+            <tr class="history">
+              <th>#</th>
+              <th>User Name</th>
+              <th>Activity Date</th>
+              <th>Activity</th>
+              <th>Value Form</th>
+
+              <th
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                Value To
+                <fa-icon
+                  class="icon"
+                  (click)="showHistory(i)"
+                  [icon]="faCross"
+                ></fa-icon>
+              </th>
+            </tr>
+            <tr
+              *ngFor="let rows of row.history; let i = index"
+              class="history"
+              style="width: 100%"
+            >
+              <td>{{ rows.id }}</td>
+              <td>{{ rows.user_name }}</td>
+              <td>{{ rows.activity }}</td>
+              <td>{{ rows.activity_date }}</td>
+              <td>{{ rows.value_from }}</td>
+              <td>{{ rows.value_to }}</td>
+            </tr>
+          </ng-container>
+        </th>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <div class="paginationBlock">
+    <div class="paginationLeft">
+      <h3>1-20 of 786 Entries</h3>
+    </div>
+    <div class="paginationRight">
+      <!--Page Numbers Block-->
+      <div class="formField pageNumbers" (blur)="closeDropdown()" tabindex="0">
+        <div
+          class="customInput"
+          [ngClass]="{ active: selectedDropdown == 'pageNmsDrop' }"
+          (click)="openDropdown('pageNmsDrop')"
+        >
+          <h3>{{ selectedPageNum }}</h3>
+        </div>
+        <ul>
+          <li
+            *ngFor="let page of pageNumsList"
+            (click)="onSelectDropValueChange(page)"
+          >
+            {{ page }}
+          </li>
+        </ul>
+      </div>
+      <div class="pageArrows">
+        <ul>
+          <li>
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_86_193)">
+                <path
+                  d="M18.2084 10.5417H7.50377L12.1804 5.86502C12.5542 5.49127 12.5542 4.87794 12.1804 4.50419C11.8067 4.13044 11.2029 4.13044 10.8292 4.50419L4.51377 10.8196C4.14002 11.1934 4.14002 11.7971 4.51377 12.1709L10.8292 18.4863C11.2029 18.86 11.8067 18.86 12.1804 18.4863C12.5542 18.1125 12.5542 17.5088 12.1804 17.135L7.50377 12.4584H18.2084C18.7354 12.4584 19.1667 12.0271 19.1667 11.5C19.1667 10.9729 18.7354 10.5417 18.2084 10.5417Z"
+                  fill="#363F57"
+                  fill-opacity="0.5"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_86_193">
+                  <rect width="23" height="23" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </li>
+          <li>
+            <svg
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_86_196)">
+                <path
+                  d="M4.79165 12.4583L15.4962 12.4583L10.8196 17.135C10.4458 17.5087 10.4458 18.1221 10.8196 18.4958C11.1933 18.8696 11.7971 18.8696 12.1708 18.4958L18.4862 12.1804C18.86 11.8066 18.86 11.2029 18.4862 10.8291L12.1708 4.51373C11.7971 4.13998 11.1933 4.13998 10.8196 4.51373C10.4458 4.88748 10.4458 5.49123 10.8196 5.86498L15.4962 10.5416L4.79165 10.5416C4.26456 10.5416 3.83331 10.9729 3.83331 11.5C3.83331 12.0271 4.26456 12.4583 4.79165 12.4583Z"
+                  fill="#363F57"
+                  fill-opacity="0.5"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_86_196">
+                  <rect
+                    width="23"
+                    height="23"
+                    fill="white"
+                    transform="translate(23 23) rotate(-180)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-add-study-url-modal #study_urlModal></app-add-study-url-modal>
+<app-certify-modal #certifyModal></app-certify-modal>
+<app-add-comment-modal #commentModal></app-add-comment-modal>

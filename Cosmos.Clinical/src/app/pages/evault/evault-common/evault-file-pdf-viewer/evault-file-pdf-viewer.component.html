@@ -1,0 +1,270 @@
+<div class="modal fade" id="ipMasterModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            {{data?.documentDetails?.docSource}} Preview Document and Document Details
+        </h1>   
+        <button type="button" class="btn-close icon" data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body d-flex">
+        <div class="pdfPreviewBlock">
+          <app-pdf-viewer *ngIf="pdfSrc" [pdfSrc]="pdfSrc" [showAnnotationTools]="false"
+            [displayFilename]="'deafult'"></app-pdf-viewer>
+          
+          <!-- <p>Pdf preview</p> -->
+          <div class="icon" (click)="showDetails()" *ngIf="!details && !siteUser">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/200/svg">
+              <rect x="0.5" y="0.5" width="29" height="29" rx="2.5" fill="#F3F4F4" fill-opacity="0.24" stroke="#EAEBEE" />
+              <path
+                d="M15 12C16.1046 12 17 12.8954 17 14V22C17 23.1046 16.1046 24 15 24V24C13.8954 24 13 23.1046 13 22V14C13 12.8954 13.8954 12 15 12V12Z"
+                fill="#5F6983" />
+              <circle cx="15" cy="9" r="2" fill="#5F6983" />
+            </svg>
+          </div>
+        </div>
+        <div *ngIf="data && data.siteId != null && !data.documentDetails.isSigned && siteUser">
+          <button class="customButton" *ngIf="!eosDocumentUser" (click)="addDigitalSignature()">
+            E-Sign
+          </button>
+          <button class="customButton" *ngIf="eosDocumentUser && documentDetailsResponse.docSource == 'Acknowledment Letter'"
+            (click)="addDigitalSignature()">
+            E-Sign
+          </button>
+        </div>
+          <div class="detailsBlock" *ngIf="details && !siteUser">
+            <div class="heading">
+              <div class="tabs">
+                <div class="elements">
+                  <h3
+                    [ngClass]="{
+                      activeTab:
+                        tab == 'doc_details'
+                    }"
+                    (click)="setTab('doc_details')"
+                  >
+                  Doc Details
+                  </h3>
+                </div>
+          
+                <div class="elements">
+                  <h3
+                    [ngClass]="{
+                      activeTab:
+                        tab == 'doc_metadata'
+                    }"
+                    (click)="setTab('doc_metadata')"
+                  >
+                  Doc Metadata
+                  </h3>
+                </div>
+              </div>
+          
+            </div>
+            <div class="inputsBlock" *ngIf="tab=='doc_details'">
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="title" class="inputText" value="{{documentDetailsResponse?.docSource}}" disabled/>
+                    <span class="floating-label">Doc Source 
+                      </span>
+                 
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4" *ngIf="!eosDocumentUser">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="mfrControlNo" class="inputText"  value="{{documentDetailsResponse?.mfrCtrlNo}}" disabled/>
+                    <span class="floating-label">MFR Control No
+                      </span>               
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4" *ngIf="!eosDocumentUser">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="mfrReportNo" class="inputText"  value="{{documentDetailsResponse?.reportNumber}}" disabled/>
+                    <span class="floating-label">MFR Report No
+                      </span>               
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4" *ngIf="!eosDocumentUser">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="caseNumber" class="inputText"  value="{{documentDetailsResponse?.caseNumber}}" disabled/>
+                    <span class="floating-label">Case Number
+                      </span>               
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4" *ngIf="!eosDocumentUser">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="worldWideNo" class="inputText"  value="{{documentDetailsResponse?.worldWideNumber}}" disabled/>
+                    <span class="floating-label">World Wide No
+                      </span>               
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4" *ngIf="!eosDocumentUser">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="comments" class="inputText"  value="{{documentDetailsResponse?.comments}}" disabled/>
+                    <span class="floating-label">Comments
+                      </span>               
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="document_date"
+                      class="inputText"
+                      value="{{eVaultDocObject[documentDetailsResponse?.eVaultDocStatus]}}"
+                                                    disabled
+                    />
+                      <span class="floating-label">Document Status</span>
+                  
+                  </div>
+                </div>
+              </div>
+              <button class="cancelButton mt-4" (click)="showDetails()">Close</button>
+            </div>
+            <div class="inputsBlock" *ngIf="tab=='doc_metadata'">
+              <div class="col-md-12 col-lg-12 col-12 mb-2 mt-4">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="documentCategory" *ngIf="!eosDocumentUser"
+                    class="inputText" value="Safety Document" disabled>
+                <input type="text" name="documentCategory" *ngIf="eosDocumentUser"
+                    class="inputText" value="EOS Document" disabled>
+                    <span class="floating-label">Document Category </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input type="text" name="documentType" *ngIf="!eosDocumentUser"
+                    class="inputText" value="Safety Report" disabled>
+                <input type="text" name="documentType" *ngIf="eosDocumentUser"
+                    class="inputText" value="EOS Report" disabled>
+                    <span class="floating-label">Document Type </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="document_category"
+                      class="inputText"
+                      value="{{documentDetailsResponse?.comments}}" disabled
+                    />
+                    <span class="floating-label">Comments  </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="document_type"
+                      class="inputText"
+                      value="{{documentDetailsResponse.documentDetails.fileName}}" disabled
+                    />
+                    <span class="floating-label">Upload File Name  </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="uploaded_by"
+                      class="inputText"
+                      value="{{documentDetailsResponse.documentDetails.size}}" disabled
+                    />
+                    <span class="floating-label">File Size (kb) </span>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="version"
+                      class="inputText"
+                      value="{{documentDetailsResponse.documentDetails.filetype}}" disabled
+                    />
+                    <span class="floating-label">File Format </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="document_number"
+                      class="inputText"
+                      value="{{documentDetailsResponse.documentDetails.s3Path}}" disabled
+                    />
+                    <span class="floating-label">Document Id </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="document_date"
+                      class="inputText"
+                      value="{{documentDetailsResponse.documentDetails.uploadedBy}}" disabled
+                    />
+                    <span class="floating-label">Uploaded By </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 col-lg-12 col-12 mb-2">
+                <div class="formField">
+                  <div class="customInput d-flex">
+                    <input
+                      type="text"
+                      name="document_date"
+                      class="inputText"
+                      value="{{documentDetailsResponse.documentDetails.uploadedDate | date: 'dd LLL yyyy, h:mm a'}}" disabled
+                    />
+                    <span class="floating-label">Updated Date</span>
+                  </div>
+                </div>
+              </div>
+              <button class="cancelButton mt-4" (click)="showDetails()">Close</button>
+            </div>
+          </div>
+       
+      </div>
+      <!-- <div class="modal-footer">
+        <button (click)="closeModal()" type="button" class="cancelButton">
+          Close
+        </button>
+        <button type="button" class="customButton">Save</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<app-e-sign-modal #eSignModal></app-e-sign-modal>

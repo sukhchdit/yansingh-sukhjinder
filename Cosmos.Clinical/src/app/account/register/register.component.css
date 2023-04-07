@@ -1,0 +1,531 @@
+#loginWrapper {
+  display: flex;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+  #loginWrapper .leftSection {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 30px;
+  }
+
+    #loginWrapper .leftSection .logoBlock {
+      width: 250px;
+    }
+
+      #loginWrapper .leftSection .logoBlock img {
+        width: 100%;
+      }
+
+    #loginWrapper .leftSection .imgBlock {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+      #loginWrapper .leftSection .imgBlock img {
+        height: calc(100vh - 145px);
+      }
+
+  #loginWrapper .rightSection {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    background: #001729;
+    padding: 20px 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+    #loginWrapper .rightSection h2 {
+      font-weight: 500;
+      font-size: 35px;
+      line-height: 40px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+      #loginWrapper .rightSection h2 span {
+        font-style: normal;
+        font-weight: 250;
+        font-size: 28px;
+        text-align: center;
+        color: #FFFFFF;
+        display: block;
+      }
+
+    #loginWrapper .rightSection.forgotPassword h3 {
+      font-weight: 250;
+      font-size: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #00A884;
+      position: relative;
+      margin: 40px 0 0 0;
+      padding: 40px 0 0 0;
+    }
+
+    #loginWrapper .rightSection.forgotPassword p {
+      font-weight: 250;
+      font-size: 18px;
+      text-align: center;
+      color: rgba(255,255,255,.5);
+      position: relative;
+      margin: 0px 0 40px 0;
+    }
+
+      #loginWrapper .rightSection.forgotPassword p span {
+        display: block;
+      }
+
+    #loginWrapper .rightSection h3 {
+      font-weight: 250;
+      font-size: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #00A884;
+      position: relative;
+      margin: 40px 0 30px 0;
+      padding: 40px 0 0 0;
+    }
+
+      #loginWrapper .rightSection h3:before {
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background: #fff;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+      }
+
+    #loginWrapper .rightSection form {
+      width: 80%;
+    }
+
+      #loginWrapper .rightSection form .formField {
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+        #loginWrapper .rightSection form .formField .customInput {
+          position: relative;
+          width: 100%;
+        }
+
+          #loginWrapper .rightSection form .formField .customInput label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 300;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5) !important;
+            left: 10px;
+            transition: .5s;
+          }
+
+          #loginWrapper .rightSection form .formField .customInput.customFilled label, #loginWrapper .rightSection form .formField .customInput.active label {
+            top: 7px;
+            transform: none;
+            font-weight: 300;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5) !important;
+          }
+
+          #loginWrapper .rightSection form .formField .customInput input {
+            position: relative;
+            width: 100%;
+            height: 65px;
+            border: 1.5px solid rgba(255, 255, 255, .5);
+            border-radius: 8px;
+            background: transparent;
+            padding: 28px 10px 10px 10px;
+            font-weight: 400;
+            font-size: 18px;
+            /*text-transform: uppercase;*/
+            color: rgba(255, 255, 255, 1);
+          }
+
+            #loginWrapper .rightSection form .formField .customInput input:hover, #loginWrapper .rightSection form .formField h4.selectedData:hover {
+              border-color: #00A884;
+            }
+
+            #loginWrapper .rightSection form .formField .customInput input:focus, #loginWrapper .rightSection form .formField .customInput.active input, #loginWrapper .rightSection form .formField .customInput.active h4.selectedData {
+              border-color: #00A884;
+              -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.2);
+              -moz-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.2);
+              box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.2);
+            }
+
+          #loginWrapper .rightSection form .formField .customInput.showError input {
+            border-color: #ff4d4d;
+            -webkit-box-shadow: 0px 0px 0px 3px rgba(255, 77, 77, 0.2);
+            -moz-box-shadow: 0px 0px 0px 3px rgba(255, 77, 77, 0.2);
+            box-shadow: 0px 0px 0px 3px rgba(255, 77, 77, 0.2);
+          }
+
+        #loginWrapper .rightSection form .formField .error {
+          color: #ff4d4d;
+          font-weight: 300;
+          font-size: 13px;
+          display: none;
+          margin-top: 8px;
+        }
+
+        #loginWrapper .rightSection form .formField .customInput.showError ~ .error {
+          display: block;
+        }
+
+        #loginWrapper .rightSection form .formField.dropdownMain .customInput.active h4.selectedData:after {
+          transform: translateY(-50%) rotate(-180deg);
+        }
+
+        #loginWrapper .rightSection form .formField h4.selectedData {
+          position: relative;
+          width: 100%;
+          height: 65px;
+          border: 1.5px solid rgba(255, 255, 255, .5);
+          border-radius: 8px;
+          background: transparent;
+          padding: 28px 10px 10px 10px;
+          font-weight: 400;
+          font-size: 18px;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 1);
+          cursor: pointer;
+        }
+
+          #loginWrapper .rightSection form .formField h4.selectedData:after {
+            position: absolute;
+            content: '';
+            /*background: url(../img/dropdownArrow.svg) no-repeat;*/
+            background: url(../../../assets/images/dropdownArror.svg) no-repeat;
+            width: 9px;
+            height: 5px;
+            background-size: cover;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: .5s;
+          }
+
+      #loginWrapper .rightSection form .twoFieldsWrapper {
+        flex-direction: row;
+        gap: 30px;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+      }
+
+        #loginWrapper .rightSection form .twoFieldsWrapper .formField {
+          margin-bottom: 0px;
+        }
+
+        #loginWrapper .rightSection form .twoFieldsWrapper .formField {
+          width: 47.5%;
+        }
+
+      #loginWrapper .rightSection form .formField.dropdownMain ul {
+        background: #fff;
+        box-shadow: 0px 16px 32px rgba(52, 61, 86, 0.2);
+        border-radius: 8px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        display: none;
+        z-index: 99;
+      }
+
+      #loginWrapper .rightSection form .formField.dropdownMain .customInput.active ~ ul {
+        display: flex;
+      }
+
+      #loginWrapper .rightSection form .formField.dropdownMain ul li {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        padding: 10px 8px 10px 8px;
+        border-radius: 8px;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #00101c;
+        cursor: pointer;
+        width: 100%;
+      }
+
+        #loginWrapper .rightSection form .formField.dropdownMain ul li:hover {
+          background: rgba(243, 244, 246, 0.5);
+        }
+
+    #loginWrapper .rightSection.forgotPassword form .sbtBtn {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    #loginWrapper .rightSection form .sbtBtn input {
+      width: 100%;
+      height: 65px;
+      border: 0;
+      border-radius: 8px;
+      background: #00A884;
+      font-weight: 400;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 1);
+      cursor: pointer;
+    }
+
+    #loginWrapper .rightSection form .sbtBtn .cancelBtn {
+      width: 100%;
+      height: 65px;
+      border: 0;
+      border-radius: 8px;
+      background: #C1CCD5;
+      font-weight: 400;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #001729;
+    }
+
+    #loginWrapper .rightSection form ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
+      #loginWrapper .rightSection form ul li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+        #loginWrapper .rightSection form ul li .checkboxBlock {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          position: relative;
+          gap: 10px;
+        }
+
+          #loginWrapper .rightSection form ul li .checkboxBlock span {
+            font-weight: 300;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+          }
+
+        #loginWrapper .rightSection form ul li .checkboxContainer {
+          display: block;
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 0;
+          cursor: pointer;
+          font-size: 22px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none
+        }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0
+          }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer .checkmark {
+            position: absolute;
+            top: -12px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            border: 1.5px solid rgba(255,255,255,.6);
+            border-radius: 5px;
+          }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer:hover input ~ .checkmark {
+            border-color: #00A884;
+          }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer input:checked ~ .checkmark {
+            background-color: #00A884;
+            border-color: #00A884;
+          }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none
+          }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer input:checked ~ .checkmark:after {
+            display: block
+          }
+
+          #loginWrapper .rightSection form ul li .checkboxContainer .checkmark:after {
+            left: 50%;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: translate(-50%) rotate(45deg);
+            -ms-transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%) rotate(45deg);
+          }
+
+        #loginWrapper .rightSection form ul li a {
+          font-weight: 300;
+          font-size: 16px;
+          text-transform: uppercase;
+          color: #00A884;
+        }
+
+    #loginWrapper .rightSection h5 {
+      font-weight: 300;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 1);
+      margin: 40px 0 0 0;
+    }
+
+      #loginWrapper .rightSection h5 a {
+        color: #00A884;
+      }
+
+    #loginWrapper .rightSection h6 {
+      font-weight: 300;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 50px 0 0 0;
+    }
+
+      #loginWrapper .rightSection h6 a {
+        color: #00A884;
+      }
+
+@media screen and (max-width:1440px) {
+  #loginWrapper .rightSection {
+    justify-content: center;
+  }
+
+  #loginWrapper .leftSection .imgBlock img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  #loginWrapper {
+    flex-direction: column;
+  }
+
+    #loginWrapper .leftSection .imgBlock {
+      display: none;
+    }
+
+    #loginWrapper .leftSection, #loginWrapper .rightSection {
+      width: 100%;
+    }
+
+    #loginWrapper .rightSection {
+      height: calc(100vh - 140px);
+      overflow-y: auto;
+      justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width:760px) {
+  #loginWrapper .rightSection form .twoFieldsWrapper {
+    flex-direction: column;
+    gap: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+
+    #loginWrapper .rightSection form .twoFieldsWrapper .formField {
+      width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+  #loginWrapper .leftSection {
+    min-height: 100px;
+    padding: 15px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+    #loginWrapper .leftSection .logoBlock {
+      width: 180px;
+    }
+
+  #loginWrapper .rightSection {
+    height: calc(100vh - 100px);
+    margin-top: 100px;
+    padding: 20px;
+  }
+
+    #loginWrapper .rightSection h2 {
+      font-size: 30px;
+    }
+
+      #loginWrapper .rightSection h2 span {
+        font-size: 25px;
+      }
+
+    #loginWrapper .rightSection form {
+      width: 100%;
+    }
+
+    #loginWrapper .rightSection h6 {
+      text-align: center;
+    }
+
+      #loginWrapper .rightSection h6 a {
+        display: block;
+      }
+
+    #loginWrapper .rightSection h3 {
+      margin: 30px 0 30px 0;
+      padding: 30px 0 0 0;
+    }
+
+    #loginWrapper .rightSection h3 {
+      font-size: 25px;
+    }
+
+    #loginWrapper .rightSection.forgotPassword p span {
+      display: inline;
+    }
+
+    #loginWrapper .rightSection.forgotPassword form .sbtBtn {
+      flex-direction: column;
+    }
+}

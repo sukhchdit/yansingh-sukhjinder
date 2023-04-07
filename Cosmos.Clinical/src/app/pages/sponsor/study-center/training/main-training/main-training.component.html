@@ -1,0 +1,24 @@
+<div class="tabs">
+  <div
+    class="tabsElement"
+    [ngClass]="{ activeTab: tab == '/sponsor/study_center/training/available' }"
+    (click)="setTab('/sponsor/study_center/training/available')"
+  >
+    <p>Available</p>
+  </div>
+  <div
+    class="tabsElement"
+    [ngClass]="{ activeTab: tab == '/sponsor/study_center/training/manager' }"
+    (click)="setTab('/sponsor/study_center/training/manager')"
+  >
+    <p>Manager</p>
+  </div>
+  <div
+    class="tabsElement"
+    [ngClass]="{ activeTab: tab == '/sponsor/study_center/training/compliance' }"
+    (click)="setTab('/sponsor/study_center/training/compliance')"
+  >
+    <p>Compliance</p>
+  </div>
+</div>
+<router-outlet></router-outlet>

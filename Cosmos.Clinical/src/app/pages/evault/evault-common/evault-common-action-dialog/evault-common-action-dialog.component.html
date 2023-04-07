@@ -1,0 +1,389 @@
+<div class="modal fade" id="importModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Import sites
+                </h1>
+                <button type="button" class="btn-close icon" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeModal()"></button>
+            </div>
+
+            <div class="modal-body row">
+                <div class="importLink" (click)="exportAsXLSX()">
+                  <p>Download Import Template</p>
+                  <img
+                    src="../../../../../assets/images/evault/excel.svg"
+                    alt="excelLogo"
+                  />
+                </div>
+                <div class="dropZone">
+                  <input type="file" id="fileDropRef" accept=".xlsx,.xls,.csv" (change)="onFileXLSXChange($event)"  />
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 21.3333V2.66667C24 1.2 22.8 0 21.3333 0H2.66667C1.2 0 0 1.2 0 2.66667V21.3333C0 22.8 1.2 24 2.66667 24H21.3333C22.8 24 24 22.8 24 21.3333ZM7.86667 14.64L10.6667 18.0133L14.8 12.6933C15.0667 12.3467 15.6 12.3467 15.8667 12.7067L20.5467 18.9467C20.88 19.3867 20.56 20.0133 20.0133 20.0133H4.02667C3.46667 20.0133 3.16 19.3733 3.50667 18.9333L6.82667 14.6667C7.08 14.32 7.58667 14.3067 7.86667 14.64Z"
+                      fill="#00A884"
+                    />
+                  </svg>
+                  <h3 *ngIf="(uploadFile && uploadFile.name)"> {{uploadFile.name}} </h3>
+                   <h3 *ngIf="!(uploadFile && uploadFile.name)">Drop your Logo here or <span>browse</span></h3>
+                  <h6>Accepted File Type: .xls, .xlsx size upto 10 MB</h6>
+                </div>
+                <!-- <div class="progessBlock">
+                  <p>New Doc 8 of 10 MB</p>
+                  <div class="progress" style="height: 6px; width: 50%">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 40%; background-color: #343d56"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div> -->
+        
+                <!-- <div class="fileUploaded">
+                  <h3>Uploaded Docs...</h3>
+                  <div class="deleteIcon">
+                    <fa-icon [icon]="faTrashCan"></fa-icon>
+                  </div>
+                </div> -->
+              </div>
+            <div class="modal-footer">
+                <button (click)="closeModal()" type="button" class="cancelButton">
+                    Cancel
+                </button>
+                <button disabled *ngIf="loadingIndicator" type="button" class="customButton"
+                    (click)="uploadSiteListFile()">Uploading..</button>
+                <button [disabled]="!uploadFile && !loadingIndicator" *ngIf="!loadingIndicator" type="button" class="customButton"
+                    (click)="uploadSiteListFile()">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="uploadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Site
+                </h1>
+                <button type="button" class="btn-close icon" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeModal()"></button>
+            </div>
+            <div class="modal-body row d-flex">
+                <div class="col-lg-12 col-md-12 col-12 mb-4">
+                    <div class="dropZone">
+                        <input type="file" accept=".xlsx,.xls,.csv" id="fileDropRef" (change)="onFileChange($event)" />
+                        <h3>Attachments</h3>
+                        <h6>{{(uploadFile && uploadFile.name)? uploadFile.name:
+                            'Upload File'}}</h6>
+                    </div>
+                    <p>Accepted File Type: .xlsx, .xls</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="closeModal()" type="button" class="cancelButton">
+                    Cancel
+                </button>
+                <button *ngIf="!loadingIndicator" [disabled]="!uploadFile" type="button" class="customButton"
+                    (click)="uploadSiteListFile()">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addSiteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Site</h1>
+                <button type="button" class="btn-close icon" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeModal(f)"></button>
+            </div>
+            <form #f="ngForm" id="f" (ngSubmit)="onSaveInfo(f)">
+            <div class="modal-body row">
+               
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="no" [(ngModel)]="investigatorEmailExisting">
+                                <label class="form-check-label" for="inlineRadio2">New Investigator</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="yes" [(ngModel)]="investigatorEmailExisting">
+                                <label class="form-check-label" for="inlineRadio1">Existing Investigator</label>
+                            </div>
+                        </div>
+                        <div *ngIf="investigatorEmailExisting == 'yes'">
+                            <app-dropdown [dropDownName]="'Investigator Email'" [Options]="piSitesListEmails" [optionId]="'id'"
+                            [optionName]="'piEmailId'" [fieldValidation]="(!pIEmail.valid && (pIEmail.dirty || pIEmail.touched || f.submitted)) && !(pIEmail.errors != null && pIEmail.errors.pattern)" [errorMsg]="'Investigator Email is <strong>required</strong>.'" (selectedValueEmit)="onValueChange($event, 'piEmail')">
+                        </app-dropdown>
+                        </div>
+                        <div class="formField" *ngIf="investigatorEmailExisting == 'no'">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="PI Email" [(ngModel)]="pIEmailValue" (change)="emailChange($event.target,pIEmail)"
+                                 email #pIEmail="ngModel" id="pIEmail"
+                                [ngClass]="{'error': !pIEmail.valid && (pIEmail.dirty || pIEmail.touched || f.submitted)}"
+                                required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+                                <span class="floating-label">Investigator Email<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <span class="text-danger" *ngIf="pIEmail.errors != null && pIEmail.errors.pattern">Enter a valid email</span>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!pIEmail.valid && (pIEmail.dirty || pIEmail.touched || f.submitted)) && !(pIEmail.errors != null && pIEmail.errors.pattern) ">
+                                    <span>Investigator Email is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="pIName"
+                                    [(ngModel)]="organizationContact.name"  required id="pIName"
+                                    #pIName="ngModel" [disabled]="pIFieldsDisable"
+                                    [ngClass]="{'error': !pIName.valid && (pIName.dirty || pIName.touched || f.submitted)}">
+                                <span class="floating-label">Investigator Name<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!pIName.valid && (pIName.dirty || pIName.touched || f.submitted))">
+                                    <span>Investigator Name is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="pIPhoneNumber"
+                                [(ngModel)]="organizationContact.phone"  required
+                                id="pIPhoneNumber" #pIPhoneNumber="ngModel" [disabled]="pIFieldsDisable"
+                                [ngClass]="{'error': !pIPhoneNumber.valid && (pIPhoneNumber.dirty || pIPhoneNumber.touched || f.submitted)}">
+                                <span class="floating-label">Investigator Phone#<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!pIPhoneNumber.valid && (pIPhoneNumber.dirty || pIPhoneNumber.touched || f.submitted))">
+                                    <span>Investigator Phone is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="name" [(ngModel)]="siteInfo.name"
+                                    (change)="siteNameChange($event.target)" required id="name"
+                                    #name="ngModel"
+                                    [ngClass]="{'error': !name.valid && (name.dirty || name.touched || f.submitted)}">
+                                <span class="floating-label">Site Name<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!name.valid && (name.dirty || name.touched || f.submitted))">
+                                    <span>Site Name is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="siteNumber"
+                                    [(ngModel)]="evaultSite.siteNumber"  required
+                                    id="siteNumber" #siteNumber="ngModel"
+                                    [ngClass]="{'error': !siteNumber.valid && (siteNumber.dirty || siteNumber.touched || f.submitted)}">
+                                <span class="floating-label">Site #<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!siteNumber.valid && (siteNumber.dirty || siteNumber.touched || f.submitted))">
+                                    <span>Site# is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="sitePhoneNumber"
+                                    [(ngModel)]="evaultSite.phoneNumber"  required
+                                    id="sitePhoneNumber" #sitePhoneNumber="ngModel"
+                                    [ngClass]="{'error': !sitePhoneNumber.valid && (sitePhoneNumber.dirty || sitePhoneNumber.touched || f.submitted)}">
+                                <span class="floating-label">Site Phone#<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!sitePhoneNumber.valid && (sitePhoneNumber.dirty || sitePhoneNumber.touched || f.submitted))">
+                                    <span>Site Phone# is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" [(ngModel)]="organizationContact.firstName" class="inputText"
+                                     name="firstName" required id="firstName" #firstName="ngModel"
+                                    [ngClass]="{'error': !firstName.valid && (firstName.dirty || firstName.touched || f.submitted)}"/>
+                                <span class="floating-label">First Name<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="!firstName.valid && (firstName.dirty || firstName.touched || f.submitted)">
+                                    <span>First Name is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText"
+                                 [(ngModel)]="organizationContact.lastName" required
+                                 name="lastName" id="lastName" #lastName="ngModel"
+                                [ngClass]="{'error': !lastName.valid && (lastName.dirty || lastName.touched || f.submitted)}"/>
+                                <span class="floating-label">Last Name<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!lastName.valid && (lastName.dirty || lastName.touched || f.submitted))">
+                                    <span>Last Name is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" name="email" [(ngModel)]="siteDetail.email"
+                                     email #email="ngModel" id="email"
+                                    [ngClass]="{'error': !email.valid && (email.dirty || email.touched || f.submitted)}"
+                                    required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+                                <span class="floating-label">Email<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                                <span *ngIf="email.errors != null && email.errors.pattern"
+                                    class="errorLabel">Enter a valid email</span>
+
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!email.valid && (email.dirty || email.touched || f.submitted)) && !(email.errors != null && email.errors.pattern) ">
+                                    <span>Email is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <app-dropdown [dropDownName]="'Country'" [Options]="countries" [optionId]="'id'"
+                            [optionName]="'name'" (selectedValueEmit)="onValueChange($event, 'Country')">
+                        </app-dropdown>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <app-dropdown [dropDownName]="'State'" [Options]="states" [optionId]="'id'"
+                            [optionName]="'name'" (selectedValueEmit)="onValueChange($event, 'State')">
+                        </app-dropdown>
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="col-md-12 col-lg-12 col-12 mb-4">
+                            <div class="formField">
+                                <div class="customInput d-flex">
+                                    <input type="text" class="inputText" name="city" [(ngModel)]="siteDetail.city"
+                                         required id="city" #city="ngModel"
+                                        [ngClass]="{'error': !city.valid && (city.dirty || city.touched || f.submitted)}">
+                                    <span class="floating-label">City<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                    </span>
+                                </div>
+                                <div class="text-danger">
+                                    <div
+                                        *ngIf="(!city.valid && (city.dirty || city.touched || f.submitted))">
+                                        <span>City is
+                                            <strong>required</strong>.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-12 col-12 mb-4">
+                            <div class="formField">
+                                <div class="customInput d-flex">
+                                    <input type="text" class="inputText"  name="zipcode" required
+                                        id="zipcode" #zipcode="ngModel" [(ngModel)]="siteDetail.zipCode"
+                                        [ngClass]="{'error': !zipcode.valid && (zipcode.dirty || zipcode.touched || f.submitted)}">
+
+                                    <span class="floating-label">Zip code
+                                    </span>
+                                </div>
+                                <div class="text-danger">
+                                    <div
+                                        *ngIf="(!zipcode.valid && (zipcode.dirty || zipcode.touched || f.submitted))">
+                                        <span>Zip code is
+                                            <strong>required</strong>.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-12 mb-4">
+                        <div class="formField">
+                            <div class="customTextArea d-flex">
+                                <textarea class="form-control" name="address1" [(ngModel)]="siteDetail.address1"
+                                     required id="address1" #address1="ngModel"
+                                    [ngClass]="{'error': !address1.valid && (address1.dirty || address1.touched || f.submitted)}"></textarea>
+                                <span class="floating-label">Address<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(!address1.valid && (address1.dirty || address1.touched || f.submitted))">
+                                    <span>Address is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div> 
+                <div class="modal-footer">
+                    <button class="customButton" *ngIf="!loadingIndicator" type="submit">Save</button>
+                    <button class="customButton" type="button" disabled *ngIf="loadingIndicator">
+                        <span class="spinner-border spinner-border-sm" role="status"></span>
+                        Saving...
+                    </button>
+                    <button class="cancelButton" type="button" (click)="closeModal(f)">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

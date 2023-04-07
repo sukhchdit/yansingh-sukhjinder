@@ -1,0 +1,237 @@
+<div
+  class="modal fade"
+  id="updateProfilePopup"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Update Profile
+        </h1>
+        <button
+          type="button"
+          class="btn-close icon"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
+      <form>
+        <div class="modal-body row">
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input
+                  type="text"
+                  name="first_name"
+                  class="inputText"
+                  required
+                />
+                <span class="floating-label">First Name</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="dropdownsColumn me-4">
+              <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                <div
+                  class="customDropInput"
+                  [ngClass]="{ active: selectedDropdown == 'honorific' }"
+                  (click)="openDropdown('honorific')"
+                >
+                  <span
+                    class="span"
+                    [ngClass]="selectedHonorific ? 'checkActive' : 'null'"
+                    >Honorific</span
+                  >
+                  <h3>
+                    {{ selectedHonorific }}
+                  </h3>
+                </div>
+                <ul>
+                  <li
+                    *ngFor="let value of honorific"
+                    (click)="onHonorificValueChanged(value)"
+                  >
+                    {{ value.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input
+                  type="text"
+                  name="middle_name"
+                  class="inputText"
+                  required
+                />
+                <span class="floating-label">Middle Name</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input
+                  type="text"
+                  name="last_name"
+                  class="inputText"
+                  required
+                />
+                <span class="floating-label">last Name</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="dropdownsColumn me-4">
+              <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                <div
+                  class="customDropInput"
+                  [ngClass]="{ active: selectedDropdown == 'role' }"
+                  (click)="openDropdown('role')"
+                >
+                  <span
+                    class="span"
+                    [ngClass]="selectedRole ? 'checkActive' : 'null'"
+                    >Role</span
+                  >
+                  <h3>
+                    {{ selectedRole }}
+                  </h3>
+                </div>
+                <ul>
+                  <li
+                    *ngFor="let value of role"
+                    (click)="onRoleValueChanged(value)"
+                  >
+                    {{ value.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input type="text" name="phone" class="inputText" required />
+                <span class="floating-label">Phone #</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input type="text" name="email" class="inputText" required />
+                <span class="floating-label">Email</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input
+                  type="text"
+                  name="organization"
+                  class="inputText"
+                  required
+                />
+                <span class="floating-label">Organization</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="dropdownsColumn me-4">
+              <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                <div
+                  class="customDropInput"
+                  [ngClass]="{ active: selectedDropdown == 'country' }"
+                  (click)="openDropdown('country')"
+                >
+                  <span
+                    class="span"
+                    [ngClass]="selectedCountry ? 'checkActive' : 'null'"
+                    >Country</span
+                  >
+                  <h3>
+                    {{ selectedCountry }}
+                  </h3>
+                </div>
+                <ul>
+                  <li
+                    *ngFor="let value of country"
+                    (click)="onCountryValueChanged(value)"
+                  >
+                    {{ value.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="dropdownsColumn me-4">
+              <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                <div
+                  class="customDropInput"
+                  [ngClass]="{ active: selectedDropdown == 'state' }"
+                  (click)="openDropdown('state')"
+                >
+                  <span
+                    class="span"
+                    [ngClass]="selectedState ? 'checkActive' : 'null'"
+                    >State</span
+                  >
+                  <h3>
+                    {{ selectedState }}
+                  </h3>
+                </div>
+                <ul>
+                  <li
+                    *ngFor="let value of state"
+                    (click)="onStateValueChanged(value)"
+                  >
+                    {{ value.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4 d-flex">
+            <div class="form-check form-check-inline checkBox">
+              <label class="customCheckBox">
+                <input
+                  type="checkbox"
+                  name="sms"
+                  formControlName="IsToIRBApproveCheck"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <p>Certified</p>
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-12 mb-4">
+            <div class="dropZone">
+              <input type="file" id="fileDropRef" accept="image/*" />
+              <h3>Attachments</h3>
+              <h6>Upload File</h6>
+            </div>
+            <p>Accepted File Type: .mp3, .mp4, .pdf, .doc, .docx</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="customButton" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

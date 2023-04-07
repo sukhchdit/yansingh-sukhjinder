@@ -1,0 +1,58 @@
+<div class="topBlock px-4 pt-3">
+    <div class="d-flex">
+      <p class="title">Protocol:</p>
+      <p>DA345983450934</p>
+    </div>
+    <div class="d-flex">
+      <p class="title">Study Title:</p>
+      <p>Phase llb/lll NASH with Fibrosis</p>
+    </div>
+    <div class="d-flex">
+      <p class="title">Sponsor:</p>
+      <p>RAM Pharma</p>
+    </div>
+    <div class="d-flex">
+      <p class="title">Site No:</p>
+      <p>1215</p>
+    </div>
+    <div class="d-flex">
+      <p class="title">Investigator:</p>
+      <p>Dr.Kruna Shah</p>
+    </div>
+  </div>
+  <div class="mainBlock">
+    <div class="tabs">
+      <button
+        class="customButton"
+        [ngClass]="{ activeTab: ((tab == '/econsent/admin') || tab == '/econsent') }"
+        (click)="setTab('/econsent/admin')"
+      >
+        Admin
+      </button>
+      <button
+        class="customButton"
+        [ngClass]="{ activeTab: tab == '/econsent/dashboard' }"
+        (click)="setTab('/econsent/dashboard')"
+      >
+        Dashboard
+      </button>
+      <!-- <button
+        class="customButton"
+        [ngClass]="{ activeTab: tab == '/econsent/econsent' }"
+        (click)="setTab('/econsent/econsent')"
+      >
+        eConsent
+      </button> -->
+      <button
+        class="customButton"
+        [ngClass]="{ activeTab: tab == '/econsent/reports' }"
+        (click)="setTab('/econsent/reports')"
+      >
+        Reports
+      </button>
+    </div>
+    <div class="tabElement">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

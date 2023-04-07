@@ -1,0 +1,105 @@
+<div class="topBlock px-4 pt-3">
+  <div class="d-flex">
+    <p class="title">Protocol:</p>
+    <p>DA345983450934</p>
+  </div>
+  <div class="d-flex">
+    <p class="title">Study Title:</p>
+    <p>Phase llb/lll NASH with Fibrosis</p>
+  </div>
+  <div class="d-flex">
+    <p class="title">Sponsor:</p>
+    <p>RAM Pharma</p>
+  </div>
+</div>
+<div class="mainBlock">
+  <div class="studyListBlock">
+    <div class="desktopScreen">
+      <div class="tabs">
+        <div class="elements">
+          <h3
+            [ngClass]="{ activeTab: tab == '/study_center_site/site_news' }"
+            (click)="setTab('/study_center_site/site_news')"
+          >
+            News
+          </h3>
+        </div>
+
+        <div class="elements">
+          <h3
+            [ngClass]="{ activeTab: tab == '/studies/procedures' }"
+            (click)="setTab('/studies/procedures')"
+          >
+            eISF
+          </h3>
+        </div>
+        <div class="elements">
+          <h3
+            [ngClass]="{
+              activeTab:
+                tab == '/study_center_site/training/available' ||
+                tab == '/study_center_site/training/manager' ||
+                tab == '/study_center_/training/compliance'
+            }"
+            (click)="setTab('/study_center_site/training/available')"
+          >
+            Training
+          </h3>
+        </div>
+        <div class="elements">
+          <h3
+            [ngClass]="{
+              activeTab:
+                tab == '/study_center/study_team/study_contact' ||
+                tab == '/study_center/study_team/site' ||
+                tab == '/study_center/study_team/my_site'
+            }"
+            (click)="setTab('/study_center/study_team/study_contact')"
+          >
+            Study Team
+          </h3>
+        </div>
+        <div class="elements">
+          <h3
+            [ngClass]="{ activeTab: tab == '/study_center/faq' }"
+            (click)="setTab('/study_center/faq')"
+          >
+            FAQ
+          </h3>
+        </div>
+        <div class="elements">
+          <h3
+            [ngClass]="{ activeTab: tab == '/study_center_site/study_url' }"
+            (click)="setTab('/study_center_/study_url')"
+          >
+            Study URL
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="dropdownsColumn mobileScreen">
+      <div class="formField" (blur)="closeDropdown()" tabindex="0">
+        <div
+          class="customDropInput"
+          [ngClass]="{ active: selectedDropdown == 'tabs' }"
+          (click)="openDropdown('tabs')"
+        >
+          <span class="span" [ngClass]="selectedTab ? 'checkActive' : 'null'"
+            >Select Tab</span
+          >
+          <h3>
+            {{ selectedTab }}
+          </h3>
+        </div>
+        <ul>
+          <li *ngFor="let value of tabs" (click)="onTabValueChanged(value)">
+            {{ value.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="tabElement">
+    <!--<router-outlet></router-outlet>-->
+  </div>
+</div>

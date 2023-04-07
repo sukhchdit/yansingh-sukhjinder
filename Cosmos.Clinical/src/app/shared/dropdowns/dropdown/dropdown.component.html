@@ -1,0 +1,33 @@
+<div class="dropdownsColumn">
+  <div class="formField" (blur)="closeDropdown()" tabindex="0">
+    <div class="customDropInput" [ngClass]="{ active: selectedDropdown == dropDownName }"
+      (click)="openDropdown(dropDownName)">
+      <span class="span" [ngClass]="selectedValue ? 'checkActive' : 'null'">{{dropDownName}}<span>
+          *</span></span>
+      <h3>{{ selectedValue }}</h3>
+    </div>
+    <div *ngIf="fieldValidation">
+      <p class="errorText" [innerHTML]="errorMsg"></p>
+    </div>
+    <ul *ngIf="enumDropDownType">
+      <li *ngFor="let option of Options" (click)="onValueChange(optionObject[option])">
+        {{ option }}
+      </li>
+    </ul>
+    <ul *ngIf="!enumDropDownType && (subOptionName == null)">
+      <li *ngFor="let option of Options" (click)="onValueChangeEnumNot(option[optionId], option[optionName])">
+        {{ option[optionName] }}
+      </li>
+    </ul>
+    <ul *ngIf="!enumDropDownType && (subOptionName != null) && (optionName != null)">
+      <li *ngFor="let option of Options" (click)="onValueChangeEnumNot(option[optionId], option[optionName][subOptionName])">
+        {{ option[optionName][subOptionName] }}
+      </li>
+    </ul>
+    <ul *ngIf="!enumDropDownType && (subOptionName == null) && (optionName == null) && (optionId == null)">
+      <li *ngFor="let option of Options" (click)="onValueChange(option)">
+        {{ option }}
+      </li>
+    </ul>
+  </div>
+</div>

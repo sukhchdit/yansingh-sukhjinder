@@ -1,0 +1,23 @@
+<div
+  class="modal fade"
+  id="confirmationModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="../../../../../assets/images/studyCenter/warning.svg"/>
+        <p>Are you sure you want to delete this Training?
+            You will not be able to recover the status of this lbar record!</p>
+        <div class="d-flex mb-3">
+            <button class="customButton" type="button">Yes, delete it</button>
+            <button class="cancelButton" type="button"  (click)="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

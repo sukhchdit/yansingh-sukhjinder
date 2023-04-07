@@ -1,0 +1,183 @@
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(52, 61, 86, 0.04);
+  box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+  border-radius: 8px;
+  width: 100%;
+
+  .addNewBlock {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eaebee;
+    padding: 0px 20px 19px 20px;
+    margin-top: 19px;
+
+    .headBlock {
+      width: 965px;
+      background: #ededed;
+      border: 1px solid #eaebee;
+      border-radius: 8px;
+      padding: 15px 15px 0px 15px;
+      .title {
+        display: flex;
+        justify-content: space-between;
+        height: 44px;
+      }
+    }
+    .formField {
+      .customInput {
+        height: 50px;
+        .inputText {
+          background-color: white;
+        }
+        .floating-label {
+          margin-top: -4px;
+        }
+        ::placeholder {
+          padding-top: -20px;
+          margin-top: -30px;
+        }
+        .star {
+          position: absolute;
+          pointer-events: none;
+          font-family: "Poppins";
+          font-style: normal;
+          color: #ff7597;
+          font-size: 6px;
+          left: 95px;
+          top: 15px;
+          transition: 0.2s ease all;
+        }
+        input:focus ~ .star,
+        input:not(:focus):valid ~ .star {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 5px;
+          line-height: 18px;
+          color: #ff7597;
+          top: -2px;
+          left: 78px;
+          opacity: 1;
+        }
+      }
+    }
+    .dropZone{
+      background: #F3F4F4;
+    }
+    .fileUploaded{
+      background: #F3F4F4;
+    }
+    .customButton {
+      width: 95px;
+      height: 45px;
+      margin-right: 10px;
+    }
+    .cancelButton {
+      background-color: transparent;
+    }
+
+    .customTextArea .floating-label {
+      position: absolute;
+      pointer-events: none;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 18px;
+      color: rgba(54, 63, 87, 0.5);
+      top: 10px;
+      left: 15px;
+      transition: 0.2s ease all;
+    }
+    .customTextArea {
+      position: relative;
+      width: 100%;
+
+      textarea {
+        width: 100%;
+        height: 130px;
+        background-color: white;
+        border: 1px solid #eaebee;
+        border-radius: 8px;
+        padding-left: 15px;
+        padding-top: 30px;
+        &:hover {
+          border-color: #00a884;
+        }
+        &::placeholder {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 25px;
+          color: #363f57;
+        }
+      }
+      textarea:focus {
+        border-color: #00a884;
+        -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+        -moz-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+        box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+      }
+    }
+  }
+
+  .newsBlock {
+    padding: 30px 30px 20px 20px;
+    border-bottom: 1px solid #eaebee;
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 7px;
+      h1 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 25px;
+        color: #5f6983;
+      }
+      .deleteIcon {
+        font-size: 20px;
+      }
+    }
+    .avater {
+      align-items: center;
+      display: flex;
+      margin-right: 15px;
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+      }
+    }
+    p {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: #5f6983;
+      margin: 3px;
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainBlock {
+    .addNewBlock {
+      .formField {
+        .customInput {
+          width: 500px;
+        }
+      }
+      .dropZone {
+        width: 100%;
+      }
+    }
+  }
+}

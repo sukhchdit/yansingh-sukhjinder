@@ -1,0 +1,223 @@
+<div class="modal fade" id="uploadDocumentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg customModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Upload Documents</h1>
+                <button type="button" class="btn-close icon" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeSafetyForm()"></button>
+            </div>
+            <form  [formGroup]="uploadSafetyDocument" class="formContainer" (ngSubmit)="safetyFormSubmit()">
+                <div class="modal-body row">
+                    <div class="col-6 mb-4">
+                        <app-dropdown [dropDownName]="'Doc Source'" [Options]="docSources" (selectedValueEmit)="onValueChange($event, 'docSource')">
+                    </app-dropdown>
+                    <div class="text-danger">
+                        <div
+                            *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.docSource.invalid) || (uploadSafetyFormControl.docSource.touched || uploadSafetyFormControl.docSource.dirty)">
+                            <span *ngIf="uploadSafetyFormControl.docSource.errors?.required">Doc Source
+                                is
+                                <strong>required</strong>.</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-6 mb-4" *ngIf="!eosDocumentUser">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText"  id="controlNumber"
+                                    formControlName="controlNumber" required [ngClass]="{'error': !uploadSafetyFormControl.controlNumber.valid && (uploadSafetyFormControl.controlNumber.dirty || uploadSafetyFormControl.controlNumber.touched || uploadSafetyFormSubmit != false)}"/>
+                                <span class="floating-label">MFR Control No<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.controlNumber.invalid) || (uploadSafetyFormControl.controlNumber.touched || uploadSafetyFormControl.controlNumber.dirty)">
+                                    <span *ngIf="uploadSafetyFormControl.controlNumber.errors?.required">MFR Control No
+                                        is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="col-6 mb-4" *ngIf="!eosDocumentUser">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText"  id="reportNumber" required
+                                    formControlName="reportNumber" [ngClass]="{'error': !uploadSafetyFormControl.reportNumber.valid && (uploadSafetyFormControl.reportNumber.dirty || uploadSafetyFormControl.reportNumber.touched || uploadSafetyFormSubmit != false)}"/>
+                                <span class="floating-label">MFR Report No<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.reportNumber.invalid) || (uploadSafetyFormControl.reportNumber.touched || uploadSafetyFormControl.reportNumber.dirty)">
+                                    <span *ngIf="uploadSafetyFormControl.reportNumber.errors?.required">MFR Report No is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-4" *ngIf="!eosDocumentUser">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input type="text" class="inputText" id="caseNumber" 
+                                formControlName="caseNumber" required [ngClass]="{'error': !uploadSafetyFormControl.caseNumber.valid && (uploadSafetyFormControl.caseNumber.dirty || uploadSafetyFormControl.caseNumber.touched || uploadSafetyFormSubmit != false)}"/>
+                                <span class="floating-label">Case Number<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.caseNumber.invalid) || (uploadSafetyFormControl.caseNumber.touched || uploadSafetyFormControl.caseNumber.dirty)">
+                                <span *ngIf="uploadSafetyFormControl.caseNumber.errors?.required">Case Number is
+                                    <strong>required</strong>.</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-4" *ngIf="!eosDocumentUser">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input class="inputText" type="text" 
+                                formControlName="worldWideNumber" [ngClass]="{'error': !uploadSafetyFormControl.worldWideNumber.valid && (uploadSafetyFormControl.worldWideNumber.dirty || uploadSafetyFormControl.worldWideNumber.touched || uploadSafetyFormSubmit != false)}"/>
+                                <span class="floating-label">World Wide Number
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.worldWideNumber.invalid) || (uploadSafetyFormControl.worldWideNumber.touched || uploadSafetyFormControl.worldWideNumber.dirty)">
+                                <span *ngIf="uploadSafetyFormControl.worldWideNumber.errors?.required">World Wide Number
+                                    is
+                                    <strong>required</strong>.</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <input class="inputText" type="text"  formControlName="version" required
+                                [ngClass]="{'error': !uploadSafetyFormControl.version.valid && (uploadSafetyFormControl.version.dirty || uploadSafetyFormControl.version.touched || uploadSafetyFormSubmit != false)}"/>
+                                <span class="floating-label">Version<fa-icon class="star" [icon]="faStarOfLife"></fa-icon>
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.version.invalid) || (uploadSafetyFormControl.version.touched || uploadSafetyFormControl.version.dirty)">
+                                <span *ngIf="uploadSafetyFormControl.version.errors?.required">Version is
+                                    <strong>required</strong>.</span>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-4">
+                        <app-dropdown [dropDownName]="'Type of Report'" [optionObject]="eVaultTypeOfReports" 
+                        [Options]="eVaultReportsOptions" 
+                        [enumDropDownType]="true" (selectedValueEmit)="onValueChange($event, 'reportType')">
+                        </app-dropdown>
+                        <div class="text-danger">
+                            <div
+                                *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.reportType.invalid) || (uploadSafetyFormControl.reportType.touched || uploadSafetyFormControl.reportType.dirty)">
+                                <span *ngIf="uploadSafetyFormControl.reportType.errors?.required">Type of Report
+                                    is
+                                    <strong>required</strong>.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="col-12 mb-4">
+                        <div class="formField">
+                            <div class="customTextArea d-flex">
+                                <textarea class="inputText" type="text"
+                                rows="8"
+                                name="screen" placeholder="Enter Here"
+                                formControlName="comments" [ngClass]="{'error': !uploadSafetyFormControl.comments.valid && (uploadSafetyFormControl.comments.dirty || uploadSafetyFormControl.comments.touched || uploadSafetyFormSubmit != false)}"></textarea>
+                                <span class="floating-label">Comments
+                                </span>
+                            </div>
+                            <div class="text-danger">
+                                <div
+                                    *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.comments.invalid) || (uploadSafetyFormControl.comments.touched || uploadSafetyFormControl.comments.dirty)">
+                                    <span *ngIf="uploadSafetyFormControl.comments.errors?.required">Comments is
+                                        <strong>required</strong>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-12 mb-2">
+                        <div class="dropZone">
+                          <input type="file" id="fileDropRef" formControlName="uploadFile" accept=".pdf, .doc, .docx" (change)="onFileChange($event)"/>
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M24 21.3333V2.66667C24 1.2 22.8 0 21.3333 0H2.66667C1.2 0 0 1.2 0 2.66667V21.3333C0 22.8 1.2 24 2.66667 24H21.3333C22.8 24 24 22.8 24 21.3333ZM7.86667 14.64L10.6667 18.0133L14.8 12.6933C15.0667 12.3467 15.6 12.3467 15.8667 12.7067L20.5467 18.9467C20.88 19.3867 20.56 20.0133 20.0133 20.0133H4.02667C3.46667 20.0133 3.16 19.3733 3.50667 18.9333L6.82667 14.6667C7.08 14.32 7.58667 14.3067 7.86667 14.64Z"
+                              fill="#00A884"
+                            />
+                          </svg>
+                          <h3 *ngIf="!uploadSafetyFormControl?.eVaultSafetyFile?.value?.name">Drop your Logo here or <span>browse</span></h3>
+                          <h3 *ngIf="uploadSafetyFormControl?.eVaultSafetyFile?.value?.name">{{uploadSafetyFormControl.eVaultSafetyFile.value.name}}</h3>
+                          <h6>Accepted File Type: .xls, .xlsx size upto 10 MB</h6>
+                        </div>
+                        <!-- <div class="progessBlock">
+                          <p>New Doc 8 of 10 MB</p>
+                          <div class="progress" style="height: 6px; width: 50%">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 40%; background-color: #343d56"
+                              aria-valuenow="25"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            ></div>
+                          </div>
+                        </div> -->
+                
+                        <!-- <div class="fileUploaded">
+                          <h3>Uploaded Docs...</h3>
+                          <div class="deleteIcon">
+                            <fa-icon [icon]="faTrashCan"></fa-icon>
+                          </div>
+                        </div> -->
+                      </div>
+                    <!-- <div class="col-12 mb-4">
+                        <div class="formField">
+                            <div class="customInput d-flex">
+                                <div class="dropZone"  [ngClass]="{'error': !uploadSafetyFormControl.uploadFile.valid && (uploadSafetyFormControl.uploadFile.dirty || uploadSafetyFormControl.uploadFile.touched || uploadSafetyFormSubmit != false)}">
+                                    <input type="file" id="customFile"   formControlName="uploadFile" id="fileDropRef" (change)="onFileChange($event)"
+                                    />
+                                    <h3>Upload File*<small class="text-info">(1MB / .csv)</small></h3>
+                                    <h6 *ngIf="uploadSafetyFormControl">{{(uploadSafetyFormControl?.eVaultSafetyFile?.value?.name) ?
+                                        uploadSafetyFormControl.eVaultSafetyFile.value.name : 'Choose file'}}</h6>
+                                </div>
+                            </div>
+                                  <div class="text-danger"
+                            *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.eVaultSafetyFile.invalid) || (uploadSafetyFormControl.eVaultSafetyFile.touched || uploadSafetyFormControl.eVaultSafetyFile.dirty)">
+                            <span *ngIf="uploadSafetyFormControl.eVaultSafetyFile.errors?.required">File must be
+                                <strong>pdf</strong> , <strong>doc</strong> or <strong>docx</strong> format.</span>
+                        </div>                 
+                        <div class="text-danger"
+                        *ngIf="(uploadSafetyFormSubmit != false && uploadSafetyFormControl.uploadFile.invalid) || (uploadSafetyFormControl.uploadFile.touched || uploadSafetyFormControl.uploadFile.dirty)">
+                        <span *ngIf="uploadSafetyFormControl.uploadFile.errors?.required">File is
+                            <strong>required</strong>.</span>
+                    </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="modal-footer">
+                    <button class="customButton" type="submit">Save</button>
+                    <button class="cancelButton" type="button" (click)="closeSafetyForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

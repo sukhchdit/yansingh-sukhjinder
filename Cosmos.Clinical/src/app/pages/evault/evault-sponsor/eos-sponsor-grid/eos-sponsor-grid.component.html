@@ -1,0 +1,261 @@
+<div class="mainBlock">
+
+<div class="tableBlock">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" >
+        <thead>
+            <tr>
+                <th>SRL#</th>
+                <th *ngIf="!eosDocumentUser">MFR Control#</th>
+                <th *ngIf="!eosDocumentUser">MFR Report#</th>
+                <th *ngIf="!eosDocumentUser">Case#</th>
+                <th *ngIf="!eosDocumentUser">World Wide#</th>
+                <th>Source</th>
+                <th *ngIf="!eosDocumentUser">Report Type</th>
+                <th *ngIf="!eosDocumentUser">Doc. Ver.</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="siteUserGridResponse && siteUserGridResponse.length !== 0">
+            <ng-container *ngFor="let row of siteUserGridResponse; let i = index">
+                <tr class="tableRow"  [ngStyle]="{
+                    'background-color':
+                      history == i ? 'rgba(0, 168, 132, 0.15)' : null
+                  }">
+                    <td>
+                        {{ i+1 }}
+                        <!-- <div class="action" (click)="openModal(viewHistoryCall(row.siteInfoId))">
+                            <fa-icon [icon]="faEllipsis" class="icon"></fa-icon>
+                        </div> -->
+                    </td>
+                    <td *ngIf="!eosDocumentUser" alt="MFR Control#">{{ row.mfrCtrlNo }}</td>
+                    <td *ngIf="!eosDocumentUser" alt="MFR Report#">
+                        {{ row.reportNumber }}
+                    </td>
+                    <td *ngIf="!eosDocumentUser" alt="Case#">
+                        {{ row.caseNumber }}
+                    </td>
+                    <td *ngIf="!eosDocumentUser" alt="World Wide#">
+                        {{ row.worldWideNumber }}
+                    </td>
+                    <td alt="Source">
+                        {{ row.docSource }}
+                    </td>
+                    <td *ngIf="!eosDocumentUser" alt="Report Type">
+                        <span *ngIf="eVaultTypeOfReports[row.reportType]">
+                            {{eVaultTypeOfReports[row.reportType]}}
+                        </span>
+                    </td>
+                    <td *ngIf="!eosDocumentUser" alt="Doc. Ver.">
+                        {{row.documentDetails.docVersion}}
+                    </td>
+
+                    <td alt="Status">
+                        <span *ngIf="eVaultDocObject[row.eVaultDocStatus]">
+                            {{eVaultDocObject[row.eVaultDocStatus]}}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <fa-icon [icon]="faEllipsis" (click)="rowData(row)" class="icon"></fa-icon>
+
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+                                
+                                <li *ngIf="row.eVaultDocStatus == '1'" class="d-flex">
+                                    <a class="dropdown-item"(click)="submitDocStatus(row.id, row.documentDetails.id, row.eVaultDocStatus)">Approve</a>
+                                </li> 
+                                <li *ngIf="row.eVaultDocStatus == '4'" class="d-flex">
+                                    <a class="dropdown-item"(click)="submitDocStatus(row.id, row.documentDetails.id, row.eVaultDocStatus)">Publish</a>
+                                </li>   
+                                <li *ngIf="row.eVaultDocStatus == '2'" class="d-flex">
+                                    <a class="dropdown-item"(click)="submitDocStatus(row.id, row.documentDetails.id, row.eVaultDocStatus)">Approve</a>
+                                </li>   
+                                <li *ngIf="row.eVaultDocStatus == '2'" class="d-flex">
+                                    <a class="dropdown-item"(click)="submitDocStatus(row.id, row.documentDetails.id, eVaultDocObject['QAFailed'])">Reject</a>
+                                </li>                         
+                                <li class="d-flex">
+                                    <a class="dropdown-item" (click)="downloadDocumentFile(row.id, row.documentDetails)">Download</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" (click)="previewDocumentFile(row.id, row)">Document Preview</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" (click)="showHistory(i)">View History</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <th colspan="10">
+                    <ng-container *ngIf="history == i">
+                        <thead>
+
+                            <tr class="history">
+                                <th>User Name</th>
+                                <th>Activity Date</th>
+                                <th>Activity</th>
+                                <th>Value Form</th>
+                                <th style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  ">
+                                    Value To
+                                    <fa-icon class="icon me-4" (click)="showHistory(i)" [icon]="faCross"></fa-icon>
+                                </th>
+                            </tr>
+                        </thead>
+        <tbody *ngIf="viewSelectedHistoryGrid && viewSelectedHistoryGrid.auditDetails; else noHistoryContainer">
+            <tr *ngFor="let rows of viewSelectedHistoryGrid.auditDetails; let ind = index" class="history"
+                style="width: 100%">
+                <td>{{ rows.userName }}</td>
+                <td alt="ICF Version">{{ rows.activityDate | date: 'dd LLL yyyy, h:mm a'}}</td>
+                <td alt="ICF Approved Dt">{{ rows.activtyType }}</td>
+                <td>{{ rows.valueFrom }}</td>
+                <td>{{ rows.valueTo }}</td>
+            </tr>
+
+        </tbody>
+
+        <ng-template #noHistoryContainer>
+            <tbody>
+                <tr class="text-center">
+                    No Records.
+                </tr>
+            </tbody>
+
+        </ng-template>
+        </ng-container>
+        </th>
+        </ng-container>
+        </tbody>
+    </table>
+
+    <div class="paginationBlock">
+        <div class="paginationLeft">
+            <h3>1-20 of 786 Entries</h3>
+        </div>
+        <div class="paginationRight">
+            <!--Page Numbers Block-->
+            <div class="formField pageNumbers" (blur)="closeDropdown()" tabindex="0">
+                <div class="customInput" [ngClass]="{ active: selectedDropdown == 'pageNmsDrop' }"
+                    (click)="openDropdown('pageNmsDrop')">
+                    <h3>{{ selectedPageNum }}</h3>
+                </div>
+                <ul>
+                    <li *ngFor="let page of pageNumsList" (click)="onSelectDropValueChange(page)">
+                        {{ page }}
+                    </li>
+                </ul>
+            </div>
+            <div class="pageArrows">
+                <ul>
+                    <li>
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_86_193)">
+                                <path
+                                    d="M18.2084 10.5417H7.50377L12.1804 5.86502C12.5542 5.49127 12.5542 4.87794 12.1804 4.50419C11.8067 4.13044 11.2029 4.13044 10.8292 4.50419L4.51377 10.8196C4.14002 11.1934 4.14002 11.7971 4.51377 12.1709L10.8292 18.4863C11.2029 18.86 11.8067 18.86 12.1804 18.4863C12.5542 18.1125 12.5542 17.5088 12.1804 17.135L7.50377 12.4584H18.2084C18.7354 12.4584 19.1667 12.0271 19.1667 11.5C19.1667 10.9729 18.7354 10.5417 18.2084 10.5417Z"
+                                    fill="#363F57" fill-opacity="0.5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_86_193">
+                                    <rect width="23" height="23" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_86_196)">
+                                <path
+                                    d="M4.79165 12.4583L15.4962 12.4583L10.8196 17.135C10.4458 17.5087 10.4458 18.1221 10.8196 18.4958C11.1933 18.8696 11.7971 18.8696 12.1708 18.4958L18.4862 12.1804C18.86 11.8066 18.86 11.2029 18.4862 10.8291L12.1708 4.51373C11.7971 4.13998 11.1933 4.13998 10.8196 4.51373C10.4458 4.88748 10.4458 5.49123 10.8196 5.86498L15.4962 10.5416L4.79165 10.5416C4.26456 10.5416 3.83331 10.9729 3.83331 11.5C3.83331 12.0271 4.26456 12.4583 4.79165 12.4583Z"
+                                    fill="#363F57" fill-opacity="0.5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_86_196">
+                                    <rect width="23" height="23" fill="white"
+                                        transform="translate(23 23) rotate(-180)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="historyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Srl 1 History</h1>
+                <button type="button" class="btn-close icon" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeModal()"></button>
+            </div>
+            <div class="modal-body row d-flex">
+                <div *ngFor="let rows of historyModalData; let i = index">
+                    <div class="d-flex">
+                        <ul>
+                            <li>User Name</li>
+                            <li>Activity Date</li>
+                            <li>Activity</li>
+                            <li>Value Form</li>
+                            <li>Value To</li>
+                        </ul>
+                        <ul class="data">
+                            <li>{{ rows.user_name }}</li>
+                            <li>{{ rows.activity_date }}</li>
+                            <li>{{ rows.activity }}</li>
+                            <li>{{ rows.value_form }}</li>
+                            <li>{{ rows.value_to }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="closeModal()" type="button" class="cancelButton">
+                    Cancel
+                </button>
+                <button type="button" class="customButton">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div
+class="modal fade"
+id="commentsModal"
+data-bs-backdrop="static"
+data-bs-keyboard="false"
+tabindex="-1"
+aria-labelledby="staticBackdropLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-content">
+    <div class="modal-body row d-flex">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate class="m-2">
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea type="text" class="form-control" placeholder="Comments" name="comments"
+                    [(ngModel)]="model.comments" #comments="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && comments.invalid }" required></textarea>
+                <div *ngIf="f.submitted && comments.invalid" class="invalid-feedback">
+                    <div *ngIf="comments.errors.required">Comments are required</div>
+                </div>
+            </div>
+    
+            <div class="modal-footer">
+                <button type="button" class="cancelButton" (click)="onNoClick()">Close</button>
+                <button type="submit" class="customButton"
+                        accessControl >Submit</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
+<app-evault-file-pdf-viewer></app-evault-file-pdf-viewer>

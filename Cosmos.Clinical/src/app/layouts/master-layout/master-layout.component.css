@@ -1,0 +1,988 @@
+.pageViews {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  
+    .pageViews .headBlock {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 45px;
+    }
+  
+      .pageViews .headBlock h2 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        color: #031926;
+      }
+  
+      .pageViews .headBlock .btnBlock {
+        width: 270px;
+        height: 45px;
+        background: rgba(243, 244, 246, 0.5);
+        border: 1px solid #F3F4F6;
+        backdrop-filter: blur(32.5px);
+        border-radius: 8px;
+        display: flex;
+        align-items: stretch;
+        padding: 5px;
+        gap: 5px;
+      }
+  
+        .pageViews .headBlock .btnBlock span {
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 18px;
+          color: rgba(52, 61, 86, 0.5);
+          width: 33.33%;
+          display: flex;
+          align-items: center;
+          border-radius: 8px;
+          justify-content: center;
+          cursor: pointer;
+          padding: 0 10px;
+        }
+  
+          .pageViews .headBlock .btnBlock span.active {
+            color: #ffffff;
+            background: #00A884;
+          }
+  
+          .pageViews .headBlock .btnBlock span:hover {
+            color: #ffffff;
+            background: #00A884;
+          }
+  
+    .pageViews .pageViewsItemsMain {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+  
+      .pageViews .pageViewsItemsMain .pageViewsItem {
+        background: #FFFFFF;
+        border: 1px solid rgba(52, 61, 86, 0.04);
+        box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+        border-radius: 8px;
+        width: 33%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+  
+        .pageViews .pageViewsItemsMain .pageViewsItem .itemTop {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+  
+          .pageViews .pageViewsItemsMain .pageViewsItem .itemTop .itemTopLeft {
+            width: 55%;
+          }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemTop .itemTopLeft img {
+              width: 100%;
+            }
+  
+          .pageViews .pageViewsItemsMain .pageViewsItem .itemTop .itemTopRight {
+            width: 35%;
+          }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemTop .itemTopRight h5 {
+              margin: 0;
+              padding: 0;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 24px;
+              color: rgba(54, 63, 87, 0.5);
+            }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemTop .itemTopRight h2 {
+              margin: 0;
+              padding: 0;
+              font-weight: 700;
+              font-size: 40px;
+              line-height: 60px;
+              color: #031926;
+            }
+  
+        .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+  
+          .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table {
+            border-collapse: collapse;
+          }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table th, .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td {
+              text-align: left;
+              height: 50px;
+              width: 20%;
+              border-bottom: 1px solid #F3F4F6;
+              position: relative;
+            }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table th:first-child, .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td:first-child {
+                width: 60%;
+              }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table th {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              color: rgba(54, 63, 87, 0.5);
+            }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 21px;
+              color: #363F57;
+              position: relative;
+            }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table tr:hover td {
+              background: rgba(243, 244, 246, 0.5);
+            }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table tr:hover td:first-child:before {
+                content: '';
+                background: rgba(243, 244, 246, 0.5);
+                width: 10px;
+                height: 100%;
+                border-radius: 10px 0 0 10px;
+                position: absolute;
+                left: -10px;
+                top: 0px;
+              }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table tr:hover td:last-child:before {
+                content: '';
+                background: rgba(243, 244, 246, 0.5);
+                width: 10px;
+                height: 100%;
+                border-radius: 0 10px 10px 0;
+                position: absolute;
+                right: -10px;
+                top: 0px;
+              }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .legendName {
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              align-items: center;
+            }
+  
+            .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .circle {
+              width: 8px;
+              height: 8px;
+              background: #FFFFFF;
+              border-radius: 100%;
+              display: block;
+            }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .circle.color1 {
+                border: 3px solid #0ACADC;
+                box-shadow: 0px 2px 7px #1CDEFF;
+              }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .circle.color2 {
+                border: 3px solid #9267B4;
+                box-shadow: 0px 2px 7px #9267B4;
+              }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .circle.color3 {
+                border: 3px solid #FF7597;
+                box-shadow: 0px 2px 7px #FF7597;
+              }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .circle.color4 {
+                border: 3px solid #FF7597;
+                box-shadow: 0px 2px 7px #FF7597;
+              }
+  
+              .pageViews .pageViewsItemsMain .pageViewsItem .itemBottom table td .circle.color5 {
+                border: 3px solid #3ADEB2;
+                box-shadow: 0px 2px 7px #3ADEB2;
+              }
+  
+  .infoStudyTaskBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+  }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockLeft {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 33%;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        width: 100%;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock h2 {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 30px;
+          color: #031926;
+          align-items: center;
+          min-height: 45px;
+          display: flex;
+          flex-direction: row;
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock .infoBlockItemsMain {
+          display: flex;
+          flex-direction: row;
+          gap: 22px;
+        }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock .infoBlockItemsMain .infoBlockItem {
+            display: flex;
+            flex-direction: column;
+            height: 139px;
+            justify-content: center;
+            border: 1px solid rgba(52, 61, 86, 0.04);
+            box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+            border-radius: 8px;
+            width: 50%;
+            padding-left: 32px;
+          }
+  
+            .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock .infoBlockItemsMain .infoBlockItem h4 {
+              margin: 0px;
+              padding: 0px;
+              font-weight: 600;
+              font-size: 13px;
+              line-height: 20px;
+              color: #363F57;
+            }
+  
+            .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock .infoBlockItemsMain .infoBlockItem h3 {
+              margin: 0px;
+              padding: 0px;
+              font-weight: 700;
+              font-size: 24px;
+              line-height: 36px;
+              color: #031926;
+            }
+  
+            .infoStudyTaskBlock .infoStudyTaskBlockLeft .infoBlock .infoBlockItemsMain .infoBlockItem h5 {
+              margin: 0px;
+              padding: 0px;
+              font-weight: 600;
+              font-size: 13px;
+              line-height: 20px;
+              color: #00A884;
+            }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        width: 100%;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock h2 {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 30px;
+          color: #031926;
+          align-items: center;
+          min-height: 45px;
+          display: flex;
+          flex-direction: row;
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem {
+          background: #FFFFFF;
+          border: 1px solid rgba(52, 61, 86, 0.04);
+          box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+          border-radius: 8px;
+          width: 100%;
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+        }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemTop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+          }
+  
+            .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemTop .itemTopLeft {
+              width: 45%;
+            }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemTop .itemTopLeft img {
+                width: 100%;
+              }
+  
+            .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemTop .itemTopRight {
+              width: 50%;
+            }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemTop .itemTopRight h5 {
+                margin: 0;
+                padding: 0;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: rgba(54, 63, 87, 0.5);
+              }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemTop .itemTopRight h2 {
+                margin: 0;
+                padding: 0;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 60px;
+                color: #031926;
+              }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+  
+            .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table {
+              border-collapse: collapse;
+            }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table th, .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td {
+                text-align: left;
+                height: 50px;
+                width: 20%;
+                border-bottom: 1px solid #F3F4F6;
+                position: relative;
+              }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table th:first-child, .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td:first-child {
+                  width: 60%;
+                }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table th {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 18px;
+                color: rgba(54, 63, 87, 0.5);
+              }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 21px;
+                color: #363F57;
+                position: relative;
+              }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table tr:hover td {
+                background: rgba(243, 244, 246, 0.5);
+              }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table tr:hover td:first-child:before {
+                  content: '';
+                  background: rgba(243, 244, 246, 0.5);
+                  width: 10px;
+                  height: 100%;
+                  border-radius: 10px 0 0 10px;
+                  position: absolute;
+                  left: -10px;
+                  top: 0px;
+                }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table tr:hover td:last-child:before {
+                  content: '';
+                  background: rgba(243, 244, 246, 0.5);
+                  width: 10px;
+                  height: 100%;
+                  border-radius: 0 10px 10px 0;
+                  position: absolute;
+                  right: -10px;
+                  top: 0px;
+                }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .legendName {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                align-items: center;
+              }
+  
+              .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .circle {
+                width: 8px;
+                height: 8px;
+                background: #FFFFFF;
+                border-radius: 100%;
+                display: block;
+              }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .circle.color1 {
+                  border: 3px solid #0ACADC;
+                  box-shadow: 0px 2px 7px #1CDEFF;
+                }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .circle.color2 {
+                  border: 3px solid #9267B4;
+                  box-shadow: 0px 2px 7px #9267B4;
+                }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .circle.color3 {
+                  border: 3px solid #FF7597;
+                  box-shadow: 0px 2px 7px #FF7597;
+                }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .circle.color4 {
+                  border: 3px solid #FF7597;
+                  box-shadow: 0px 2px 7px #FF7597;
+                }
+  
+                .infoStudyTaskBlock .infoStudyTaskBlockLeft .taskBlock .taskItem .itemBottom table td .circle.color5 {
+                  border: 3px solid #3ADEB2;
+                  box-shadow: 0px 2px 7px #3ADEB2;
+                }
+  
+  
+  .studiesBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 100%;
+  }
+  
+  .infoStudyTaskBlock .infoStudyTaskBlockRight {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 66%;
+  }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock, .studiesBlock .headBlock {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 45px;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock h2, .studiesBlock .headBlock h2 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        color: #031926;
+      }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .rightBlock {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock, .studiesBlock .headBlock .searchBlock {
+      position: relative;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock .formField, .studiesBlock .headBlock .searchBlock .formField {
+        position: relative;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock .formField ::placeholder, .studiesBlock .headBlock .searchBlock .formField ::placeholder {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+          color: #343D56;
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock .formField .customInput, .studiesBlock .headBlock .searchBlock .formField .customInput {
+          position: relative;
+        }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock .formField .customInput img, .studiesBlock .headBlock .searchBlock .formField .customInput img {
+            position: absolute;
+          }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock .formField .customInput input, .studiesBlock .headBlock .searchBlock .formField .customInput input {
+            position: relative;
+            min-height: 45px;
+            background: #FFFFFF;
+            border: 1px solid #EAEBEE;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0 12px;
+            cursor: pointer;
+            width: 300px;
+            padding-left: 30px;
+          }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .searchBlock .formField .customInput img, .studiesBlock .headBlock .searchBlock .formField .customInput img {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 9;
+          }
+  
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop {
+      position: relative;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput {
+        position: relative;
+        min-height: 45px;
+        background: #FFFFFF;
+        border: 1px solid #EAEBEE;
+        border-radius: 8px;
+        width: 233px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput {
+        position: relative;
+        min-height: 45px;
+        background: #FFFFFF;
+        border: 1px solid #EAEBEE;
+        border-radius: 8px;
+        width: 233px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 12px;
+        cursor: pointer;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput.active {
+          border-color: #00A884;
+          -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+          -moz-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+          box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput:after {
+          position: absolute;
+          content: '';
+          /*background: url(../images/dropdownArror.svg) no-repeat;*/
+          background: url(../../../assets/images/dropdownArror.svg) no-repeat;
+          width: 9px;
+          height: 5px;
+          background-size: cover;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: .5s;
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput.active:after {
+          transform: translateY(-50%) rotate(-180deg);
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput h3 {
+          position: relative;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+          color: #343D56;
+          width: 180px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          pointer-events: none;
+        }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop ul {
+        background: #FFFFFF;
+        box-shadow: 0px 16px 32px rgba(52, 61, 86, 0.2);
+        border-radius: 8px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        display: none;
+        z-index: 99;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop .customInput.active ~ ul {
+        display: flex;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop ul li {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        padding: 10px 8px 10px 8px;
+        border-radius: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #343D56;
+        cursor: pointer;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .headBlock .statusDrop ul li:hover {
+          background: rgba(243, 244, 246, 0.5);
+        }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock, .studiesBlock .tabelBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid rgba(52, 61, 86, 0.04);
+      box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+      border-radius: 8px;
+      width: 100%;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table, .studiesBlock .tabelBlock table {
+        border-collapse: collapse;
+        height: 600px;
+        overflow-y: auto;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock thead, .studiesBlock .tabelBlock thead {
+        position: sticky;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock thead th, .studiesBlock .tabelBlock thead th {
+          height: 60px;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 18px;
+          color: rgba(52, 61, 86, 0.5);
+          text-align: left;
+        }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock thead th:first-child, .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td:first-child, .studiesBlock .tabelBlock thead th:first-child, .studiesBlock .tabelBlock tbody td:first-child {
+            padding: 0 0 0 23px;
+          }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td, .studiesBlock .tabelBlock tbody td {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #343D56;
+        height: 60px;
+        border-bottom: 1px solid #EAEBEE;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td .title, .studiesBlock .tabelBlock tbody td .title {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 21px;
+          color: #343D56;
+        }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td .rejectedStatus, .studiesBlock .tabelBlock tbody td .rejectedStatus {
+          color: #FF7597;
+        }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tr:last-child td, .studiesBlock .tabelBlock tr:last-child td {
+        border-bottom: 0px;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tr:hover td, .studiesBlock .tabelBlock tr:hover td {
+        background: rgba(243, 244, 246, 0.5);
+      }
+  
+  .paginationBlock {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #EAEBEE;
+    align-items: center;
+    min-height: 90px;
+    padding: 0 23px;
+  }
+  
+    .paginationBlock .paginationLeft h3 {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: rgba(52, 61, 86, 0.5);
+    }
+  
+    .paginationBlock .paginationRight {
+      display: flex;
+      gap: 10px;
+    }
+  
+    .paginationBlock .pageNumbers {
+      position: relative;
+      width: 80px;
+    }
+  
+      .paginationBlock .pageNumbers .customInput {
+        position: relative;
+        min-height: 45px;
+        background: #FFFFFF;
+        border: 1px solid #EAEBEE;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+  
+        .paginationBlock .pageNumbers .customInput.active {
+          border-color: #00A884;
+          -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+          -moz-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+          box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+        }
+  
+        .paginationBlock .pageNumbers .customInput:after {
+          position: absolute;
+          content: '';
+          background: url(../../../assets/images/dropdownArror.svg) no-repeat;
+          width: 9px;
+          height: 5px;
+          background-size: cover;
+          right: 12px;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: .5s;
+        }
+  
+        .paginationBlock .pageNumbers .customInput.active:after {
+          transform: translateY(-50%) rotate(-180deg);
+        }
+  
+        .paginationBlock .pageNumbers .customInput h3 {
+          position: relative;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+          color: #343D56;
+          padding: 10px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          pointer-events: none;
+          min-height: 55px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+  
+      .paginationBlock .pageNumbers ul {
+        background: #FFFFFF;
+        box-shadow: 0px 16px 32px rgba(52, 61, 86, 0.2);
+        border-radius: 8px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        bottom: 70px;
+        display: none;
+        z-index: 99;
+      }
+  
+      .paginationBlock .pageNumbers .customInput.active ~ ul {
+        display: flex;
+      }
+  
+      .paginationBlock .pageNumbers ul li {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        padding: 10px 8px 10px 8px;
+        border-radius: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: #343D56;
+        cursor: pointer;
+      }
+  
+        .paginationBlock .pageNumbers ul li:hover {
+          background: rgba(243, 244, 246, 0.5);
+        }
+  
+    .paginationBlock .pageArrows ul {
+      display: flex;
+      gap: 12px;
+    }
+  
+      .paginationBlock .pageArrows ul li {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(234, 235, 238, 1);
+        border-radius: 8px;
+        cursor: pointer;
+      }
+  
+        .paginationBlock .pageArrows ul li:hover {
+          border-color: #00A884;
+        }
+  
+          .paginationBlock .pageArrows ul li:hover svg path {
+            fill: #00A884;
+            fill-opacity: 1;
+          }
+  
+        .paginationBlock .pageArrows ul li.active {
+          border-color: #00A884;
+          -webkit-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+          -moz-box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+          box-shadow: 0px 0px 0px 3px rgba(0, 168, 132, 0.1);
+        }
+  
+          .paginationBlock .pageArrows ul li.active svg path {
+            fill: #00A884;
+            fill-opacity: 1;
+          }
+  
+        .paginationBlock .pageArrows ul li.disabled, .paginationBlock .pageArrows ul li.disabled:hover {
+          border-color: rgba(234, 235, 238, 1);
+        }
+  
+          .paginationBlock .pageArrows ul li.disabled svg path, .paginationBlock .pageArrows ul li.disabled:hover svg path {
+            fill: #363F57;
+            fill-opacity: 0.5;
+          }
+  
+  @media screen and (max-width:1367px) {
+    #rightSection {
+      width: 100% !important;
+      margin-left: 0px !important;
+    }
+  
+      #rightSection .welcomeBar, #rightSection .topBar, .contentSection {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+  
+        #rightSection .welcomeBar .leftBlock {
+          display: flex;
+          gap: 10px;
+        }
+  }
+  
+  @media screen and (max-width:1024px) {
+    .infoStudyTaskBlock, .pageViews .pageViewsItemsMain {
+      flex-direction: column;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockLeft, .pageViews .pageViewsItemsMain .pageViewsItem {
+        width: 100% !important;
+      }
+  
+    .infoStudyTaskBlockRight {
+      width: 100% !important;
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .pageViews .headBlock {
+      flex-direction: column !important;
+      gap: 10px;
+      align-items: flex-start !important;
+    }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table {
+      display: flex;
+      flex-direction: column;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table thead {
+        display: none;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table tbody, .studiesBlock .tabelBlock table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+  
+    .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock, .studiesBlock .tabelBlock {
+      border: 0px;
+      box-shadow: none;
+      padding: 0px;
+    }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table tbody tr, .studiesBlock .tabelBlock table tr {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        border: 1px solid rgba(52, 61, 86, 0.04) !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        position: relative;
+      }
+  
+        .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table tbody tr td, .studiesBlock .tabelBlock table tr td {
+          display: flex;
+          align-items: center;
+          padding: 0 0 0 30% !important;
+          position: relative;
+        }
+  
+          .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table tbody tr td:before, .studiesBlock .tabelBlock table tr td:before {
+            position: absolute;
+            content: attr(alt);
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+          }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td:first-child:before, .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td:last-child:before, .studiesBlock .tabelBlock thead {
+        display: none;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td:last-child {
+        position: absolute;
+        top: 0;
+        z-index: 9;
+        width: auto;
+        padding: 0px !important;
+        right: 20px;
+      }
+  
+      .studiesBlock .tabelBlock table tr td:first-child {
+        background: #EAEBEE;
+        border-radius: 8px 8px 0 0;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td:first-child {
+        padding: 0 0 0 30px !important;
+        background: #EAEBEE;
+        border-radius: 8px 8px 0 0;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock tbody td:nth-child(5), .studiesBlock .tabelBlock table tr td:last-child {
+        border-bottom: 0px;
+      }
+  
+      .infoStudyTaskBlock .infoStudyTaskBlockRight .tabelBlock table, .studiesBlock .tabelBlock table {
+        height: 660px;
+      }
+  }
+  
+  
+  

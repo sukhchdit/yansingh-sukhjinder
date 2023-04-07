@@ -1,0 +1,35 @@
+.modal-body {
+  align-items: center;
+  .formField {
+    .customInput {
+      height: 45px;
+      .floating-label {
+        margin-top: -6px;
+      }
+      .star {
+        position: absolute;
+        pointer-events: none;
+        font-family: "Poppins";
+        font-style: normal;
+        color: #ff7597;
+        font-size: 6px;
+        margin-left: 2px;
+      }
+    }
+    .customInput input:focus ~ .floating-label,
+    .customInput input:not(:focus):valid ~ .floating-label {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 18px;
+      color: rgba(87, 74, 54, 0.5);
+      top:11px;
+      left: 15px;
+      opacity: 1;
+      .star {
+        margin-top: -4px;
+      }
+    }
+  }
+}

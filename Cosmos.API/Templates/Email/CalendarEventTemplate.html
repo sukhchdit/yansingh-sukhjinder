@@ -1,0 +1,102 @@
+﻿<p style="font-family:Arial;font-size:11pt;line-height:1.5;">Dear @name,</p>
+<p style="font-family:Arial;font-size:11pt;line-height:1.5;margin-bottom:0;">
+	An event has been scheduled 
+</p>
+<p>
+	@televisitLink
+</p>
+<p>
+	<table style="border:0px;">
+		<tbody style="border:0px;">
+			<tr style="border:0px;">
+				<td style="border:0px;">
+					Assigned To
+				</td>
+				<td style="border:0px;">
+					: @assignedTo
+				</td>
+			</tr>
+			<tr style="border:0px;">
+				<td style="border:0px;">
+					Subject
+				</td>
+				<td style="border:0px;">
+					: @subject
+				</td>
+			</tr>
+			<tr>
+				<td style="border:0px;">
+					From
+				</td>
+				<td style="border:0px;">
+					: @startdate
+				</td>
+
+			</tr>
+			<tr>
+				<td style="border:0px;">
+					To
+				</td>
+				<td style="border:0px;">
+					: @enddate
+				</td>
+			</tr>
+			<tr>
+				<td style="border:0px;">
+					Location
+				</td>
+				<td style="border:0px;">
+					: @location
+				</td>
+			</tr>
+			<tr>
+				<td style="border:0px;">
+					Comment
+				</td>
+				<td style="border:0px;">
+					: @comment
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</p>
+<p>
+	
+	<table style="border: 1px solid black; border-collapse: collapse;">
+		<thead>
+			<tr>
+				<th style="border: 1px solid black; border-collapse: collapse;">
+					Name
+				</th>
+				<th style="border: 1px solid black; border-collapse: collapse;">
+					Start Time
+				</th>
+				<th style="border: 1px solid black; border-collapse: collapse;">
+					End Time
+				</th>
+				<th style="border: 1px solid black; border-collapse: collapse;">
+					Comment
+				</th>
+
+			</tr>
+		</thead>
+        <tbody>
+            @participenttable
+        </tbody>
+	</table>
+</p>
+
+<p style="font-family:Arial;font-size:11pt;line-height:1.5;">
+	For any support questions please contact Cosmos.
+</p>
+<p style="font-family:Arial;font-size:11pt;line-height:1.5;">
+	Regards,<br />
+	Team Cosmos <br />
+</p>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>

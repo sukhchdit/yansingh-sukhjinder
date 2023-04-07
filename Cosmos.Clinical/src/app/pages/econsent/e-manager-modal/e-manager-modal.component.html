@@ -1,0 +1,162 @@
+<div
+  class="modal fade"
+  id="EManageModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          E-Consent Manage
+        </h1>
+        <button
+          type="button"
+          class="btn-close icon"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
+      <form [formGroup]="uploadICFForm" (ngSubmit)="icfFormSubmit()">
+        <div class="modal-body row">
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input type="text" class="inputText" placeholder="ICF Name" name="ICFName" formControlName="ICFName" />
+                <span class="floating-label">ICF Name<span> *</span></span>
+              </div>
+              <div
+                *ngIf="(uploadICFFormSubmit != false && uploadICFFormControl.ICFName.invalid) || (uploadICFFormControl.ICFName.touched || uploadICFFormControl.ICFName.dirty)">
+                <p class="errorText" *ngIf="uploadICFFormControl.ICFName.errors?.required">ICF Name is
+                  <strong>required</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input type="text" class="inputText" placeholder="ICF Version" name="ICFVersion" formControlName="ICFVersion" />
+            
+                <span class="floating-label">ICF Version<span> *</span></span>
+              </div>
+              <div
+                *ngIf="(uploadICFFormSubmit != false && uploadICFFormControl.ICFVersion.invalid) || (uploadICFFormControl.ICFVersion.touched || uploadICFFormControl.ICFVersion.dirty)">
+                <p class="errorText" *ngIf="uploadICFFormControl.ICFVersion.errors?.required">ICF Version is
+                  <strong>required</strong>.
+                </p>
+            
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customDateInput customInput d-flex">
+                <input type="date" name="Date" width="150" placeholder="Date" formControlName="ICFApprovedDate" />
+                <span class="floating-label">ICF Approved Date<span> *</span></span>
+              </div>
+              <div
+                *ngIf="(uploadICFFormSubmit != false && uploadICFFormControl.ICFApprovedDate.invalid) || (uploadICFFormControl.ICFApprovedDate.touched || uploadICFFormControl.ICFApprovedDate.dirty)">
+                <p class="errorText" *ngIf="uploadICFFormControl.ICFApprovedDate.errors?.required">ICF Approved Date is
+                  <strong>required</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input class="inputText" type="text" placeholder="Protocol Version" formControlName="ProtocolVersion" />
+                <span class="floating-label">Protocol Version<span> *</span></span>
+              </div>
+              <div
+                *ngIf="(uploadICFFormSubmit != false && uploadICFFormControl.ProtocolVersion.invalid) || (uploadICFFormControl.ProtocolVersion.touched || uploadICFFormControl.ProtocolVersion.dirty)">
+                <p class="errorText" *ngIf="uploadICFFormControl.ProtocolVersion.errors?.required">Protocol Version is
+                  <strong>required</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <app-icf-type [fieldValidation]="((uploadICFFormSubmit != false && uploadICFFormControl.ICFType.invalid) || (uploadICFFormControl.ICFType.touched || uploadICFFormControl.ICFType.dirty))? uploadICFFormControl.ICFType?.errors?.required : false" (icfTypeValue)="onValueChange($event, 'icfType')"></app-icf-type>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <app-icf-source [fieldValidation]="((uploadICFFormSubmit != false && uploadICFFormControl.ICFSource.invalid) || (uploadICFFormControl.ICFSource.touched || uploadICFFormControl.ICFSource.dirty))? uploadICFFormControl.ICFSource.errors?.required : false" (icfSourceValue)="onValueChange($event, 'icfSource')"></app-icf-source>
+          </div>
+  
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customDateInput customInput d-flex">
+                <input type="date" name="Date" width="150" placeholder="Date" formControlName="EffectiveDate"/>
+                <span class="floating-label">Effective Date</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customDateInput customInput d-flex">
+                <input type="date" name="Date" width="150" placeholder="Date" />
+                <span class="floating-label">Local Approved Dt Date</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <app-languages [fieldValidation]="((uploadICFFormSubmit != false && uploadICFFormControl.languageId.invalid) || (uploadICFFormControl.languageId.touched || uploadICFFormControl.languageId.dirty))? uploadICFFormControl.languageId.errors?.required : false" (Language)="onValueChange($event, 'language')"></app-languages>
+          </div>
+  
+          <div class="row mb-4 formField">
+            <div class="col-lg-6 col-md-6">
+              <div class="uploadFile">
+                <p>Upload file<span> *</span></p>
+                <h3>{{(uploadICFFormControl &&
+                  uploadICFFormControl.EConsentFile && uploadICFFormControl.EConsentFile.value)?
+                  uploadICFFormControl.EConsentFile.value.name : 'Choose file'}}</h3>
+              </div>
+            </div>
+          
+            <div class="col-lg-6 col-md-6">
+              <div class="dropZone">
+                <input type="file" id="fileDropRef" (change)="onFileChange($event)" formControlName="ICFFile" />
+                <p>Browse</p>
+              </div>
+            </div>
+            <div 
+              *ngIf="(uploadICFFormSubmit != false && uploadICFFormControl.ICFFile.invalid) || (uploadICFFormControl.ICFFile.touched || uploadICFFormControl.ICFFile.dirty)">
+              <p class="errorText" *ngIf="uploadICFFormControl.ICFFile.errors?.required">ICF File is
+                <strong>required</strong>.</p>
+            </div>
+            <div 
+              *ngIf="(uploadICFFormSubmit != false && uploadICFFormControl.EConsentFile.invalid) || (uploadICFFormControl.EConsentFile.touched || uploadICFFormControl.EConsentFile.dirty)">
+              <p class="errorText" *ngIf="uploadICFFormControl.EConsentFile.errors?.required">ICF File must be
+                <strong>pdf</strong> or <strong>doc</strong> format.</p>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-12 mb-4">
+            <div class="description">
+              <div class="form-check form-check-inline checkBox">
+                <label class="customCheckBox">
+                  <input type="checkbox" name="sms" formControlName="IsToIRBApproveCheck"/>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+  
+              <h2 class="mt-2">
+                I Certify that this document is an exact copy having all of the
+                same attributes and information has the original IRB approved copy
+                <span> *</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="customButton" type="submit">Save</button>
+        </div>
+      </form>
+      
+    </div>
+  </div>
+</div>

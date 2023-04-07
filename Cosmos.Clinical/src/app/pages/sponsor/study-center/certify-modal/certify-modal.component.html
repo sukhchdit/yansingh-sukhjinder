@@ -1,0 +1,28 @@
+<div
+  class="modal fade"
+  id="certifyModal"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form>
+        <div class="modal-body row">
+          <div class="details">
+            <p>
+              Are you sure you want to change status? You will not be able to
+              recover the status of this lbar record!
+            </p>
+          </div>
+          <div class="footer">
+            <button class="customButton">Yes, change it</button>
+            <button class="cancelButton" (click)="closeModal()">cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

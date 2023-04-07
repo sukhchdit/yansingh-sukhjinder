@@ -1,0 +1,140 @@
+<div
+  class="modal fade"
+  id="updateProfilePopup"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Add FAQ</h1>
+        <button
+          type="button"
+          class="btn-close icon"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
+      <form>
+        <div class="modal-body row">
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input type="text" name="question" class="inputText" required />
+                <span class="floating-label">Question #</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-6 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input
+                  type="text"
+                  name="question_name"
+                  class="inputText"
+                  required
+                />
+                <span class="floating-label">Question Name </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-12 mb-4">
+            <div class="formField">
+              <div class="customInput d-flex">
+                <input
+                  type="text"
+                  name="question_answer"
+                  class="inputText"
+                  required
+                />
+                <span class="floating-label">Question Answer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="dropdownsColumn me-4">
+              <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                <div
+                  class="customDropInput"
+                  [ngClass]="{ active: selectedDropdown == 'language' }"
+                  (click)="openDropdown('language')"
+                >
+                  <span
+                    class="span"
+                    [ngClass]="selectedLanguage ? 'checkActive' : 'null'"
+                    >Language</span
+                  >
+                  <h3>
+                    {{ selectedLanguage }}
+                  </h3>
+                </div>
+                <ul>
+                  <li
+                    *ngFor="let value of language"
+                    (click)="onLanguageValueChanged(value)"
+                  >
+                    {{ value.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="dropdownsColumn me-4">
+              <div class="formField" (blur)="closeDropdown()" tabindex="0">
+                <div
+                  class="customDropInput"
+                  [ngClass]="{ active: selectedDropdown == 'country' }"
+                  (click)="openDropdown('country')"
+                >
+                  <span
+                    class="span"
+                    [ngClass]="selectedCountry ? 'checkActive' : 'null'"
+                    >Country</span
+                  >
+                  <h3>
+                    {{ selectedCountry }}
+                  </h3>
+                </div>
+                <ul>
+                  <li
+                    *ngFor="let value of country"
+                    (click)="onCountryValueChanged(value)"
+                  >
+                    {{ value.name }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-6 col-12 mb-4 d-flex">
+            <div class="form-check form-check-inline checkBox">
+              <label class="customCheckBox">
+                <input
+                  type="checkbox"
+                  name="sms"
+                  formControlName="IsToIRBApproveCheck"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <p>Certified</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="customButton" type="submit">Save</button>
+          <button class="cancelButton" (click)="closeModal()">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
