@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./layouts/homepage-layout/homepage-layout.module').then(m => m.HomePageLayoutModule) },
+  { path: 'maid', loadChildren: () => import('./pages/maid/maid.module').then(m => m.MaidModule) },
   {
     path: '',
     loadChildren: () =>
