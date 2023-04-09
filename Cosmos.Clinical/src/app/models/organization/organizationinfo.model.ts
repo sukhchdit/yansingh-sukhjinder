@@ -1,6 +1,6 @@
 import { BaseAddress } from '../baseaddress.model';
 import { OrganizationContact } from './organizationcontact.model';
-import { SiteInfo } from '../site/siteinfo.model';
+
 
 export enum OrganizationType {
   SuperAdmin=0,
@@ -18,5 +18,4 @@ export class OrganizationInfo extends BaseAddress {
   content: string;
 
   organizationContacts: OrganizationContact[];
-  siteInfos: SiteInfo[];
 }
