@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./registermaid.component.scss']
 })
 export class RegisterMaidComponent {
+  tabselector = 'firsttab';
 
 }

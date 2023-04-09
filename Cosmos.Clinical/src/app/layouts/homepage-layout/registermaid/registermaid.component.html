@@ -1,1 +1,14 @@
-Here go
+<app-header></app-header>
+<section id="teamMembers">
+  <div class="tabsBlock">
+    <div class="tabButtons">
+      <span class="blckBtn" (click)="tabselector = 'firsttab'" [ngClass]="{'active' : tabselector == 'firsttab'}">General</span>
+      <span class="blckBtn" (click)="tabselector = 'secondtab'" [ngClass]="{'active' : tabselector == 'secondtab'}">Forms</span>
+    </div>
+    <div class="tabBlck">
+      <div class="blockItem" *ngIf="tabselector == 'firsttab'">General</div>
+      <div class="blockItem" *ngIf="tabselector == 'secondtab'">Forms</div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
