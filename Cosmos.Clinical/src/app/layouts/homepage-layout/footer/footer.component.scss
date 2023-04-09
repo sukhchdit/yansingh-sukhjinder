@@ -5,6 +5,11 @@
     justify-content:$jcontent;
 }
 
+ul, ol {
+    margin:0;
+    padding:0;
+  }
+
 .container {
     width:100%;
     max-width:1170px;
@@ -30,8 +35,7 @@ footer {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 28px;
-                color: #FFFFFF;
-                opacity: 0.8;
+                color:rgba(255, 255, 255, .6);
                 margin:20px 0px;
             }
 
@@ -69,8 +73,7 @@ footer {
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 28px;
-                    color: #FFFFFF;
-                    opacity: 0.8;
+                    color:rgba(255, 255, 255, .6);
                     list-style-type:none;
 
                     a {
@@ -79,8 +82,7 @@ footer {
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 28px;
-                        color: #FFFFFF;
-                        opacity: 0.8;
+                        color:rgba(255, 255, 255, .6);
                         text-decoration:none;
                     }
                 }
@@ -92,9 +94,8 @@ footer {
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 26px;
-                color: #FFFFFF;
+                color:rgba(255, 255, 255, .6);
                 mix-blend-mode: normal;
-                opacity: 0.6;
                 margin-top:50px;
             }
         }
