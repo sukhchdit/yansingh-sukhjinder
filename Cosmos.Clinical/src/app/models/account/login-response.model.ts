@@ -1,6 +1,3 @@
-import { StudyUserInterfaceModel } from '../userrrolemanagement/studyuserinterface.model';
-import { StudyUserInterfaceViewModel } from '../userrrolemanagement/studyuserinterfaceview.model';
-import { UserInterface } from '../userrrolemanagement/userinterface.model';
 import { PermissionValues } from './permission.model';
 import { UserRole } from './user.model';
 
@@ -10,7 +7,6 @@ export interface LoginResponse {
   refresh_token: string;
   expires_in: number;
   token_type: string;
-  user_studies: StudyUserInterfaceViewModel[];
 }
 
 
