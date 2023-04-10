@@ -1,13 +1,854 @@
 <app-header></app-header>
 <section id="teamMembers">
-  <div class="tabsBlock">
-    <div class="tabButtons">
-      <span class="blckBtn" (click)="tabselector = 'firsttab'" [ngClass]="{'active' : tabselector == 'firsttab'}">General</span>
-      <span class="blckBtn" (click)="tabselector = 'secondtab'" [ngClass]="{'active' : tabselector == 'secondtab'}">Forms</span>
-    </div>
-    <div class="tabBlck">
-      <div class="blockItem" *ngIf="tabselector == 'firsttab'">General</div>
-      <div class="blockItem" *ngIf="tabselector == 'secondtab'">Forms</div>
+
+  <div>
+
+    <div>
+      <div class="newTabsBtns">
+        <button class="blckBtn" (click)="tabselectornew = 'basictab';tabsSliderNew('basictab');" [ngClass]="{'active' : tabselectornew == 'basictab'}" id="basicTab">Basic</button>
+
+        <button class="blckBtn" (click)="tabselectornew = 'skillstab';tabsSliderNew('skillstab');" [ngClass]="{'active' : tabselectornew == 'skillstab'}" id="skillsTab">Skills</button>
+
+        <button class="blckBtn" (click)="tabselectornew = 'experiencetab';tabsSliderNew('experiencetab');" [ngClass]="{'active' : tabselectornew == 'experiencetab'}" id="experienceTab">Experience</button>
+
+        <button class="blckBtn" (click)="tabselectornew = 'questionstab';tabsSliderNew('questionstab');" [ngClass]="{'active' : tabselectornew == 'questionstab'}" id="questionsTab">Questions</button>
+
+        <button class="blckBtn" (click)="tabselectornew = 'savetab';tabsSliderNew('savetab');" [ngClass]="{'active' : tabselectornew == 'savetab'}" id="saveTab">Save</button>
+      </div>
+
+      <div class="newTabsContent scrollbar-new-design">
+        <!--Basic-->
+        <div class="blockItemNew" id="blockItemNew1" *ngIf="tabselectornew == 'basictab'">
+          <div class="formBlock">
+
+            <h2>Basic information</h2>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="fnamefield" placeholder="Full Name" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="nicknamefield" placeholder="Nick Name" />
+                </div>
+              </div>
+            </div>
+
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Nationality</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Filipino
+                    <input type="radio" name="nationality">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Indonesian
+                    <input type="radio" name="nationality">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="date" name="nicknamefield" placeholder="Date of birth" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Weight</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Kg
+                    <input type="radio" name="weight">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Lbs
+                    <input type="radio" name="weight">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <input type="text" name="weightField" id="weightField" placeholder="Weight" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Height</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    ft
+                    <input type="radio" name="height">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    cms
+                    <input type="radio" name="height">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <input type="text" name="heightField" id="weightField" placeholder="Height" />
+                </div>
+              </div>
+
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Marital status</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Single
+                    <input type="radio" name="materialStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Married
+                    <input type="radio" name="materialStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Widow
+                    <input type="radio" name="materialStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Single Mother
+                    <input type="radio" name="materialStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Divorced
+                    <input type="radio" name="materialStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Separate
+                    <input type="radio" name="materialStatus">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Education</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Elementary
+                    <input type="radio" name="education">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Senior High School
+                    <input type="radio" name="education">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    University
+                    <input type="radio" name="education">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Junior High School
+                    <input type="radio" name="education">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    College
+                    <input type="radio" name="education">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Religion</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Kg
+                    <input type="radio" name="religion">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Lbs
+                    <input type="radio" name="religion">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <input type="text" name="weightField" id="weightField" placeholder="Weight" />
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner addMinusFieldMain">
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">Number of Sibling</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn">-</button><input type="text" name="siblingsField" id="siblingsField" placeholder="0" /><button class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">I am number</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn">-</button><input type="text" name="iMaNmbrField" id="iMaNmbrField" placeholder="0" /><button class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">No of sons</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn">-</button><input type="text" name="noOfSnsField" id="noOfSnsField" placeholder="0" /><button class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">No of daughters</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn">-</button><input type="text" name="noOfDtrsField" id="noOfDtrsField" placeholder="0" /><button class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="pnfield" placeholder="Passport number" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="pedfield" placeholder="Passport expiry date" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="hkidfield" placeholder="Number of Hong Kong Identity Card" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Currently based in</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Hong Kong
+                    <input type="radio" name="currentlybasedin">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Indonesia
+                    <input type="radio" name="currentlybasedin">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Philippine
+                    <input type="radio" name="currentlybasedin">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Other countries
+                    <input type="radio" name="currentlybasedin">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <select>
+                    <option>Contract situation</option>
+                    <option>Contract situation 1</option>
+                    <option>Contract situation 2</option>
+                    <option>Contract situation 3</option>
+                  </select>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="cellphonenumberfield" placeholder="Cellphone number" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="fbmfield" placeholder="Facebook/Messenger" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="domicileaddressfield" placeholder="Domicile address" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="namereferralfield" placeholder="Name of referral" />
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="btnsBlock">
+            <button class="backBtn">Back</button>
+            <button class="nextBtn">Next</button>
+          </div>
+        </div>
+
+        <!--Skills-->
+        <div class="blockItemNew" id="blockItemNew2" *ngIf="tabselectornew == 'skillstab'">
+          <div class="formBlock">
+
+            <h2>Languages</h2>
+
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Cantonese</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Learning
+                    <input type="radio" name="cantonese">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Average
+                    <input type="radio" name="cantonese">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Good
+                    <input type="radio" name="cantonese">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">English</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Learning
+                    <input type="radio" name="english">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Average
+                    <input type="radio" name="english">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Good
+                    <input type="radio" name="english">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Mandarin</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Learning
+                    <input type="radio" name="mandarin">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Average
+                    <input type="radio" name="mandarin">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Good
+                    <input type="radio" name="mandarin">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <h2>Countries Experience</h2>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner CountriesExperienceField">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="hkcefield" placeholder="Hong Kong" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="mcefield" placeholder="Malaysia" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="tcefield" placeholder="Taiwan" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="sacefield" placeholder="Saudi Arabia" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="mecefield" placeholder="Middle East" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="pcefield" placeholder="Philippines" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="icefield" placeholder="Indonesia" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="scefield" placeholder="Singapore" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="ocefield" placeholder="Others" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="ocefield" placeholder="Others" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField checkboxBtns">
+                <label class="mainLabel">Currently based in</label>
+
+                <div class="customInput">
+                  <label class="containerCheckbox">
+                    Taking care of babies
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Taking care of children
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Taking care of elderly
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Taking care of disabled
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Pet care
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Cooking
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="btnsBlock">
+            <button class="backBtn">Back</button>
+            <button class="nextBtn">Next</button>
+          </div>
+        </div>
+
+        <!--Experience-->
+        <div class="blockItemNew" id="blockItemNew3" *ngIf="tabselectornew == 'experiencetab'">
+          <div class="formBlock">
+
+            <h2>Working experience (1)</h2>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpFrmField" placeholder="Working period (from)" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpToField" placeholder="Working period (to)" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpLocationField" placeholder="Location" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpHouseSizeField" placeholder="Size of house" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpLastSalaryField" placeholder="Last salary" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner addMinusFieldMain">
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">No of person served</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn">-</button><input type="text" name="workExpPrsnSrvdField" id="workExpPrsnSrvdField" placeholder="0" /><button class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">No. of Maid in the family</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn">-</button><input type="text" name="workExpMaidCountField" id="workExpMaidCountField" placeholder="0" /><button class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpHolidayArrangementField" placeholder="Holiday arrangement" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpReasonLeavingField" placeholder="Reason of leaving" />
+                </div>
+              </div>
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner multiCheckboxesBlock">
+              <!--Field-->
+              <div class="formField checkboxBtns">
+                <label class="mainLabel">Currently based in</label>
+
+                <div class="customInput">
+                  <label class="containerCheckbox">
+                    Taking care of babies
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Taking care of children
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Taking care of elderly
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Taking care of disabled
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Pet care
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Car washing
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    House work
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Hand-Washing Clothes
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Go to market
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Cooking (chinese)
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerCheckbox">
+                    Cooking (western)
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="workExpOthersField" placeholder="Others" />
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="btnsBlock">
+            <button class="backBtn">Back</button>
+            <button class="nextBtn">Next</button>
+          </div>
+        </div>
+
+        <!--Questions-->
+        <div class="blockItemNew" id="blockItemNew4" *ngIf="tabselectornew == 'questionstab'">
+          <div class="formBlock">
+
+            <h2>General questions</h2>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner questionsBlck">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">would you like to work on holiday, Exchange with money?</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Yes
+                    <input type="radio" name="quesOne">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    No
+                    <input type="radio" name="quesOne">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <input type="text" name="quesOnePleaseSpecify" id="quesOnePleaseSpecify" placeholder="Please Specify" />
+                </div>
+
+                <!--Field-->
+                <div class="formField radioBtns">
+                  <label class="mainLabel">Do you eat pork?</label>
+
+                  <div class="customInput">
+                    <label class="containerRadio">
+                      Yes
+                      <input type="radio" name="quesTwo">
+                      <span class="checkmark"></span>
+                    </label>
+
+                    <label class="containerRadio">
+                      No
+                      <input type="radio" name="quesTwo">
+                      <span class="checkmark"></span>
+                    </label>
+
+                    <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" />
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="btnsBlock">
+              <button class="backBtn">Back</button>
+              <button class="nextBtn">Next</button>
+            </div>
+          </div>
+
+          <!--Save-->
+          <div class="blockItemNew" id="blockItemNew5" *ngIf="tabselectornew == 'savetab'">
+            Block 5
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

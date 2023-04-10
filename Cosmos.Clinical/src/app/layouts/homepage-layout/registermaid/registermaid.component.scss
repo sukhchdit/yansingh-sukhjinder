@@ -1,0 +1,381 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+}
+
+.newTabsBtns {
+  display: flex;
+  min-height: 84px;
+  align-items: center;
+  align-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.newTabsBtns .blckBtn {
+  min-height: 44px;
+  background: #CCCCCC;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+}
+
+.newTabsBtns .blckBtn.active, .newTabsBtns .blckBtn:hover {
+  color: #ffffff;
+  background: #DA1F26;
+}
+
+.newTabsContent {
+  background: #FFFFFF;
+  border: 1px solid rgba(52, 61, 86, 0.04);
+  box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+  border-radius: 8px;
+  padding: 0;
+}
+
+.formBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  padding: 20px;
+}
+
+.formBlock h2 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #DA1F26;
+}
+
+.formBlockInner {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.formBlock .formBlockInner.addMinusFieldMain {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.formBlock .formBlockInner.addMinusFieldMain .formField {
+  width: auto;
+}
+
+.CountriesExperienceField, .formBlock .formBlockInner.multiCheckboxesBlock .customInput {
+  flex-wrap: wrap;
+}
+
+.CountriesExperienceField .formField {
+  width: 48.5%;
+}
+
+.radioBtns, .formField.addMinusBtnBlck, .checkboxBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radioBtns label.mainLabel, .checkboxBtns label.mainLabel, .formField.addMinusBtnBlck label.mainLabel {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(54, 63, 87, 0.5);
+}
+
+.radioBtns .customInput, .checkboxBtns .customInput {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.formField {
+  width: 100%;
+}
+
+.formField input {
+  width: 100%;
+  height: 60px;
+  background: rgba(243, 244, 244, 0.24);
+  border: 1px solid #EAEBEE;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(54, 63, 87, 1);
+}
+
+.formField select {
+  width: 100%;
+  height: 60px;
+  background: rgba(243, 244, 244, 0.24);
+  border: 1px solid #EAEBEE;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(54, 63, 87, 1);
+}
+
+.formField input:focus, .formField select:focus {
+  border-color: #DA1F26;
+}
+
+.formField ::placeholder {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(54, 63, 87, 0.5);
+}
+
+.formField.addMinusBtnBlck .customInput {
+  display: flex;
+}
+
+.formField.addMinusBtnBlck .customInput input {
+  width: 55px;
+  height: 60px;
+  background: rgba(243, 244, 244, 0.24);
+  border: 1px solid #EAEBEE;
+  border-radius: 0px;
+}
+
+.formField.addMinusBtnBlck .customInput button {
+  display: flex;
+  width: 61px;
+  height: 60px;
+  background: #363F57;
+  border: 0px;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.formField.addMinusBtnBlck .customInput button:first-child {
+  border-radius: 8px 0px 0px 8px;
+}
+
+.formField.addMinusBtnBlck .customInput button:last-child {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.containerRadio {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #363F57;
+}
+
+.containerRadio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer
+}
+
+.containerRadio .checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBEE;
+  border-radius: 100px;
+  border-radius: 50%
+}
+
+.containerRadio:hover input ~ .checkmark {
+  background-color: #ccc
+}
+
+.containerRadio input:checked ~ .checkmark {
+  background-color: #DA1F26;
+  border-color: #DA1F26;
+}
+
+.containerRadio .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none
+}
+
+.containerRadio input:checked ~ .checkmark:after {
+  display: block
+}
+
+.containerRadio .checkmark:after {
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%,-50%);
+}
+
+
+.containerCheckbox {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #363F57;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.containerCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0
+}
+
+.containerCheckbox .checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border: 1px solid #EAEBEE;
+  border-radius: 5px;
+}
+
+.containerCheckbox:hover input ~ .checkmark {
+  background-color: #ccc
+}
+
+.containerCheckbox input:checked ~ .checkmark {
+  background-color: #DA1F26;
+  border-color: #DA1F26;
+}
+
+.containerCheckbox.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none
+}
+
+.containerCheckbox input:checked ~ .checkmark:after {
+  display: block
+}
+
+.containerCheckbox .checkmark:after {
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform: translate(-50%,-50%);
+}
+
+
+.btnsBlock {
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-top: 1px solid rgba(0, 23, 41, 0.23);
+  margin-top: 50px;
+}
+
+.btnsBlock .backBtn {
+  width: 84px;
+  height: 45px;
+  border: 1px solid #343D56;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #031926;
+  background: transparent;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.btnsBlock .nextBtn {
+  width: 100px;
+  height: 45px;
+  background: #DA1F26;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border: 0px;
+}
