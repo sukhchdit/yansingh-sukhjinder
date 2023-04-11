@@ -5,18 +5,9 @@
   justify-content: $jcontent;
 }
 
-.container {
-  width: 100%;
-  max-width: 1170px;
-  min-width: 1170px;
-  margin: 0 auto;
-}
-
-.container-fluid {
-  width: 100%;
-  max-width: 1800px;
-  min-width: 1800px;
-  margin: 0 auto;
+ul, ol {
+  margin:0;
+  padding:0;
 }
 
 #banner {
@@ -26,14 +17,11 @@
 
   .container {
     @include dflex(row, center, space-between);
-
-    .row {
-      height: calc(100vh - 100px);
-      margin-top: 100px;
-      @include dflex(row, center, space-between);
+    height: calc(100vh - 176px);
+    padding-top: 176px;
 
       .colLeft {
-        width: 55%;
+        width: 50%;
 
         h1 {
           font-family: 'Inter';
@@ -72,7 +60,7 @@
       }
 
       .colRight {
-        width: 500px;
+        width: 605px;
 
         .rightInner {
           padding: 22px 35px;
@@ -135,6 +123,7 @@
               @include dflex(row, center, flex-start);
               gap: 10px;
               flex-wrap: wrap;
+              margin:0px;
 
               li {
                 width: 120px;
@@ -225,7 +214,6 @@
           }
         }
       }
-    }
   }
 }
 
@@ -238,7 +226,11 @@
     @include dflex(row, center, space-between);
 
     .colLeft {
-      width: 45%
+      width: 45%;
+
+      img {
+        width:100%;
+      }
     }
 
     .colRight {
@@ -470,7 +462,7 @@
 
     .whatWeDoItem {
       width: 380px;
-      min-height: 300px;
+      min-height: 400px;
       border: 1px solid rgba(0, 0, 0, 0.2);
       padding: 30px;
       @include dflex(column, center, center);
