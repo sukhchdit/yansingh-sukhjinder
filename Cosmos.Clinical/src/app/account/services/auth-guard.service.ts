@@ -10,25 +10,25 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if (this.authService.sponsorStudyInfoId) {
-      var study = this.authService.userStudies.find(x => x.sponsorStudy.sponsorStudyInfoId == this.authService.sponsorStudyInfoId);
-      if (study) {
-        var userInterface = study.userInterfaces.find(x => x.uiUrl && x.uiUrl.toLowerCase() == state.url.toLowerCase());
-        if (userInterface) {
-          let url: string = state.url;
-          return this.checkLogin(url, route);
-        }
-        else {
-          this.router.navigate(['']);
-        }
-      }
-      else {
-        this.router.navigate(['']);
-      }
-    }
-    else {
-      this.router.navigate(['']);
-    }
+    //if (this.authService.sponsorStudyInfoId) {
+    //  var study = this.authService.userStudies.find(x => x.sponsorStudy.sponsorStudyInfoId == this.authService.sponsorStudyInfoId);
+    //  if (study) {
+    //    var userInterface = study.userInterfaces.find(x => x.uiUrl && x.uiUrl.toLowerCase() == state.url.toLowerCase());
+    //    if (userInterface) {
+    let url: string = state.url;
+    return this.checkLogin(url, route);
+    //    }
+    //    else {
+    //      this.router.navigate(['']);
+    //    }
+    //  }
+    //  else {
+    //    this.router.navigate(['']);
+    //  }
+    //}
+    //else {
+    //  this.router.navigate(['']);
+    //}
 
   }
 
@@ -46,8 +46,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     //let userRole = null;
     //if (this.authService.currentUser)
     //  userRole = this.authService.currentUser.userRole.toString().toLowerCase();
-    if (this.authService.isLoggedIn )
-      return true;   
+    if (this.authService.isLoggedIn)
+      return true;
 
     this.router.navigate(['']);
 

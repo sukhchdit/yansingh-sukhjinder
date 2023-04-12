@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { GuardsModule } from './guards/guards.module';
 import { InterceptorsModule } from './interceptors/interceptors.module';
 import { MomentDatePipe } from './pipes/momentdate.pipe';
@@ -8,6 +8,7 @@ import { LocalStoreManager } from '../account/services/local-store-manager.servi
 import { AuthGuard } from '../account/services/auth-guard.service';
 import { EndPointService } from './services/endpoint.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MaidService } from './services/maid/maid.service';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AuthService,
     LocalStoreManager,
     AuthGuard,
-    EndPointService
+    EndPointService,
+    MaidService
   ]
 })
 export class CoreModule { }

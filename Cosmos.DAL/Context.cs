@@ -2,6 +2,7 @@
 using Cosmos.Model.Entities;
 using Cosmos.Model.Entities.Organization;
 using Cosmos.Models.Entities.Account;
+using Cosmos.Models.Entities.Maid;
 using Microsoft.EntityFrameworkCore;
 #endregion namespaces
 
@@ -51,6 +52,10 @@ namespace Cosmos.DAL
         public DbSet<OrganizationContact> OrganizationContacts { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserSession> UserSessions { get; set; }
+        public DbSet<MaidDetail> MaidDetails { get; set; }
+        public DbSet<MaidExperience> MaidExperiences { get; set; }
+        public DbSet<MaidDuty> MaidDuties { get; set; }
+        public DbSet<MaidExperienceJobDuty> MaidExperienceJobDuties { get; set; }
 
 
         #endregion

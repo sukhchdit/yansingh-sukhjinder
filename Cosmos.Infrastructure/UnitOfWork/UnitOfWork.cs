@@ -5,6 +5,7 @@ using Cosmos.Infrastructure.Repository;
 using Cosmos.Model.Entities;
 using Cosmos.Model.Entities.Organization;
 using Cosmos.Models.Entities.Account;
+using Cosmos.Models.Entities.Maid;
 
 namespace Cosmos.Infrastructure.UnitOfWork
 {
@@ -29,6 +30,57 @@ namespace Cosmos.Infrastructure.UnitOfWork
 
         private IGenericRepository<UserSession> userSessionRepository;
 
+        private IGenericRepository<MaidDetail> maidDetailRepository;
+
+        private IGenericRepository<MaidExperience> maidExperienceRepository;
+
+        private IGenericRepository<MaidDuty> maidDutyRepository;
+
+        private IGenericRepository<MaidExperienceJobDuty> maidExperienceJobDutyRepository;
+
+        public IGenericRepository<MaidDetail> MaidDetailRepository {
+            get
+            {
+                if (this.maidDetailRepository == null)
+                {
+                    this.maidDetailRepository = new GenericRepository<MaidDetail>(this._context);
+                }
+                return this.maidDetailRepository;
+            }
+        }
+
+        public IGenericRepository<MaidDuty> MaidDutyRepository {
+            get
+            {
+                if (this.maidDutyRepository == null)
+                {
+                    this.maidDutyRepository = new GenericRepository<MaidDuty>(this._context);
+                }
+                return this.maidDutyRepository;
+            }
+        }
+
+        public IGenericRepository<MaidExperience> MaidExperienceRepository {
+            get
+            {
+                if (this.maidExperienceRepository == null)
+                {
+                    this.maidExperienceRepository = new GenericRepository<MaidExperience>(this._context);
+                }
+                return this.maidExperienceRepository;
+            }
+        }
+
+        public IGenericRepository<MaidExperienceJobDuty> MaidExperienceJobDutyRepository {
+            get
+            {
+                if (this.maidExperienceJobDutyRepository == null)
+                {
+                    this.maidExperienceJobDutyRepository = new GenericRepository<MaidExperienceJobDuty>(this._context);
+                }
+                return this.maidExperienceJobDutyRepository;
+            }
+        }
 
         public IGenericRepository<User> UserRepository
         {

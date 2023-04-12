@@ -7,15 +7,7 @@ import { LocalStoreManager } from './local-store-manager.service';
 import { OrganizationInfo } from '../../models/organization/organizationinfo.model';
 import { LoginResponse, AccessToken } from '../../models/account/login-response.model';
 import { PermissionValues } from '../../models/account/permission.model';
-import { SponsorInfo } from '../../models/sponsor/sponsorinfo.model';
-import { SiteInfo } from '../../models/site/siteinfo.model';
-import { InvestigatorInfo } from '../../models/site/investigator/investigatorinfo.model';
 import { CurrentUserViewModel } from '../../models/account/currentuserviewmodel.model';
-import { CroInfo } from '../../models/cro/croinfo.model';
-import { MonitorInfo } from '../../models/monitor/monitorinfo.model';
-import { StudyUserInterfaceModel } from '../../models/userrrolemanagement/studyuserinterface.model';
-//import { UserInterface } from '../../models/userrrolemanagement/userinterface.model';
-//import { StudyUserInterfaceModel } from '../../models/userrrolemanagement/studyuserinterface.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,11 +15,6 @@ import { StudyUserInterfaceModel } from '../../models/userrrolemanagement/studyu
 export class AuthService {
   @Output() userSettingChanged: EventEmitter<CurrentUserViewModel> = new EventEmitter();
   @Output() organizationChanged: EventEmitter<OrganizationInfo> = new EventEmitter();
-  @Output() sponsorChanged: EventEmitter<SponsorInfo> = new EventEmitter();
-  @Output() croChanged: EventEmitter<CroInfo> = new EventEmitter();
-  @Output() monitorChanged: EventEmitter<MonitorInfo> = new EventEmitter();
-  @Output() siteChanged: EventEmitter<SiteInfo> = new EventEmitter();
-  @Output() investigatorChanged: EventEmitter<InvestigatorInfo> = new EventEmitter();
   @Output() siteListChanged: EventEmitter<any[]> = new EventEmitter();
   @Output() investigatorListChanged: EventEmitter<any[]> = new EventEmitter();
   @Output() accounTypeChangedChanged: EventEmitter<any> = new EventEmitter();
@@ -64,7 +51,6 @@ export class AuthService {
   public processLoginResponse(response: LoginResponse, rememberMe: boolean) {
     rememberMe = true;
     let accessToken = response.access_token;
-    let userStudies = response.user_studies;
 
     if (accessToken == null) {
       throw new Error("Received accessToken was empty");
@@ -96,19 +82,18 @@ export class AuthService {
     user.lastLoginDate = decodedAccessToken.lastLoginDate;
     user.role = JSON.parse(decodedAccessToken.organizationContactRole);
 
-    this.saveUserDetails(user, permissions, userStudies, accessToken, refreshToken, accessTokenExpiry, rememberMe);
+    this.saveUserDetails(user, permissions, accessToken, refreshToken, accessTokenExpiry, rememberMe);
 
     this.reevaluateLoginStatus(user);
   }
 
-  private saveUserDetails(user: CurrentUserViewModel, permissions: PermissionValues[], userStudies: any[], accessToken: string, refreshToken: string, expiresIn: Date, rememberMe: boolean) {
+  private saveUserDetails(user: CurrentUserViewModel, permissions: PermissionValues[], accessToken: string, refreshToken: string, expiresIn: Date, rememberMe: boolean) {
     if (rememberMe) {
       this.localStorage.savePermanentData(accessToken, DBkeys.ACCESS_TOKEN);
       this.localStorage.savePermanentData(refreshToken, DBkeys.REFRESH_TOKEN);
       this.localStorage.savePermanentData(expiresIn, DBkeys.TOKEN_EXPIRES_IN);
       this.localStorage.savePermanentData(permissions, DBkeys.USER_PERMISSIONS);
       this.localStorage.savePermanentData(user, DBkeys.CURRENT_USER);
-      this.localStorage.savePermanentData(userStudies, DBkeys.USER_STUDIES);
     }
     else {
       this.localStorage.saveSyncedSessionData(accessToken, DBkeys.ACCESS_TOKEN);
@@ -116,17 +101,12 @@ export class AuthService {
       this.localStorage.saveSyncedSessionData(expiresIn, DBkeys.TOKEN_EXPIRES_IN);
       this.localStorage.saveSyncedSessionData(permissions, DBkeys.USER_PERMISSIONS);
       this.localStorage.saveSyncedSessionData(user, DBkeys.CURRENT_USER);
-      this.localStorage.saveSyncedSessionData(userStudies, DBkeys.USER_STUDIES);
     }
 
     this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
   }
 
-  addNewStudy(newStudy: StudyUserInterfaceModel) {
-    var userStudies = this.userStudies;
-    userStudies.push(newStudy);
-    this.localStorage.saveSyncedSessionData(userStudies, DBkeys.USER_STUDIES);
-  }
+  
 
   updateCurrentUserRole(currentUser) {
     var rememberMe = this.localStorage.getData(DBkeys.REMEMBER_ME);
@@ -172,65 +152,7 @@ export class AuthService {
     this.investigatorListChanged.emit(investigatorList);
   }
 
-  saveSponsorDetails(sponsor: SponsorInfo) {
-    var rememberMe = this.localStorage.getData(DBkeys.REMEMBER_ME);
-    this.localStorage.deleteData(DBkeys.CURRENT_SPONSOR);
-
-    if (rememberMe)
-      this.localStorage.savePermanentData(sponsor, DBkeys.CURRENT_SPONSOR);
-    else
-      this.localStorage.saveSyncedSessionData(sponsor, DBkeys.CURRENT_SPONSOR);
-
-    this.sponsorChanged.emit(sponsor);
-  }
-
-  saveCRODetails(cro: CroInfo) {
-    var rememberMe = this.localStorage.getData(DBkeys.REMEMBER_ME);
-    this.localStorage.deleteData(DBkeys.CURRENT_CRO);
-
-    if (rememberMe)
-      this.localStorage.savePermanentData(cro, DBkeys.CURRENT_CRO);
-    else
-      this.localStorage.saveSyncedSessionData(cro, DBkeys.CURRENT_CRO);
-
-    this.croChanged.emit(cro);
-  }
-
-  saveMonitorDetails(monitor: MonitorInfo) {
-    var rememberMe = this.localStorage.getData(DBkeys.REMEMBER_ME);
-    this.localStorage.deleteData(DBkeys.CURRENT_MONITOR);
-
-    if (rememberMe)
-      this.localStorage.savePermanentData(monitor, DBkeys.CURRENT_MONITOR);
-    else
-      this.localStorage.saveSyncedSessionData(monitor, DBkeys.CURRENT_MONITOR);
-
-    this.monitorChanged.emit(monitor);
-  }
-
-  saveSiteDetails(site: SiteInfo) {
-    var rememberMe = this.localStorage.getData(DBkeys.REMEMBER_ME);
-    this.localStorage.deleteData(DBkeys.CURRENT_SITE);
-
-    if (rememberMe)
-      this.localStorage.savePermanentData(site, DBkeys.CURRENT_SITE);
-    else
-      this.localStorage.saveSyncedSessionData(site, DBkeys.CURRENT_SITE);
-
-    this.siteChanged.emit(site);
-  }
-
-  saveInvestigatorDetails(investigator: InvestigatorInfo) {
-    var rememberMe = this.localStorage.getData(DBkeys.REMEMBER_ME);
-    this.localStorage.deleteData(DBkeys.CURRENT_INVESTIGATOR);
-
-    if (rememberMe)
-      this.localStorage.savePermanentData(investigator, DBkeys.CURRENT_INVESTIGATOR);
-    else
-      this.localStorage.saveSyncedSessionData(investigator, DBkeys.CURRENT_INVESTIGATOR);
-
-    this.investigatorChanged.emit(investigator);
-  }
+  
 
   saveAccountType(type) {
     if (type) {
@@ -293,30 +215,7 @@ export class AuthService {
     return list;
   }
 
-  get sponsor(): SponsorInfo {
-    var model = this.localStorage.getData(DBkeys.CURRENT_SPONSOR);
-    return model;
-  }
-
-  get cro(): CroInfo {
-    var model = this.localStorage.getData(DBkeys.CURRENT_CRO);
-    return model;
-  }
-
-  get site(): SiteInfo {
-    var model = this.localStorage.getData(DBkeys.CURRENT_SITE);
-    return model;
-  }
-
-  get monitor(): MonitorInfo {
-    var model = this.localStorage.getData(DBkeys.CURRENT_MONITOR);
-    return model;
-  }
-
-  get investigator(): InvestigatorInfo {
-    var model = this.localStorage.getData(DBkeys.CURRENT_INVESTIGATOR);
-    return model;
-  }
+  
 
   get accountType(): string {
     return this.localStorage.getData(DBkeys.ACCOUNTTYPE);
@@ -329,24 +228,13 @@ export class AuthService {
     return user;
   }
 
-  get userStudies(): StudyUserInterfaceModel[] {
-    let userStudies = this.localStorage.getDataObject<StudyUserInterfaceModel[]>(DBkeys.USER_STUDIES);
-    return userStudies;
-  }
+  
 
   get isLoggedIn(): boolean {
     return this.currentUser != null;
   }
 
-  set sponsorStudyInfoId(studyId) {
-    this.localStorage.savePermanentData(studyId, DBkeys.SPONSOR_STUDYINFO_ID);
-    this.sponsorStudyInfoIdChanged.emit(studyId);
-  }
-
-  get sponsorStudyInfoId(): number {
-    let sponsorStudyInfoId = this.localStorage.getDataObject<number>(DBkeys.SPONSOR_STUDYINFO_ID);
-    return sponsorStudyInfoId;
-  }
+  
 
   set mainLoadingIndicator(mainloadingindicator) {
     this.localStorage.savePermanentData(mainloadingindicator, DBkeys.MAIN_LOADING_INDICATOR);

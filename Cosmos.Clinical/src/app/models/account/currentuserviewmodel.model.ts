@@ -1,4 +1,3 @@
-import { StudyUserInterfaceModel } from '../userrrolemanagement/studyuserinterface.model';
 import { UserRole } from './user.model';
 
 export class CurrentUserViewModel {
