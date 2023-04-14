@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageLayoutComponent } from './homepage-layout.component';
+import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
+import { RegisterMaidComponent } from './registermaid/registermaid.component';
 
 
 const routes: Routes = [{
   path: '', component: HomePageLayoutComponent,
-  children: [
-    /*{ path: 'admin', loadChildren: () => import('./../../pages/admin/admin.module').then(m => m.AdminModule) }*/
-  ]
-}];
+},
+{
+  path: 'maiddetails',
+  component: MaidDetailsComponent
+},
+{
+  path: 'registermaid',
+  component: RegisterMaidComponent
+}
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

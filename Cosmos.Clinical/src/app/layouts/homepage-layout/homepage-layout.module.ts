@@ -8,13 +8,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageLayoutRoutingModule } from './homepage-layout-routing.module';
 import { HomePageLayoutComponent } from './homepage-layout.component';
+import { RegisterMaidComponent } from './registermaid/registermaid.component';
+import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
 
 
 @NgModule({
   declarations: [
     HomePageLayoutComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterMaidComponent,
+    MaidDetailsComponent
   ],
   imports: [
     CommonModule,
