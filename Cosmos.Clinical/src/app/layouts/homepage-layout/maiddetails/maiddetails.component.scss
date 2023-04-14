@@ -1,2 +1,35 @@
-﻿body {
-}
+﻿#innerBanner {
+    /*background: url('../../assets/registrationBgImage.jpg') no-repeat;*/
+    background: url(../../../../assets/images/maidDetailBanner.jpg) no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      h2 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 73px;
+        color: #FFFFFF;
+      }
+  
+      h5 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+      }
+    }
+  }
