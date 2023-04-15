@@ -6,7 +6,6 @@ namespace Cosmos.Model.Entities.Organization
 {
     public enum UserType { Admin=1, User, Investigator}
 
-    [Table("organizationcontacts")]
     public class OrganizationContact : BaseContact
     {
         public string firstName { get; set; }

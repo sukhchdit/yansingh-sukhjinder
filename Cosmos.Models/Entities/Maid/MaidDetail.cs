@@ -6,7 +6,6 @@ using System.Text;
 
 namespace Cosmos.Models.Entities.Maid
 {
-    [Table("maiddetails")]
     public class MaidDetail : BaseEntity
     {
         public string name { get; set; }
@@ -23,6 +22,7 @@ namespace Cosmos.Models.Entities.Maid
         public string religion { get; set; }
         public string spouseName { get; set; }
         public string spouseOccupation { get; set; }
+        public string iAmNumber { get; set; }
         public string siblings { get; set; }
         public string numberOfSon { get; set; }
         public string numberOfDaughter { get; set; }

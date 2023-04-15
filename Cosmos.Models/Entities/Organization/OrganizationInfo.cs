@@ -12,7 +12,6 @@ namespace Cosmos.Model.Entities.Organization
         CRO
     }
 
-    [Table("organizationinfos")]
     public class OrganizationInfo : BaseEntity
     {
         public string name { get; set; }

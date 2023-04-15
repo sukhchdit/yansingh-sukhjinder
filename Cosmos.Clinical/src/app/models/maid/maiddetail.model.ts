@@ -18,6 +18,7 @@ export class MaidDetail extends BaseContact {
   spouseName: string;
   spouseOccupation: string;
   siblings: string;
+  iAmNumber: string;
   numberOfSon: string;
   numberOfDaughter: string;
   passportNumber: string;
