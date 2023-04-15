@@ -35,14 +35,14 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="fnamefield" placeholder="Full Name" />
+                  <input type="text" name="fnamefield" placeholder="Full Name" [(ngModel)]="maidDetail.name" />
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="nicknamefield" placeholder="Nick Name" />
+                  <input type="text" name="nicknamefield" placeholder="Nick Name" [(ngModel)]="maidDetail.nickName"/>
                 </div>
               </div>
             </div>
@@ -57,13 +57,24 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Filipino
-                    <input type="radio" name="nationality">
+                    <input type="radio" name="nationality" value="Filipino" [(ngModel)]="maidDetail.nationality">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Indonesian
-                    <input type="radio" name="nationality">
+                    <input type="radio" name="nationality" value="Indonesian" [(ngModel)]="maidDetail.nationality">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Indian
+                    <input type="radio" name="nationality" value="Indian" [(ngModel)]="maidDetail.nationality">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Sri Lankan
+                    <input type="radio" name="nationality" value="Sri Lankan" [(ngModel)]="maidDetail.nationality">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -72,7 +83,7 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="date" name="nicknamefield" placeholder="Date of birth" />
+                  <input type="date" name="nicknamefield" placeholder="Date of birth" [(ngModel)]="maidDetail.dateOfBirth"/>
                 </div>
               </div>
             </div>
@@ -86,17 +97,17 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Kg
-                    <input type="radio" name="weight">
+                    <input type="radio" name="weight" value="Kg" [(ngModel)]="maidDetail.weightUnit">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Lbs
-                    <input type="radio" name="weight">
+                    <input type="radio" name="weight" value="Lbs" [(ngModel)]="maidDetail.weightUnit">
                     <span class="checkmark"></span>
                   </label>
 
-                  <input type="text" name="weightField" id="weightField" placeholder="Weight" />
+                  <input type="text" name="weightField" id="weightField" placeholder="Weight" [(ngModel)]="maidDetail.weight"/>
                 </div>
               </div>
 
@@ -107,17 +118,17 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     ft
-                    <input type="radio" name="height">
+                    <input type="radio" name="height" value="ft" [(ngModel)]="maidDetail.heightUnit">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     cms
-                    <input type="radio" name="height">
+                    <input type="radio" name="height" value="cms" [(ngModel)]="maidDetail.heightUnit">
                     <span class="checkmark"></span>
                   </label>
 
-                  <input type="text" name="heightField" id="weightField" placeholder="Height" />
+                  <input type="text" name="heightField" id="weightField" placeholder="Height" [(ngModel)]="maidDetail.height"/>
                 </div>
               </div>
 
@@ -133,37 +144,37 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Single
-                    <input type="radio" name="materialStatus">
+                    <input type="radio" name="materialStatus" value="Single" [(ngModel)]="maidDetail.maritalStatus">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Married
-                    <input type="radio" name="materialStatus">
+                    <input type="radio" name="materialStatus" value="Married" [(ngModel)]="maidDetail.maritalStatus">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Widow
-                    <input type="radio" name="materialStatus">
+                    <input type="radio" name="materialStatus" value="Widow" [(ngModel)]="maidDetail.maritalStatus">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Single Mother
-                    <input type="radio" name="materialStatus">
+                    <input type="radio" name="materialStatus" value="Single Mother" [(ngModel)]="maidDetail.maritalStatus">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Divorced
-                    <input type="radio" name="materialStatus">
+                    <input type="radio" name="materialStatus" value="Divorced" [(ngModel)]="maidDetail.maritalStatus">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Separate
-                    <input type="radio" name="materialStatus">
+                    <input type="radio" name="materialStatus" value="Separate" [(ngModel)]="maidDetail.maritalStatus">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -180,31 +191,27 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Elementary
-                    <input type="radio" name="education">
+                    <input type="radio" name="education" value="Elementary" [(ngModel)]="maidDetail.education">
                     <span class="checkmark"></span>
                   </label>
-
-                  <label class="containerRadio">
-                    Senior High School
-                    <input type="radio" name="education">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    University
-                    <input type="radio" name="education">
-                    <span class="checkmark"></span>
-                  </label>
-
                   <label class="containerRadio">
                     Junior High School
-                    <input type="radio" name="education">
+                    <input type="radio" name="education" value="Junior High School" [(ngModel)]="maidDetail.education">
                     <span class="checkmark"></span>
                   </label>
-
+                  <label class="containerRadio">
+                    Senior High School
+                    <input type="radio" name="education" value="Senior High School" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
                   <label class="containerRadio">
                     College
-                    <input type="radio" name="education">
+                    <input type="radio" name="education" value="College" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    University
+                    <input type="radio" name="education" value="University" [(ngModel)]="maidDetail.education">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -220,18 +227,31 @@
 
                 <div class="customInput">
                   <label class="containerRadio">
-                    Kg
-                    <input type="radio" name="religion">
+                    Buddhism
+                    <input type="radio" name="religion" value="Buddhism" [(ngModel)]="maidDetail.religion">
                     <span class="checkmark"></span>
                   </label>
-
                   <label class="containerRadio">
-                    Lbs
-                    <input type="radio" name="religion">
+                    Christian
+                    <input type="radio" name="religion" value="Christian" [(ngModel)]="maidDetail.religion">
                     <span class="checkmark"></span>
                   </label>
-
-                  <input type="text" name="weightField" id="weightField" placeholder="Weight" />
+                  <label class="containerRadio">
+                    Muslim
+                    <input type="radio" name="religion" value="Muslim" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Hindu
+                    <input type="radio" name="religion" value="Hindu" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Other
+                    <input type="radio" name="religion" value="Other" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <input type="text" name="weightField" id="weightField" placeholder="Weight" [(ngModel)]="maidDetail.religion"/>
                 </div>
               </div>
 
@@ -244,7 +264,7 @@
                 <label class="mainLabel">Number of Sibling</label>
 
                 <div class="customInput">
-                  <button class="addMinsBtn">-</button><input type="text" name="siblingsField" id="siblingsField" placeholder="0" /><button class="addMinsBtn">+</button>
+                  <button class="addMinsBtn">-</button><input type="text" name="siblingsField" id="siblingsField" placeholder="0" [(ngModel)]="maidDetail.siblings"/><button class="addMinsBtn">+</button>
                 </div>
               </div>
 
@@ -253,7 +273,7 @@
                 <label class="mainLabel">I am number</label>
 
                 <div class="customInput">
-                  <button class="addMinsBtn">-</button><input type="text" name="iMaNmbrField" id="iMaNmbrField" placeholder="0" /><button class="addMinsBtn">+</button>
+                  <button class="addMinsBtn">-</button><input type="text" name="iMaNmbrField" id="iMaNmbrField" placeholder="0" [(ngModel)]="maidDetail.iAmNumber"/><button class="addMinsBtn">+</button>
                 </div>
               </div>
 
@@ -262,7 +282,7 @@
                 <label class="mainLabel">No of sons</label>
 
                 <div class="customInput">
-                  <button class="addMinsBtn">-</button><input type="text" name="noOfSnsField" id="noOfSnsField" placeholder="0" /><button class="addMinsBtn">+</button>
+                  <button class="addMinsBtn">-</button><input type="text" name="noOfSnsField" id="noOfSnsField" placeholder="0" [(ngModel)]="maidDetail.numberOfSon"/><button class="addMinsBtn">+</button>
                 </div>
               </div>
 
@@ -271,7 +291,7 @@
                 <label class="mainLabel">No of daughters</label>
 
                 <div class="customInput">
-                  <button class="addMinsBtn">-</button><input type="text" name="noOfDtrsField" id="noOfDtrsField" placeholder="0" /><button class="addMinsBtn">+</button>
+                  <button class="addMinsBtn">-</button><input type="text" name="noOfDtrsField" id="noOfDtrsField" placeholder="0" [(ngModel)]="maidDetail.numberOfDaughter"/><button class="addMinsBtn">+</button>
                 </div>
               </div>
 
@@ -282,21 +302,21 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="pnfield" placeholder="Passport number" />
+                  <input type="text" name="pnfield" placeholder="Passport number" [(ngModel)]="maidDetail.passportNumber"/>
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="pedfield" placeholder="Passport expiry date" />
+                  <input type="text" name="pedfield" placeholder="Passport expiry date" [(ngModel)]="maidDetail.passportExpiryDate"/>
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="hkidfield" placeholder="Number of Hong Kong Identity Card" />
+                  <input type="text" name="hkidfield" placeholder="Number of Hong Kong Identity Card" [(ngModel)]="maidDetail.hongKongId"/>
                 </div>
               </div>
             </div>
@@ -310,25 +330,25 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Hong Kong
-                    <input type="radio" name="currentlybasedin">
+                    <input type="radio" name="currentlybasedin" value="Hong Kong" [(ngModel)]="maidDetail.currentlyBasedId">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Indonesia
-                    <input type="radio" name="currentlybasedin">
+                    <input type="radio" name="currentlybasedin" value="Indonesia" [(ngModel)]="maidDetail.currentlyBasedId">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Philippine
-                    <input type="radio" name="currentlybasedin">
+                    <input type="radio" name="currentlybasedin" value="Philippine" [(ngModel)]="maidDetail.currentlyBasedId">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Other countries
-                    <input type="radio" name="currentlybasedin">
+                    <input type="radio" name="currentlybasedin" value="Other countries" [(ngModel)]="maidDetail.currentlyBasedId">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -341,11 +361,13 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <select>
-                    <option>Contract situation</option>
-                    <option>Contract situation 1</option>
-                    <option>Contract situation 2</option>
-                    <option>Contract situation 3</option>
+                  <select [(ngModel)]="maidDetail.currentContractStatus">
+                    <option value="1st Timer">1st Timer</option>
+                    <option value="Finished Contract">Finished Contract</option>
+                    <option value="Terminated">Terminated</option>
+                    <option value="Break Contract">Break Contract</option>
+                    <option value="I will break contract if I find a new employer">I will break contract if I find a new employer</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
               </div>
@@ -353,14 +375,14 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="cellphonenumberfield" placeholder="Cellphone number" />
+                  <input type="text" name="cellphonenumberfield" placeholder="Cellphone number" [(ngModel)]="maidDetail.phone"/>
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="fbmfield" placeholder="Facebook/Messenger" />
+                  <input type="text" name="fbmfield" placeholder="Email" [(ngModel)]="maidDetail.email"/>
                 </div>
               </div>
             </div>
@@ -370,14 +392,14 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="domicileaddressfield" placeholder="Domicile address" />
+                  <input type="text" name="domicileaddressfield" placeholder="Domicile address" [(ngModel)]="maidDetail.permanentAddress"/>
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="namereferralfield" placeholder="Name of referral" />
+                  <input type="text" name="namereferralfield" placeholder="Name of referral" [(ngModel)]="maidDetail.referralName"/>
                 </div>
               </div>
             </div>
@@ -385,8 +407,8 @@
           </div>
 
           <div class="btnsBlock">
-            <button class="backBtn">Back</button>
-            <button class="nextBtn">Next</button>
+            <!--<button class="backBtn">Back</button>-->
+            <button class="nextBtn" (click)="saveMaidBasicDetails()">Save</button>
           </div>
         </div>
 

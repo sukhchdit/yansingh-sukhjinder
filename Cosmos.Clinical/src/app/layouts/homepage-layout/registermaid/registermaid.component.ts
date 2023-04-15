@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MaidDetail } from '../../../models/maid/maiddetail.model';
 
 @Component({
   selector: 'app-registermaid',
@@ -8,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterMaidComponent implements OnInit {
   tabselectornew:string = 'basictab';
 
+  maidDetail = new MaidDetail();
+
   ngOnInit() {
 
   }
 
   tabsSliderNew(val) {
     this.tabselectornew = val;
+  }
+
+  saveMaidBasicDetails() {
+
   }
 
 }
