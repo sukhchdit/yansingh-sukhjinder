@@ -18,8 +18,8 @@ namespace Cosmos.Model.Entities.Organization
         [ForeignKey("userId")]
         public User user { get; set; }
         public long organizationInfoId { get; set; }
-        [NotMapped]
-        [ForeignKey("organizationInfoId")]
+        //[NotMapped]
+        //[ForeignKey("organizationInfoId")]
         public OrganizationInfo organizationInfo { get; set; }
 
         [NotMapped]

@@ -32,9 +32,9 @@ export class MaidService {
   }
 
    save(model: MaidDetail) {
-    if (model.id <= 0 || model.id == undefined || model.id == null || model.createdBy <= 0 || model.createdBy == null || model.createdBy == undefined)
-      model.createdBy = this.authService.currentUser.id;
-    model.updatedBy = this.authService.currentUser.id;
+    //if (model.id <= 0 || model.id == undefined || model.id == null || model.createdBy <= 0 || model.createdBy == null || model.createdBy == undefined)
+    //  model.createdBy = this.authService.currentUser.id;
+    //model.updatedBy = this.authService.currentUser.id;
      return this.endpoint.addupdate<MaidDetail>(model, this._saveMaidURL);
   }
 

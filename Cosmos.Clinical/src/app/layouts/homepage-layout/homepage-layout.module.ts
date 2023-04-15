@@ -10,6 +10,8 @@ import { HomePageLayoutRoutingModule } from './homepage-layout-routing.module';
 import { HomePageLayoutComponent } from './homepage-layout.component';
 import { RegisterMaidComponent } from './registermaid/registermaid.component';
 import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
+import { MaidService } from '../../core/services/maid/maid.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
     MaidDetailsComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     HomePageLayoutRoutingModule,
     HttpClientModule,
@@ -29,6 +32,7 @@ import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
   ],
   providers: [
     EndPointService,
+    MaidService
   ]
 })
 export class HomePageLayoutModule { }
