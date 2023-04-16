@@ -10,7 +10,13 @@ header {
     width:100%;
     top:0;
     left:0px;
-
+    .btnMenuToggle{
+        width: 30px;
+        background: transparent;
+        box-shadow: none;
+        border: 0;
+        display: none;
+    }
     @include dflex(column, center, center);
 
     .headerTop {
@@ -27,15 +33,11 @@ header {
 
             h3 {
                 @include dflex(row, center, flex-end);
-                gap: 20px;
+                gap: 10px;
             }
         }
         
         h3 {
-            color:#fff;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
             font-size: 14px;
             line-height: 17px;
             color: #FFFFFF;
@@ -116,4 +118,859 @@ header {
             }
         }
     }
+}
+
+@media (min-width:320px) and (max-width:575px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            display: none!important;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                color:#fff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 120px;
+                height: 44px;
+                background: #FFFFFF;
+                border-radius: 100px;
+                @include dflex(column, center, center);
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(column, flex-end, flex-end);
+                .btnMenuToggle{
+                    display: block;  
+                }
+                nav{
+                    display: none;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(column, center, space-between);
+                            gap:15px;
+                            position: absolute;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    font-family: 'Inter';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (min-width:576px) and (max-width:767px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            display: none!important;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                color:#fff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 120px;
+                height: 44px;
+                background: #FFFFFF;
+                border-radius: 100px;
+                @include dflex(column, center, center);
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(column, flex-end, flex-end);
+                .btnMenuToggle{
+                    display: block;  
+                }
+                nav{
+                    display: none;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(column, center, space-between);
+                            gap:15px;
+                            position: absolute;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    font-family: 'Inter';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+@media (min-width:768px) and (max-width:991px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                font-size: 13px;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 122px;
+                height: 44px;
+                font-size: 13px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(row, flex-end, end);
+                .btnMenuToggle{
+                    display: none;  
+                }
+                nav{
+                    display: block;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(row, center, space-between);
+                            gap:15px;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    font-family: 'Inter';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 13px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+@media (min-width:992px) and (max-width:1199px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                color:#fff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 122px;
+                height: 44px;
+                font-size: 13px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(row, flex-end, end);
+                .btnMenuToggle{
+                    display: none;  
+                }
+                nav{
+                    display: block;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(row, center, space-between);
+                            gap:15px;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    
+                                    font-size: 13px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (min-width:1200px) and (max-width:1399px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                color:#fff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 122px;
+                height: 44px;
+                background: #FFFFFF;
+                border-radius: 100px;
+                @include dflex(column, center, center);
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(row, flex-end, end);
+                .btnMenuToggle{
+                    display: none;  
+                }
+                nav{
+                    display: block;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(row, center, space-between);
+                            gap:15px;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    
+                                    font-size: 13px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        ul{
+                            padding-left: 0px;
+                            li{
+                                a{
+                                    svg{
+                                        width:30px
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+@media (min-width:1400px) and (max-width:1660px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                color:#fff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 122px;
+                height: 44px;
+                background: #FFFFFF;
+                border-radius: 100px;
+                @include dflex(column, center, center);
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(row, flex-end, end);
+                .btnMenuToggle{
+                    display: none;  
+                }
+                nav{
+                    display: block;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(row, center, space-between);
+                            gap:15px;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    
+                                    font-size: 14px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        ul{
+                            padding-left: 0px;
+                            li{
+                                a{
+                                    svg{
+                                        width:30px
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+@media (min-width:1661px) and (max-width:1920px){
+
+    header {
+        position:absolute;
+        width:100%;
+        top:0;
+        left:0px;
+        
+        @include dflex(column, center, center);
+        
+        
+        .headerTop {
+            border-bottom:1px solid #FFFFFF;
+            padding:13px 0px;
+            width:100%;
+            
+            .col:first-child {
+                @include dflex(row, center, flex-start);
+            }
+    
+            .col:last-child {
+                @include dflex(row, center, flex-end);
+    
+                h3 {
+                    @include dflex(row, center, flex-end);
+                    gap: 20px;
+                }
+            }
+            
+            h3 {
+                color:#fff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #FFFFFF;
+            }
+    
+            a {
+                color:#fff;
+                font-weight: 700;
+                text-decoration:none;
+            }
+    
+            .btn {
+                width: 122px;
+                height: 44px;
+                background: #FFFFFF;
+                border-radius: 100px;
+                @include dflex(column, center, center);
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 17px;
+                text-transform: uppercase;
+    
+                color: #00A651;
+            }
+    
+            @include dflex(row, center, center);
+    
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+                }
+            }
+        }
+    
+        .headerBottom {
+            width:100%;
+            padding:10px 0px;
+    
+            @include dflex(row, center, center);
+            .logoSvg {
+                width: 70px;
+            }
+            .navBar{
+                @include dflex(row, flex-end, end);
+                .btnMenuToggle{
+                    display: none;  
+                }
+                nav{
+                    display: block;
+                }
+            }
+            .container {
+                .row {
+                    @include dflex(row, center, space-between);
+    
+                    nav {
+                        ul {
+                            @include dflex(row, center, space-between);
+                            gap:15px;
+                            li {
+                                list-style-type:none;
+    
+                                a {
+                                    
+                                    font-size: 14px;
+                                    line-height: 19px;
+                                    color: #FFFFFF;
+                                    text-decoration:none;
+                                }
+                            }
+                        }
+                    }
+    
+                    .socialMedia{
+                        ul{
+                            padding-left: 0px;
+                            li{
+                                a{
+                                    svg{
+                                        width:30px
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 }

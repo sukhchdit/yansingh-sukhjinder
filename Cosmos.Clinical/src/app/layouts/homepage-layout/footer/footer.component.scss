@@ -101,3 +101,268 @@ footer {
         }
     }
 }
+
+
+
+@media (min-width:320px) and (max-width:480px) {
+
+    footer {
+        padding: 40px 0px 0;
+        .container {
+            @include dflex(column, flex-start, center);
+            gap:30px;
+            max-width: 100%;
+            min-width:100%;
+    
+            .colLeft {
+                width:100%;
+                @include dflex(column, flex-start, center);
+    
+                p {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+    
+                ul {
+                    @include dflex(row, center, flex-start);
+                    gap:20px;
+    
+                    li {
+                        list-style-type:none;
+                    }
+                }
+            }
+    
+            .colRight {
+                width:100%;
+                @include dflex(column, flex-start, flex-start);
+                gap:50px;
+    
+                h3 {
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #FFFFFF;
+                    margin-bottom:20px;
+                }
+    
+                ul {
+                    @include dflex(column, flex-start, center);
+    
+                    li {
+                        font-size: 13px;
+                        line-height: 24px;
+    
+                        a {
+                            font-size: 13px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+    
+                p {
+                    font-size: 13px;
+                    line-height: 24px;
+                    margin-top:50px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:481px) and (max-width:767px) {
+
+    footer {
+        padding: 40px 0px 20px;
+        .container {
+            @include dflex(row, flex-start, center);
+            gap:30px;
+            max-width: 100%;
+            min-width:100%;
+    
+            .colLeft {
+                width:50%;
+                @include dflex(column, flex-start, center);
+    
+                p {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+    
+                ul {
+                    @include dflex(row, center, flex-start);
+                    gap:20px;
+    
+                    li {
+                        list-style-type:none;
+                    }
+                }
+            }
+    
+            .colRight {
+                width:100%;
+                @include dflex(row, flex-start, flex-end);
+                gap:20px;
+    
+                h3 {
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #FFFFFF;
+                    margin-bottom:20px;
+                }
+    
+                ul {
+                    @include dflex(column, flex-start, center);
+    
+                    li {
+                        font-size: 13px;
+                        line-height: 24px;
+    
+                        a {
+                            font-size: 13px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+    
+                p {
+                    font-size: 13px;
+                    line-height: 24px;
+                    margin-top:50px;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+    footer {
+        padding: 40px 0px 20px;
+        .container {
+            @include dflex(row, flex-start, center);
+            gap:30px;
+            max-width: 100%;
+            min-width:100%;
+    
+            .colLeft {
+                width:70%;
+                @include dflex(column, flex-start, center);
+    
+                p {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+    
+                ul {
+                    @include dflex(row, center, flex-start);
+                    gap:20px;
+    
+                    li {
+                        list-style-type:none;
+                    }
+                }
+            }
+    
+            .colRight {
+                width:100%;
+                @include dflex(row, flex-start, flex-end);
+                gap:30px;
+    
+                h3 {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+    
+                ul {
+                    @include dflex(column, flex-start, center);
+    
+                    li {
+                        font-size: 13px;
+                        line-height: 24px;
+    
+                        a {
+                            font-size: 13px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+    
+                p {
+                    font-size: 13px;
+                    line-height: 24px;
+                    margin-top:50px;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media (min-width:992px) and (max-width:1199px) {
+
+    footer {
+        padding: 40px 20px 20px;
+        .container {
+            @include dflex(row, flex-start, center);
+            gap:30px;
+            max-width: 100%;
+            min-width:100%;
+    
+            .colLeft {
+                width:70%;
+                @include dflex(column, flex-start, center);
+    
+                p {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+    
+                ul {
+                    @include dflex(row, center, flex-start);
+                    gap:20px;
+    
+                    li {
+                        list-style-type:none;
+                    }
+                }
+            }
+    
+            .colRight {
+                width:100%;
+                @include dflex(row, flex-start, flex-end);
+                gap:30px;
+    
+                h3 {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+    
+                ul {
+                    @include dflex(column, flex-start, center);
+    
+                    li {
+                        font-size: 13px;
+                        line-height: 24px;
+    
+                        a {
+                            font-size: 13px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+    
+                p {
+                    font-size: 13px;
+                    line-height: 24px;
+                    margin-top:50px;
+                }
+            }
+        }
+    }
+
+
+}
