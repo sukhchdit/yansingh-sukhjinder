@@ -504,3 +504,1815 @@ ul, ol {
     }
   }
 }
+
+
+
+// responsive media query
+
+@media (min-width:320px) and (max-width:575px) {
+  #banner {
+    height: 100%;
+    background-size: 979px 41%;
+    .container {
+      @include dflex(column, center, space-between);
+      height: 100%;
+      gap: 20px;
+        .colLeft {
+          width: 100%;
+  
+          h1 {
+            font-size: 36px;
+            line-height: 42px;
+            color: #FFFFFF;
+          }
+  
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 20px 0 20px 0;
+          }
+  
+          button {
+            width: 165px;
+            height: 40px;
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+  
+        .colRight {
+          width: 100%;
+          .rightInner {
+            padding: 22px 20px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 15px;
+            h3 {
+              font-size: 18px;
+              line-height: 18px;
+              margin-bottom: 0px;
+            }
+  
+            #searchBar {
+              width: 100%;
+              height: 40px;
+              &::placeholder {
+                font-size: 13px;
+              }
+            }
+  
+            .formField {
+              @include dflex(column, flex-start, flex-start);
+              gap: 10px;
+  
+              label.main {
+                font-size: 13px;
+              }
+  
+              ul {
+                @include dflex(row, center, flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+                margin:0px;
+  
+                li {
+                  .containerRadio {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(column, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 100%;
+  
+        img {
+          width:100%;
+        }
+      }
+  
+      .colRight {
+        width: 100%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 14px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 24px;
+          line-height: 30px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(column, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+        width: 100%;
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  
+  #whatWeDo {
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(column, center, center);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 18px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+  
+
+}
+
+
+@media (min-width:576px) and (max-width:767px) {
+  #banner {
+    height: 100%;
+    background-size: 979px 41%;
+    .container {
+      @include dflex(column, center, space-between);
+      height: 100%;
+      gap: 20px;
+        .colLeft {
+          width: 100%;
+  
+          h1 {
+            font-size: 36px;
+            line-height: 42px;
+            color: #FFFFFF;
+          }
+  
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 20px 0 20px 0;
+          }
+  
+          button {
+            width: 165px;
+            height: 40px;
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+  
+        .colRight {
+          width: 100%;
+          .rightInner {
+            padding: 22px 20px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 15px;
+            h3 {
+              font-size: 18px;
+              line-height: 18px;
+              margin-bottom: 0px;
+            }
+  
+            #searchBar {
+              width: 100%;
+              height: 40px;
+              &::placeholder {
+                font-size: 13px;
+              }
+            }
+  
+            .formField {
+              @include dflex(column, flex-start, flex-start);
+              gap: 10px;
+  
+              label.main {
+                font-size: 13px;
+              }
+  
+              ul {
+                @include dflex(row, center, flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+                margin:0px;
+  
+                li {
+                  .containerRadio {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(column, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 100%;
+  
+        img {
+          width:60%;
+        }
+      }
+  
+      .colRight {
+        width: 100%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 30px;
+          line-height: 36px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+    .container-fluid{
+      max-width: 540px;
+    }
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(row, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+        width: 48%;
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  #whatWeDo {
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(column, center, center);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 18px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+  #banner {
+    height: 100%;
+    background-size: cover;
+    .container {
+      @include dflex(row, center, space-between);
+      height: 100%;
+      gap: 20px;
+        .colLeft {
+          width: 50%;
+  
+          h1 {
+            font-size: 36px;
+            line-height: 42px;
+            color: #FFFFFF;
+          }
+  
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 20px 0 20px 0;
+          }
+  
+          button {
+            width: 165px;
+            height: 40px;
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+  
+        .colRight {
+          width: 65%;
+          .rightInner {
+            padding: 22px 20px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 15px;
+            h3 {
+              font-size: 18px;
+              line-height: 18px;
+              margin-bottom: 0px;
+            }
+  
+            #searchBar {
+              width: 100%;
+              height: 40px;
+              &::placeholder {
+                font-size: 13px;
+              }
+            }
+  
+            .formField {
+              @include dflex(row, flex-start, flex-start);
+              gap: 10px;
+  
+              label.main {
+                font-size: 13px;
+              }
+  
+              ul {
+                @include dflex(row, center, flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+                margin:0px;
+  
+                li {
+                  min-width: 110px;
+                  width: 100%;
+                  max-width: 110px;
+                  .containerRadio {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(row, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 47%;
+  
+        img {
+          width:100%;
+        }
+      }
+  
+      .colRight {
+        width: 50%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 30px;
+          line-height: 36px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+   
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(row, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+        width: 48%;
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  #whatWeDo {
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(row, flex-start, flex-start);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 16px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+  #banner {
+    height: 100%;
+    background-size: cover;
+    .container {
+      @include dflex(row, center, space-between);
+      height: 100%;
+      gap: 20px;
+        .colLeft {
+          width: 50%;
+  
+          h1 {
+            font-size: 48px;
+            line-height: 54px;
+            color: #FFFFFF;
+          }
+  
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 20px 0 20px 0;
+          }
+  
+          button {
+            width: 165px;
+            height: 40px;
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+  
+        .colRight {
+          width: 65%;
+          .rightInner {
+            padding: 22px 20px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 15px;
+            h3 {
+              font-size: 24px;
+              line-height: 24px;
+              margin-bottom: 0px;
+            }
+  
+            #searchBar {
+              width: 100%;
+              height: 40px;
+              &::placeholder {
+                font-size: 13px;
+              }
+            }
+  
+            .formField {
+              @include dflex(row, flex-start, flex-start);
+              gap: 10px;
+  
+              label.main {
+                font-size: 13px;
+              }
+  
+              ul {
+                @include dflex(row, center, flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+                margin:0px;
+  
+                li {
+                  min-width: 110px;
+                  width: 100%;
+                  max-width: 110px;
+                  .containerRadio {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(row, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 47%;
+  
+        img {
+          width:100%;
+        }
+      }
+  
+      .colRight {
+        width: 50%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 36px;
+          line-height: 42px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+   
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(row, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+        width: 32%;
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  #whatWeDo {
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(row, flex-start, flex-start);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 16px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width:1200px) and (max-width:1400px) {
+  #banner {
+    height: 100%;
+    background-size: cover;
+    .container {
+      @include dflex(row, center, space-between);
+      height: 100%;
+      gap: 20px;
+        .colLeft {
+          width: 50%;
+  
+          h1 {
+            font-size: 48px;
+            line-height: 54px;
+            color: #FFFFFF;
+          }
+  
+          p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 20px 0 20px 0;
+          }
+  
+          button {
+            width: 165px;
+            height: 40px;
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+  
+        .colRight {
+          width:50%;
+          .rightInner {
+            padding: 22px 20px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 15px;
+            h3 {
+              font-size: 24px;
+              line-height: 24px;
+              margin-bottom: 0px;
+            }
+  
+            #searchBar {
+              width: 100%;
+              height: 40px;
+              &::placeholder {
+                font-size: 13px;
+              }
+            }
+  
+            .formField {
+              @include dflex(row, flex-start, flex-start);
+              gap: 10px;
+  
+              label.main {
+                font-size: 13px;
+              }
+  
+              ul {
+                @include dflex(row, center, flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+                margin:0px;
+  
+                li {
+                  min-width: 110px;
+                  width: 100%;
+                  max-width: 110px;
+                  .containerRadio {
+                    font-size: 13px;
+                    line-height: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(row, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 47%;
+  
+        img {
+          width:100%;
+        }
+      }
+  
+      .colRight {
+        width: 50%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 36px;
+          line-height: 42px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+   
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(row, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+        width: 24%;
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  #whatWeDo {
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(row, flex-start, flex-start);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 16px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+@media (min-width:1401px) and (max-width:1660px) {
+  #banner {
+    height: 100%;
+    background-size: cover;
+    .container {
+      @include dflex(row, center, space-between);
+      height: 100%;
+      gap: 20px;
+        .colLeft {
+          width: 50%;
+  
+          h1 {
+            font-size: 54px;
+            line-height: 60px;
+            color: #FFFFFF;
+          }
+  
+          p {
+            font-size: 18px;
+            line-height: 27px;
+            margin: 20px 0 20px 0;
+          }
+  
+          button {
+            width: 165px;
+            height: 40px;
+            font-size: 13px;
+            line-height: 18px;
+          }
+        }
+  
+        .colRight {
+          width:605px;
+          .rightInner {
+            padding: 22px 28px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 18px;
+            h3 {
+              font-size: 30px;
+              line-height: 38px;
+              margin-bottom: 0px;
+            }
+  
+            #searchBar {
+              width: 100%;
+              height: 40px;
+              &::placeholder {
+                font-size: 13px;
+              }
+            }
+  
+            .formField {
+              @include dflex(row, flex-start, flex-start);
+              gap: 15px;
+  
+              label.main {
+                font-size: 14px;
+              }
+  
+              ul {
+                @include dflex(row, center, flex-start);
+                gap: 10px;
+                flex-wrap: wrap;
+                margin:0px;
+  
+                li {
+                  min-width: 110px;
+                  width: 100%;
+                  max-width: 110px;
+                  .containerRadio {
+                    font-size: 14px;
+                    line-height: 18px;
+                  }
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(row, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 47%;
+  
+        img {
+          width:100%;
+        }
+      }
+  
+      .colRight {
+        width: 50%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 36px;
+          line-height: 42px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+   
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(row, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+        width: 24%;
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  #whatWeDo {
+    padding: 80px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(row, flex-start, flex-start);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 16px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+@media (min-width:1661px) and (max-width:2540px) {
+  #banner {
+    
+    background-size: cover;
+    .container {
+      @include dflex(row, center, space-between);
+      height: 100%;
+      gap: 20px;
+      
+  
+        .colRight {
+       
+          .rightInner {
+            padding: 22px 28px;
+            height: 100%;
+            width: 100%;
+            @include dflex(column, flex-start, center);
+            gap: 18px;
+           
+  
+          
+  
+            .formField {
+              @include dflex(row, flex-start, flex-start);
+              gap: 15px;
+  
+              label.main {
+                font-size: 14px;
+              }
+  
+             
+            }
+          }
+        }
+    }
+  }
+  #about {
+    background: white;
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(row, center, space-between);
+      gap: 20px;
+      .colLeft {
+        width: 47%;
+  
+        img {
+          width:100%;
+        }
+      }
+  
+      .colRight {
+        width: 50%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        h2 {
+          font-size: 36px;
+          line-height: 42px;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+          margin-bottom: 20px;
+        }
+  
+        h4 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+  
+        ul {
+          li {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+  #teamMembers {
+    padding: 40px 0 40px 0;
+    @include dflex(column, center, center);
+    gap: 50px;
+   
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .teamMembersList {
+      @include dflex(row, center, center);
+      gap: 15px;
+      flex-wrap: wrap;
+  
+      .team {
+     
+        @include dflex(column, center, center);
+        padding:0px;
+        overflow: hidden;
+  
+        .imageBlock {
+          position: relative;
+          width: 100%;
+  
+          img {
+            width: 100%;
+          }
+        }
+  
+        .teamDetail {
+          width: 100%;
+          padding: 0 20px 20px;
+  
+          ul {
+            gap: 5px;
+  
+            li {
+              @include dflex(row, center, flex-start);
+              width: 100%;
+  
+              a {
+                font-size: 13px;
+                line-height: 18px;
+              }
+  
+              h4 {
+                font-size: 13px;
+              }
+  
+              h5 {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .view {
+  
+      button {
+        width: 70%;
+        max-width: 430px;
+        height: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+  #whatWeDo {
+    padding: 40px 0px;
+    @include dflex(column, center, center);
+    gap: 40px;
+  
+    .headingBlck {
+      @include dflex(column, center, center);
+  
+      h4 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+  
+      h2 {
+        font-size: 36px;
+        line-height: 42px;
+      }
+    }
+  
+    .whatWeDoList {
+      @include dflex(row, flex-start, flex-start);
+      gap: 15px;
+  
+      .whatWeDoItem {
+        width:100%;
+        min-height: auto;
+        padding: 20px;
+        @include dflex(column, center, flex-start);
+        gap: 0px;
+        svg{
+          width: 60px;
+        }
+        h4 {
+          font-size: 16px;
+          line-height: 30px;
+        }
+  
+        p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
