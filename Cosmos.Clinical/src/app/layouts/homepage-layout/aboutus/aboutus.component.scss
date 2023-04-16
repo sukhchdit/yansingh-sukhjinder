@@ -1,0 +1,381 @@
+@mixin dflex($fdir, $aitems, $jcontent) {
+    display:flex;
+    flex-direction:$fdir;
+    align-items:$aitems;
+    justify-content:$jcontent;
+}
+
+#innerBanner {
+    /*background: url('../../assets/registrationBgImage.jpg') no-repeat;*/
+    background: url(../../../../assets/images/maidDetailBanner.jpg) no-repeat;
+    background-size: cover;
+    min-height: 460px;
+    @include dflex(column, center, center);
+    padding-top: 155px;
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      h2 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 73px;
+        color: #FFFFFF;
+		@media (max-width:767px) {
+			font-size: 42px;
+        	line-height: 48px;
+		}
+		@media (max-width:991px) {
+			font-size: 48px;
+        	line-height: 54px;
+		}
+		@media (max-width:1200px) {
+			font-size: 52px;
+        	line-height: 60px;
+		}
+	  
+      }
+  
+      h5 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+      }
+    }
+}
+
+#about {
+    background: white;
+    padding: 100px 0px;
+    @include dflex(column, center, center);
+    .row {
+      @include dflex(row, center, space-between);
+      .colRight {
+        width: 50%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #DA1F26;
+          margin-bottom: 4px;
+        }
+  
+        h2 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 800;
+          font-size: 40px;
+          line-height: 48px;
+          color: #000000;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 30px;
+          color: #808080;
+          margin-bottom: 43px;
+        }
+  
+        h4 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #DA1F26;
+          margin-bottom: 4px;
+        }
+  
+        ul {
+          li {
+            list-style-type: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            color: #808080;
+          }
+        }
+      }
+      .colLeft{
+        width: 50%;
+        .aboutUsImageBox {
+            position: relative;
+            @include dflex(row, flex-start, flex-end);
+            padding-top: 70px;
+            margin-right: 26px;
+            gap: 15px;
+            .image {
+                border-radius: 5px;
+                &.image1{
+                    padding-top: 70px;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+        }
+      }
+    }
+  }
+  
+
+  #jobPosting {
+    background: #f3f3f3;
+    padding: 100px 0px;
+    @include dflex(column, center, center);
+  
+    .row {
+      @include dflex(row, center, space-between);
+  
+      
+  
+      .jobProcess {
+        width: 100%;
+        @include dflex(column, flex-start, center);
+  
+        h3 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #DA1F26;
+          margin-bottom: 4px;
+        }
+  
+        h2 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 800;
+          font-size: 40px;
+          line-height: 48px;
+          color: #000000;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 30px;
+          color: #808080;
+          margin-bottom: 43px;
+        }
+  
+        h5 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          color: #DA1F26;
+          margin-bottom: 4px;
+        }
+  
+        ul {
+          li {
+            list-style-type: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            color: #808080;
+          }
+        }
+      }
+      .colLeft{
+        width: 50%;
+        .aboutUsImageBox {
+            position: relative;
+            @include dflex(row, flex-start, flex-end);
+            padding-top: 70px;
+            margin-right: 26px;
+            gap: 15px;
+            .image {
+                border-radius: 5px;
+                &.image1{
+                    padding-top: 70px;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+        }
+      }
+    }
+  }
+  
+
+  #testimonials {
+    background: #ffffff;
+    padding: 100px 0px;
+    @include dflex(column, center, center);
+    .testimonialHeading {
+        width: 100%;
+        @include dflex(column, center, center);
+  
+        h3 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #DA1F26;
+          margin-bottom: 4px;
+        }
+  
+        h2 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 800;
+          font-size: 40px;
+          line-height: 48px;
+          color: #000000;
+        }
+  
+        .saperator {
+          width: 120px;
+          height: 2px;
+          background: #DA1F26;
+          border-radius: 20px;
+          margin: 12px 0 30px 0;
+        }
+  
+        p {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 30px;
+          color: #808080;
+          margin-bottom: 43px;
+        }
+  
+        h5 {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          color: #DA1F26;
+          margin-bottom: 4px;
+        }
+  
+        ul {
+          li {
+            list-style-type: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            color: #808080;
+          }
+        }
+      }
+      .testimonialSlider{
+        
+        .carousel-indicators button{
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: #c9c9c9;
+          &.active{
+            background-color: #DA1F26;
+          }
+        }
+        .carousel-item{
+            padding: 50px
+        }
+        .contentBox{
+            @include dflex(row, center, center);
+            padding: 50px;
+            background-color: #fff;
+            margin-top: 30px;
+            box-shadow: 0 16px 24px #343d561a;
+            .leftCol{
+                width: 30%;
+                .avtar{
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 200px;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .rightCol{
+                width: 70%;
+                .feedback{
+                    p{
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 30px;
+                        color: #808080;
+                        margin-bottom: 43px;
+                    }
+                    h3{
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: #000000;
+                        margin-bottom: 4px;
+                    }
+                    h6{
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #DA1F26;
+                        margin-bottom: 4px;
+                    }
+                }
+            }
+        }
+      }
+    
+}
