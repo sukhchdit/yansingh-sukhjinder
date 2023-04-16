@@ -421,10 +421,7 @@
         <!--Skills-->
         <div class="blockItemNew" id="blockItemNew2" *ngIf="tabselectornew == 'skillstab'">
           <div class="formBlock">
-
             <h2>Languages</h2>
-
-
             <!--Form Field Main Block-->
             <div class="formBlockInner">
               <!--Field-->
@@ -434,19 +431,19 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Learning
-                    <input type="radio" name="cantonese" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="cantonese" value="Learning" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Average
-                    <input type="radio" name="cantonese" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="cantonese" value="Average" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Good
-                    <input type="radio" name="cantonese" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="cantonese" value="Good" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -459,19 +456,19 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Learning
-                    <input type="radio" name="english" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="english" value="Learning" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Average
-                    <input type="radio" name="english" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="english" value="Average" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Good
-                    <input type="radio" name="english" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="english" value="Good" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -485,19 +482,19 @@
                 <div class="customInput">
                   <label class="containerRadio">
                     Learning
-                    <input type="radio" name="mandarin" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="mandarin" value="Learning" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Average
-                    <input type="radio" name="mandarin" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="mandarin" value="Average" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerRadio">
                     Good
-                    <input type="radio" name="mandarin" [(ngModel)]="maidDetail.referralName">
+                    <input type="radio" name="mandarin" value="Good" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -588,50 +585,47 @@
                 <div class="customInput">
                   <label class="containerCheckbox">
                     Taking care of babies
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                    <input type="checkbox" value="Taking care of babies" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerCheckbox">
                     Taking care of children
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                    <input type="checkbox" value="Taking care of children" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerCheckbox">
                     Taking care of elderly
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                    <input type="checkbox" value="Taking care of elderly" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerCheckbox">
                     Taking care of disabled
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                    <input type="checkbox" value="Taking care of disabled" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerCheckbox">
                     Pet care
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                    <input type="checkbox" value="Pet care" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
 
                   <label class="containerCheckbox">
                     Cooking
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                    <input type="checkbox" value="Cooking" [(ngModel)]="maidDetail.referralName">
                     <span class="checkmark"></span>
                   </label>
                 </div>
               </div>
-
             </div>
-
-
           </div>
 
           <div class="btnsBlock">
             <button class="backBtn" (click)="previous('basictab')">Back</button>
-            <button class="nextBtn">Next</button>
+            <button class="nextBtn" (click)="saveMaidSkills()">Next</button>
           </div>
         </div>
 
@@ -814,7 +808,7 @@
 
           <div class="btnsBlock">
             <button class="backBtn" (click)="previous('skillstab')">Back</button>
-            <button class="nextBtn">Next</button>
+            <button class="nextBtn" (click)=" saveMaidExperience()">Next</button>
           </div>
         </div>
 
@@ -999,7 +993,7 @@
 
           <div class="btnsBlock">
             <button class="backBtn" (click)="previous('experiencetab')">Back</button>
-            <button class="nextBtn">Next</button>
+            <button class="nextBtn" (click)="saveMaidGeneralquestions()">Next</button>
           </div>
 
         </div>
@@ -1041,7 +1035,7 @@
 
             <div class="btnsBlock">
               <button class="backBtn" (click)="previous('questionstab')">Back</button>
-              <button class="nextBtn">Next</button>
+              <button class="nextBtn" (click)="saveMaidPhoto()">Next</button>
             </div>
           </div>
         </div>
