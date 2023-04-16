@@ -12,6 +12,8 @@ import { RegisterMaidComponent } from './registermaid/registermaid.component';
 import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
 import { MaidService } from '../../core/services/maid/maid.service';
 import { FormsModule } from '@angular/forms';
+import { ContactUsComponent } from './contactus/contactus.component';
+import { AboutUsComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HeaderComponent,
     RegisterMaidComponent,
-    MaidDetailsComponent
+    MaidDetailsComponent,
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     FormsModule,
