@@ -85,6 +85,13 @@ header {
                 @include dflex(row, center, space-between);
 
                 nav {
+                    .navbar-toggler{
+                        border:1px solid #fff;
+                        .navbar-toggler-icon{
+                            filter: invert(1)
+                        }
+                    }
+
                     ul {
                         @include dflex(row, center, space-between);
                         gap:15px;
@@ -109,9 +116,15 @@ header {
                     ul {
                         @include dflex(row, center, space-between);
                         gap:15px;
-
+                        margin-bottom: 0px;
                         li {
                             list-style-type:none;
+
+                            a{
+                                svg{
+                                    width:30px
+                                }
+                            }
                         }
                     }
                 }
@@ -119,6 +132,7 @@ header {
         }
     }
 }
+
 
 @media (min-width:320px) and (max-width:575px){
 
@@ -201,12 +215,7 @@ header {
             }
             .navBar{
                 @include dflex(column, flex-end, flex-end);
-                .btnMenuToggle{
-                    display: block;  
-                }
-                nav{
-                    display: none;
-                }
+               
             }
             .container {
                 .row {
@@ -214,20 +223,31 @@ header {
     
                     nav {
                         ul {
-                            @include dflex(column, center, space-between);
+                            @include dflex(column, flex-start, space-between);
                             gap:15px;
                             position: absolute;
+                            min-width: 280px;
+                            right: 11px;
+                            background-color: #fff;
+                            top: 64px;
+                            box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
                             li {
                                 list-style-type:none;
-    
+                                width: 100%;
                                 a {
                                     font-family: 'Inter';
                                     font-style: normal;
                                     font-weight: 400;
                                     font-size: 16px;
                                     line-height: 19px;
-                                    color: #FFFFFF;
+                                    color: #DA1F26;
                                     text-decoration:none;
+                                    padding: 15px 20px;
+                                    width: 100%;
+                                    &:hover{
+                                        background-color: #DA1F26;
+                                        color: #fff;
+                                    }
                                 }
                             }
                         }
@@ -325,12 +345,8 @@ header {
             }
             .navBar{
                 @include dflex(column, flex-end, flex-end);
-                .btnMenuToggle{
-                    display: block;  
-                }
-                nav{
-                    display: none;
-                }
+               
+                
             }
             .container {
                 .row {
@@ -338,20 +354,31 @@ header {
     
                     nav {
                         ul {
-                            @include dflex(column, center, space-between);
+                            @include dflex(column, flex-start, space-between);
                             gap:15px;
                             position: absolute;
+                            min-width: 280px;
+                            right: 11px;
+                            background-color: #fff;
+                            top: 64px;
+                            box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
                             li {
                                 list-style-type:none;
-    
+                                width: 100%;
                                 a {
                                     font-family: 'Inter';
                                     font-style: normal;
                                     font-weight: 400;
                                     font-size: 16px;
                                     line-height: 19px;
-                                    color: #FFFFFF;
+                                    color: #DA1F26;
                                     text-decoration:none;
+                                    padding: 15px 20px;
+                                    width: 100%;
+                                    &:hover{
+                                        background-color: #DA1F26;
+                                        color: #fff;
+                                    }
                                 }
                             }
                         }
@@ -448,19 +475,32 @@ header {
     
                     nav {
                         ul {
-                            @include dflex(row, center, space-between);
+                            @include dflex(column, flex-start, space-between);
                             gap:15px;
+                            position: absolute;
+                            min-width: 280px;
+                            right: 11px;
+                            background-color: #fff;
+                            top: 64px;
+                            box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+
                             li {
                                 list-style-type:none;
-    
+                                width: 100%;
                                 a {
                                     font-family: 'Inter';
                                     font-style: normal;
                                     font-weight: 400;
-                                    font-size: 13px;
+                                    font-size: 16px;
                                     line-height: 19px;
-                                    color: #FFFFFF;
+                                    color: #DA1F26;
                                     text-decoration:none;
+                                    padding: 15px 20px;
+                                    width: 100%;
+                                    &:hover{
+                                        background-color: #DA1F26;
+                                        color: #fff;
+                                    }
                                 }
                             }
                         }

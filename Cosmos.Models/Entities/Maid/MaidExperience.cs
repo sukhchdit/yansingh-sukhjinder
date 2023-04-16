@@ -18,8 +18,8 @@ namespace Cosmos.Models.Entities.Maid
         public string reasonOfLeaving { get; set; }
         public long maidDetailId { get; set; }
 
-        [NotMapped]
-        [ForeignKey("maidDetailId")]
+        //[NotMapped]
+        //[ForeignKey("maidDetailId")]
         public MaidDetail maidDetail { get; set; }
         public IList<MaidExperienceJobDuty> maidExperienceJobDuty { get; set; }
 

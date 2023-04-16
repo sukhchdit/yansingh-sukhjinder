@@ -12,8 +12,8 @@ namespace Cosmos.Models.Entities.Maid
         public string dutyName { get; set; }
         public long maidDetailId { get; set; }
 
-        [NotMapped]
-        [ForeignKey("maidDetailId")]
+        //[NotMapped]
+        //[ForeignKey("maidDetailId")]
         public MaidDetail maidDetail { get; set; }
     }
 }
