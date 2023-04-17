@@ -1,5 +1,4 @@
 import { BaseContact } from '../basecontact.model';
-import { MaidDuty } from './maidduty.model';
 import { MaidExperience } from './maidexperience.model';
 
 export class MaidDetail extends BaseContact {
@@ -48,10 +47,27 @@ export class MaidDetail extends BaseContact {
   takeCareDisabledElderly: boolean;
   shareRoomWithElderlyKids: boolean;
   chineseZodiac: string;
+  goOnHoliday: string;
   maidCode: string;
   lastFinishContractDate: Date;
   maidEmployementStatus: boolean;
 
+  hkExp: string;
+  singaporeExp: string;
+  taiwanExp: string;
+  malaysiaExp: string;
+  middleEastExp: string;
+  saudiArabiaExp: string;
+  indonesiaExp: string;
+  philippinesExp: string;
+  otherExp: string;
+
+  babies: boolean;
+  children: boolean;
+  elderly: boolean;
+  disabled: boolean;
+  petCare: boolean;
+  cooking: boolean;
+
   maidExperienceJobDuty: MaidExperience[] = [];
-  maidDuty: MaidDuty[]=[];
 }
