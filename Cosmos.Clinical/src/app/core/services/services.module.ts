@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaidService } from './maid/maid.service';
+import { ToastNotificationService } from './toastnotification.service';
 
 
 
@@ -10,7 +11,9 @@ import { MaidService } from './maid/maid.service';
     CommonModule
   ],
   exports: [
-    MaidService
-  ]
+    MaidService,
+    ToastNotificationService
+  ],
+  providers: []
 })
 export class ServicesModule { }
