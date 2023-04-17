@@ -20,7 +20,7 @@ export class MaidService {
   }
 
   get(id) {
-    const url = this._getMaidByIdURL + "?id=" + id;
+    const url = this._getMaidByIdURL + "?maidId=" + id;
     return this.endpoint.get<MaidDetail>(url);
   }
 
