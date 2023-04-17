@@ -1,4 +1,4 @@
-<app-header></app-header>
+﻿<app-header></app-header>
 
 <section id="innerBanner">
   <div class="container">
@@ -11,643 +11,83 @@
 
   <div class="container">
 
-      <div class="newTabsBtns">
-        <button class="blckBtn" (click)="tabselectornew = 'basictab';tabsSliderNew('basictab');" [ngClass]="{'active' : tabselectornew == 'basictab'}" id="basicTab">Basic</button>
+    <div class="newTabsBtns">
+      <button class="blckBtn" (click)="tabselectornew = 'basictab';tabsSliderNew('basictab');" [ngClass]="{'active' : tabselectornew == 'basictab'}" id="basicTab">Basic</button>
 
-        <button class="blckBtn" (click)="tabselectornew = 'skillstab';tabsSliderNew('skillstab');" [ngClass]="{'active' : tabselectornew == 'skillstab'}" id="skillsTab">Skills</button>
+      <button class="blckBtn" (click)="tabselectornew = 'skillstab';tabsSliderNew('skillstab');" [ngClass]="{'active' : tabselectornew == 'skillstab'}" id="skillsTab">Skills</button>
 
-        <button class="blckBtn" (click)="tabselectornew = 'experiencetab';tabsSliderNew('experiencetab');" [ngClass]="{'active' : tabselectornew == 'experiencetab'}" id="experienceTab">Experience</button>
+      <!--<button class="blckBtn" (click)="tabselectornew = 'experiencetab';tabsSliderNew('experiencetab');" [ngClass]="{'active' : tabselectornew == 'experiencetab'}" id="experienceTab">Experience</button>-->
 
-        <button class="blckBtn" (click)="tabselectornew = 'questionstab';tabsSliderNew('questionstab');" [ngClass]="{'active' : tabselectornew == 'questionstab'}" id="questionsTab">Questions</button>
+      <button class="blckBtn" (click)="tabselectornew = 'questionstab';tabsSliderNew('questionstab');" [ngClass]="{'active' : tabselectornew == 'questionstab'}" id="questionsTab">Questions</button>
 
-        <button class="blckBtn" (click)="tabselectornew = 'savetab';tabsSliderNew('savetab');" [ngClass]="{'active' : tabselectornew == 'savetab'}" id="saveTab">Save</button>
-      </div>
+      <button class="blckBtn" (click)="tabselectornew = 'savetab';tabsSliderNew('savetab');" [ngClass]="{'active' : tabselectornew == 'savetab'}" id="saveTab">Photo</button>
+    </div>
 
-      <div class="newTabsContent scrollbar-new-design">
-        <!--Basic-->
-        <div class="blockItemNew" id="blockItemNew1" *ngIf="tabselectornew == 'basictab'">
-          <form class="formStyle"
-                name="form"
-                (ngSubmit)="saveMaidBasicDetails(f1)"
-                #f1="ngForm">
-            <div class="formBlock">
-
-              <h2>Basic information</h2>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="fnamefield" id="mName" placeholder="Full Name" [(ngModel)]="maidDetail.name" />
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="nicknamefield" id="nickName" placeholder="Nick Name" [(ngModel)]="maidDetail.nickName" />
-                  </div>
-                </div>
-              </div>
-
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Nationality</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      Filipino
-                      <input type="radio" name="nationality" id="nationalityFilipino" value="Filipino" [(ngModel)]="maidDetail.nationality">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Indonesian
-                      <input type="radio" name="nationality1" value="Indonesian" id="nationalityIndonesian" [(ngModel)]="maidDetail.nationality">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Indian
-                      <input type="radio" name="nationality2" value="Indian" id="nationalityIndian" [(ngModel)]="maidDetail.nationality">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Sri Lankan
-                      <input type="radio" name="nationality3" value="Sri Lankan" id="nationalitySrilanka" [(ngModel)]="maidDetail.nationality">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="date" name="nicknamefield" placeholder="Date of birth" id="dateOfBirth" [(ngModel)]="maidDetail.dateOfBirth" />
-                  </div>
-                </div>
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Weight</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      Kg
-                      <input type="radio" name="weight" value="Kg" id="weightUnitKg" [(ngModel)]="maidDetail.weightUnit">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Lbs
-                      <input type="radio" name="weight1" value="Lbs" id="weightUnitLbs" [(ngModel)]="maidDetail.weightUnit">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <input type="text" name="weightField" id="weight" placeholder="Weight" [(ngModel)]="maidDetail.weight" />
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Height</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      ft
-                      <input type="radio" name="height" value="ft" id="heightUnitFt" [(ngModel)]="maidDetail.heightUnit">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      cms
-                      <input type="radio" name="height1" value="cms" id="heightUnitCms" [(ngModel)]="maidDetail.heightUnit">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <input type="text" name="heightField" id="heightField" placeholder="Height" [(ngModel)]="maidDetail.height" />
-                  </div>
-                </div>
-
-
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Marital status</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      Single
-                      <input type="radio" name="materialStatus" id="maritalStatusSingle" value="Single" [(ngModel)]="maidDetail.maritalStatus">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Married
-                      <input type="radio" name="materialStatus1" id="maritalStatusMarried" value="Married" [(ngModel)]="maidDetail.maritalStatus">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Widow
-                      <input type="radio" name="materialStatus2" value="Widow" id="maritalStatusWidow" [(ngModel)]="maidDetail.maritalStatus">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Single Mother
-                      <input type="radio" name="materialStatus3" id="maritalStatusSingleMother" value="Single Mother" [(ngModel)]="maidDetail.maritalStatus">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Divorced
-                      <input type="radio" name="materialStatus4" value="Divorced" id="maritalStatusDivorced" [(ngModel)]="maidDetail.maritalStatus">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Separate
-                      <input type="radio" name="materialStatus5" value="Separate" id="maritalStatusSeparate" [(ngModel)]="maidDetail.maritalStatus">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Education</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      Elementary
-                      <input type="radio" name="education" value="Elementary" id="educationElementary" [(ngModel)]="maidDetail.education">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Junior High School
-                      <input type="radio" name="education1" value="Junior High School" id="educationJuniorHighSchool" [(ngModel)]="maidDetail.education">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Senior High School
-                      <input type="radio" name="education2" value="Senior High School" id="educationSeniorHighSchool" [(ngModel)]="maidDetail.education">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      College
-                      <input type="radio" name="education3" value="College" id="educationCollege" [(ngModel)]="maidDetail.education">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      University
-                      <input type="radio" name="education4" value="University" id="educationUniversity" [(ngModel)]="maidDetail.education">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Religion</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      Buddhism
-                      <input type="radio" name="religion" value="Buddhism" id="religionBuddhism" [(ngModel)]="maidDetail.religion">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Christian
-                      <input type="radio" name="religion1" value="Christian" id="religionChristian" [(ngModel)]="maidDetail.religion">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Muslim
-                      <input type="radio" name="religion2" value="Muslim" id="religionMuslim" [(ngModel)]="maidDetail.religion">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Hindu
-                      <input type="radio" name="religion3" value="Hindu" id="religionHindu" [(ngModel)]="maidDetail.religion">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="containerRadio">
-                      Other
-                      <input type="radio" name="religion" value="Other" id="religionOther" [(ngModel)]="maidDetail.religion">
-                      <span class="checkmark"></span>
-                    </label>
-                    <input type="text" name="weightField4" id="weightField" placeholder="Weight" [(ngModel)]="maidDetail.religion" />
-                  </div>
-                </div>
-
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner addMinusFieldMain">
-                <!--Field-->
-                <div class="formField addMinusBtnBlck">
-                  <label class="mainLabel">Number of Sibling</label>
-
-                  <div class="customInput">
-                    <button class="addMinsBtn" name="a1">-</button><input type="text" name="siblingsField" id="siblingsField" placeholder="0" [(ngModel)]="maidDetail.siblings" /><button class="addMinsBtn" name="a2">+</button>
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField addMinusBtnBlck">
-                  <label class="mainLabel">I am number</label>
-
-                  <div class="customInput">
-                    <button class="addMinsBtn" name="a3">-</button><input type="text" name="iMaNmbrField" id="iMaNmbrField" placeholder="0" [(ngModel)]="maidDetail.iAmNumber" /><button name="a4" class="addMinsBtn">+</button>
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField addMinusBtnBlck">
-                  <label class="mainLabel">No of sons</label>
-
-                  <div class="customInput">
-                    <button class="addMinsBtn" name="a5">-</button><input type="text" name="noOfSnsField" id="noOfSnsField" placeholder="0" [(ngModel)]="maidDetail.numberOfSon" /><button name="a6" class="addMinsBtn">+</button>
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField addMinusBtnBlck">
-                  <label class="mainLabel">No of daughters</label>
-
-                  <div class="customInput">
-                    <button class="addMinsBtn" name="a7">-</button><input type="text" name="noOfDtrsField" id="noOfDtrsField" placeholder="0" [(ngModel)]="maidDetail.numberOfDaughter" /><button name="a8" class="addMinsBtn">+</button>
-                  </div>
-                </div>
-
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="pnfield" placeholder="Passport number" id="passportNumber" [(ngModel)]="maidDetail.passportNumber" />
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="pedfield2" placeholder="Passport expiry date" id="passportExpiryDate" [(ngModel)]="maidDetail.passportExpiryDate" />
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="hkidfield3" placeholder="Number of Hong Kong Identity Card" id="hongKongId" [(ngModel)]="maidDetail.hongKongId" />
-                  </div>
-                </div>
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField radioBtns">
-                  <label class="mainLabel">Currently based in</label>
-
-                  <div class="customInput">
-                    <label class="containerRadio">
-                      Hong Kong
-                      <input type="radio" name="currentlybasedin" value="Hong Kong" id="currentlyBasedInHongKong" [(ngModel)]="maidDetail.currentlyBasedIn">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Indonesia
-                      <input type="radio" name="currentlybasedin1" value="Indonesia" id="currentlyBasedInIndonesia" [(ngModel)]="maidDetail.currentlyBasedIn">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Philippine
-                      <input type="radio" name="currentlybasedin2" value="Philippine" id="currentlyBasedInPhilippine" [(ngModel)]="maidDetail.currentlyBasedIn">
-                      <span class="checkmark"></span>
-                    </label>
-
-                    <label class="containerRadio">
-                      Other countries
-                      <input type="radio" name="currentlybasedin3" value="Other countries" id="currentlyBasedInOthercountries" [(ngModel)]="maidDetail.currentlyBasedIn">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <select name="a10" id="currentContractStatus" [(ngModel)]="maidDetail.currentContractStatus">
-                      <option value="1st Timer">1st Timer</option>
-                      <option value="Finished Contract">Finished Contract</option>
-                      <option value="Terminated">Terminated</option>
-                      <option value="Break Contract">Break Contract</option>
-                      <option value="I will break contract if I find a new employer">I will break contract if I find a new employer</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="cellphonenumberfield" id="phone" placeholder="Cellphone number" [(ngModel)]="maidDetail.phone" />
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="fbmfield" id="email" placeholder="Email" [(ngModel)]="maidDetail.email" />
-                  </div>
-                </div>
-              </div>
-
-              <!--Form Field Main Block-->
-              <div class="formBlockInner">
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="domicileaddressfield" id="permanentAddress" placeholder="Domicile address" [(ngModel)]="maidDetail.permanentAddress" />
-                  </div>
-                </div>
-
-                <!--Field-->
-                <div class="formField">
-                  <div class="customInput">
-                    <input type="text" name="namereferralfield" id="referralName" placeholder="Name of referral" [(ngModel)]="maidDetail.referralName" />
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="btnsBlock">
-              <!--<button class="backBtn">Back</button>-->
-              <input class="nextBtn" name="submit" type="submit" value="Save"/>
-              <!--<button class="nextBtn" (click)="saveMaidBasicDetails()">Save</button>-->
-            </div>
-            </form>
-        </div>
-
-        <!--Skills-->
-        <div class="blockItemNew" id="blockItemNew2" *ngIf="tabselectornew == 'skillstab'">
-          <div class="formBlock">
-            <h2>Languages</h2>
-            <!--Form Field Main Block-->
-            <div class="formBlockInner">
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Cantonese</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Learning
-                    <input type="radio" name="cantonese" value="Learning" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    Average
-                    <input type="radio" name="cantonese" value="Average" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    Good
-                    <input type="radio" name="cantonese" value="Good" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">English</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Learning
-                    <input type="radio" name="english" value="Learning" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    Average
-                    <input type="radio" name="english" value="Average" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    Good
-                    <input type="radio" name="english" value="Good" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-              </div>
-
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Mandarin</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Learning
-                    <input type="radio" name="mandarin" value="Learning" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    Average
-                    <input type="radio" name="mandarin" value="Average" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    Good
-                    <input type="radio" name="mandarin" value="Good" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <h2>Countries Experience</h2>
-
-            <!--Form Field Main Block-->
-            <div class="formBlockInner CountriesExperienceField">
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="hkcefield" placeholder="Hong Kong" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="mcefield" placeholder="Malaysia" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="tcefield" placeholder="Taiwan" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="sacefield" placeholder="Saudi Arabia" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="mecefield" placeholder="Middle East" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="pcefield" placeholder="Philippines" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="icefield" placeholder="Indonesia" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="scefield" placeholder="Singapore" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="ocefield" placeholder="Others" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <input type="text" name="ocefield" placeholder="Others" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-            </div>
-
-            <!--Form Field Main Block-->
-            <div class="formBlockInner">
-              <!--Field-->
-              <div class="formField checkboxBtns">
-                <label class="mainLabel">Currently based in</label>
-
-                <div class="customInput">
-                  <label class="containerCheckbox">
-                    Taking care of babies
-                    <input type="checkbox" value="Taking care of babies" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Taking care of children
-                    <input type="checkbox" value="Taking care of children" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Taking care of elderly
-                    <input type="checkbox" value="Taking care of elderly" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Taking care of disabled
-                    <input type="checkbox" value="Taking care of disabled" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Pet care
-                    <input type="checkbox" value="Pet care" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Cooking
-                    <input type="checkbox" value="Cooking" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="btnsBlock">
-            <button class="backBtn" (click)="previous('basictab')">Back</button>
-            <button class="nextBtn" (click)="saveMaidSkills()">Next</button>
-          </div>
-        </div>
-
-        <!--Experience-->
-        <div class="blockItemNew" id="blockItemNew3" *ngIf="tabselectornew == 'experiencetab'">
+    <div class="newTabsContent scrollbar-new-design">
+      <!--Basic-->
+      <div class="blockItemNew" id="blockItemNew1" *ngIf="tabselectornew == 'basictab'">
+        <form class="formStyle"
+              name="form"
+              (ngSubmit)="saveMaidBasicDetails(f1)"
+              #f1="ngForm">
           <div class="formBlock">
 
-            <h2>Working experience (1)</h2>
+            <h2>Basic information</h2>
 
             <!--Form Field Main Block-->
             <div class="formBlockInner">
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="workExpFrmField" placeholder="Working period (from)" [(ngModel)]="maidDetail.referralName"/>
+                  <input type="text" name="fnamefield" id="mName" placeholder="Full Name" [(ngModel)]="maidDetail.name" />
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="workExpToField" placeholder="Working period (to)" [(ngModel)]="maidDetail.referralName"/>
+                  <input type="text" name="nicknamefield" id="nickName" placeholder="Nick Name" [(ngModel)]="maidDetail.nickName" />
+                </div>
+              </div>
+            </div>
+
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Nationality</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Filipino
+                    <input type="radio" name="nationality" id="nationalityFilipino" value="Filipino" [(ngModel)]="maidDetail.nationality">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Indonesian
+                    <input type="radio" name="nationality1" value="Indonesian" id="nationalityIndonesian" [(ngModel)]="maidDetail.nationality">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Indian
+                    <input type="radio" name="nationality2" value="Indian" id="nationalityIndian" [(ngModel)]="maidDetail.nationality">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Sri Lankan
+                    <input type="radio" name="nationality3" value="Sri Lankan" id="nationalitySrilanka" [(ngModel)]="maidDetail.nationality">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="date" name="nicknamefield" placeholder="Date of birth" id="dateOfBirth" [(ngModel)]="maidDetail.dateOfBirth" />
                 </div>
               </div>
             </div>
@@ -655,137 +95,264 @@
             <!--Form Field Main Block-->
             <div class="formBlockInner">
               <!--Field-->
-              <div class="formField">
+              <div class="formField radioBtns">
+                <label class="mainLabel">Weight</label>
+
                 <div class="customInput">
-                  <input type="text" name="workExpLocationField" placeholder="Location" [(ngModel)]="maidDetail.referralName"/>
+                  <label class="containerRadio">
+                    Kg
+                    <input type="radio" name="weight" value="Kg" id="weightUnitKg" [(ngModel)]="maidDetail.weightUnit">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Lbs
+                    <input type="radio" name="weight1" value="Lbs" id="weightUnitLbs" [(ngModel)]="maidDetail.weightUnit">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <input type="text" name="weightField" id="weight" placeholder="Weight" [(ngModel)]="maidDetail.weight" />
                 </div>
               </div>
 
               <!--Field-->
-              <div class="formField">
+              <div class="formField radioBtns">
+                <label class="mainLabel">Height</label>
+
                 <div class="customInput">
-                  <input type="text" name="workExpHouseSizeField" placeholder="Size of house" [(ngModel)]="maidDetail.referralName"/>
+                  <label class="containerRadio">
+                    ft
+                    <input type="radio" name="height" value="ft" id="heightUnitFt" [(ngModel)]="maidDetail.heightUnit">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    cms
+                    <input type="radio" name="height1" value="cms" id="heightUnitCms" [(ngModel)]="maidDetail.heightUnit">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <input type="text" name="heightField" id="heightField" placeholder="Height" [(ngModel)]="maidDetail.height" />
                 </div>
               </div>
 
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
               <!--Field-->
-              <div class="formField">
+              <div class="formField radioBtns">
+                <label class="mainLabel">Marital status</label>
+
                 <div class="customInput">
-                  <input type="text" name="workExpLastSalaryField" placeholder="Last salary" [(ngModel)]="maidDetail.referralName"/>
+                  <label class="containerRadio">
+                    Single
+                    <input type="radio" name="materialStatus" id="maritalStatusSingle" value="Single" [(ngModel)]="maidDetail.maritalStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Married
+                    <input type="radio" name="materialStatus1" id="maritalStatusMarried" value="Married" [(ngModel)]="maidDetail.maritalStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Widow
+                    <input type="radio" name="materialStatus2" value="Widow" id="maritalStatusWidow" [(ngModel)]="maidDetail.maritalStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Single Mother
+                    <input type="radio" name="materialStatus3" id="maritalStatusSingleMother" value="Single Mother" [(ngModel)]="maidDetail.maritalStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Divorced
+                    <input type="radio" name="materialStatus4" value="Divorced" id="maritalStatusDivorced" [(ngModel)]="maidDetail.maritalStatus">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="containerRadio">
+                    Separate
+                    <input type="radio" name="materialStatus5" value="Separate" id="maritalStatusSeparate" [(ngModel)]="maidDetail.maritalStatus">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
               </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Education</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Elementary
+                    <input type="radio" name="education" value="Elementary" id="educationElementary" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Junior High School
+                    <input type="radio" name="education1" value="Junior High School" id="educationJuniorHighSchool" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Senior High School
+                    <input type="radio" name="education2" value="Senior High School" id="educationSeniorHighSchool" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    College
+                    <input type="radio" name="education3" value="College" id="educationCollege" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    University
+                    <input type="radio" name="education4" value="University" id="educationUniversity" [(ngModel)]="maidDetail.education">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField radioBtns">
+                <label class="mainLabel">Religion</label>
+
+                <div class="customInput">
+                  <label class="containerRadio">
+                    Buddhism
+                    <input type="radio" name="religion" value="Buddhism" id="religionBuddhism" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Christian
+                    <input type="radio" name="religion1" value="Christian" id="religionChristian" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Muslim
+                    <input type="radio" name="religion2" value="Muslim" id="religionMuslim" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Hindu
+                    <input type="radio" name="religion3" value="Hindu" id="religionHindu" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerRadio">
+                    Other
+                    <input type="radio" name="religion" value="Other" id="religionOther" [(ngModel)]="maidDetail.religion">
+                    <span class="checkmark"></span>
+                  </label>
+                  <input type="text" name="weightField4" id="weightField" placeholder="Weight" [(ngModel)]="maidDetail.religion" />
+                </div>
+              </div>
+
             </div>
 
             <!--Form Field Main Block-->
             <div class="formBlockInner addMinusFieldMain">
               <!--Field-->
               <div class="formField addMinusBtnBlck">
-                <label class="mainLabel">No of person served</label>
+                <label class="mainLabel">Number of Sibling</label>
 
                 <div class="customInput">
-                  <button class="addMinsBtn">-</button><input type="text" name="workExpPrsnSrvdField" id="workExpPrsnSrvdField" placeholder="0" [(ngModel)]="maidDetail.referralName"/><button class="addMinsBtn">+</button>
+                  <button class="addMinsBtn" name="a1">-</button><input type="text" name="siblingsField" id="siblingsField" placeholder="0" [(ngModel)]="maidDetail.siblings" /><button class="addMinsBtn" name="a2">+</button>
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField addMinusBtnBlck">
-                <label class="mainLabel">No. of Maid in the family</label>
+                <label class="mainLabel">I am number</label>
 
                 <div class="customInput">
-                  <button class="addMinsBtn">-</button><input type="text" name="workExpMaidCountField" id="workExpMaidCountField" placeholder="0" [(ngModel)]="maidDetail.referralName"/><button class="addMinsBtn">+</button>
+                  <button class="addMinsBtn" name="a3">-</button><input type="text" name="iMaNmbrField" id="iMaNmbrField" placeholder="0" [(ngModel)]="maidDetail.iAmNumber" /><button name="a4" class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">No of sons</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn" name="a5">-</button><input type="text" name="noOfSnsField" id="noOfSnsField" placeholder="0" [(ngModel)]="maidDetail.numberOfSon" /><button name="a6" class="addMinsBtn">+</button>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField addMinusBtnBlck">
+                <label class="mainLabel">No of daughters</label>
+
+                <div class="customInput">
+                  <button class="addMinsBtn" name="a7">-</button><input type="text" name="noOfDtrsField" id="noOfDtrsField" placeholder="0" [(ngModel)]="maidDetail.numberOfDaughter" /><button name="a8" class="addMinsBtn">+</button>
                 </div>
               </div>
 
             </div>
-
 
             <!--Form Field Main Block-->
             <div class="formBlockInner">
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="workExpHolidayArrangementField" placeholder="Holiday arrangement" [(ngModel)]="maidDetail.referralName"/>
+                  <input type="text" name="pnfield" placeholder="Passport number" id="passportNumber" [(ngModel)]="maidDetail.passportNumber" />
                 </div>
               </div>
 
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="workExpReasonLeavingField" placeholder="Reason of leaving" [(ngModel)]="maidDetail.referralName"/>
+                  <input type="text" name="pedfield2" placeholder="Passport expiry date" id="passportExpiryDate" [(ngModel)]="maidDetail.passportExpiryDate" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="hkidfield3" placeholder="Number of Hong Kong Identity Card" id="hongKongId" [(ngModel)]="maidDetail.hongKongId" />
                 </div>
               </div>
             </div>
 
             <!--Form Field Main Block-->
-            <div class="formBlockInner multiCheckboxesBlock">
+            <div class="formBlockInner">
               <!--Field-->
-              <div class="formField checkboxBtns">
+              <div class="formField radioBtns">
                 <label class="mainLabel">Currently based in</label>
 
                 <div class="customInput">
-                  <label class="containerCheckbox">
-                    Taking care of babies
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                  <label class="containerRadio">
+                    Hong Kong
+                    <input type="radio" name="currentlybasedin" value="Hong Kong" id="currentlyBasedInHongKong" [(ngModel)]="maidDetail.currentlyBasedIn">
                     <span class="checkmark"></span>
                   </label>
 
-                  <label class="containerCheckbox">
-                    Taking care of children
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                  <label class="containerRadio">
+                    Indonesia
+                    <input type="radio" name="currentlybasedin1" value="Indonesia" id="currentlyBasedInIndonesia" [(ngModel)]="maidDetail.currentlyBasedIn">
                     <span class="checkmark"></span>
                   </label>
 
-                  <label class="containerCheckbox">
-                    Taking care of elderly
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                  <label class="containerRadio">
+                    Philippine
+                    <input type="radio" name="currentlybasedin2" value="Philippine" id="currentlyBasedInPhilippine" [(ngModel)]="maidDetail.currentlyBasedIn">
                     <span class="checkmark"></span>
                   </label>
 
-                  <label class="containerCheckbox">
-                    Taking care of disabled
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Pet care
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Car washing
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    House work
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Hand-Washing Clothes
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Go to market
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Cooking (chinese)
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerCheckbox">
-                    Cooking (western)
-                    <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+                  <label class="containerRadio">
+                    Other countries
+                    <input type="radio" name="currentlybasedin3" value="Other countries" id="currentlyBasedInOthercountries" [(ngModel)]="maidDetail.currentlyBasedIn">
                     <span class="checkmark"></span>
                   </label>
                 </div>
@@ -798,248 +365,650 @@
               <!--Field-->
               <div class="formField">
                 <div class="customInput">
-                  <input type="text" name="workExpOthersField" placeholder="Others" [(ngModel)]="maidDetail.referralName"/>
+                  <select name="a10" id="currentContractStatus" [(ngModel)]="maidDetail.currentContractStatus">
+                    <option value="1st Timer">1st Timer</option>
+                    <option value="Finished Contract">Finished Contract</option>
+                    <option value="Terminated">Terminated</option>
+                    <option value="Break Contract">Break Contract</option>
+                    <option value="I will break contract if I find a new employer">I will break contract if I find a new employer</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="cellphonenumberfield" id="phone" placeholder="Cellphone number" [(ngModel)]="maidDetail.phone" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="fbmfield" id="email" placeholder="Email" [(ngModel)]="maidDetail.email" />
                 </div>
               </div>
             </div>
 
+            <!--Form Field Main Block-->
+            <div class="formBlockInner">
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="domicileaddressfield" id="permanentAddress" placeholder="Domicile address" [(ngModel)]="maidDetail.permanentAddress" />
+                </div>
+              </div>
+
+              <!--Field-->
+              <div class="formField">
+                <div class="customInput">
+                  <input type="text" name="namereferralfield" id="referralName" placeholder="Name of referral" [(ngModel)]="maidDetail.referralName" />
+                </div>
+              </div>
+            </div>
 
           </div>
 
           <div class="btnsBlock">
-            <button class="backBtn" (click)="previous('skillstab')">Back</button>
-            <button class="nextBtn" (click)=" saveMaidExperience()">Next</button>
+            <!--<button class="backBtn">Back</button>-->
+            <input class="nextBtn" name="submit" type="submit" value="Save" />
+            <!--<button class="nextBtn" (click)="saveMaidBasicDetails()">Save</button>-->
+          </div>
+        </form>
+      </div>
+
+      <!--Skills-->
+      <div class="blockItemNew" id="blockItemNew2" *ngIf="tabselectornew == 'skillstab'">
+        <div class="formBlock">
+          <h2>Languages</h2>
+          <!--Form Field Main Block-->
+          <div class="formBlockInner">
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Cantonese</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Learning
+                  <input type="radio" name="cantonese" value="Learning" [(ngModel)]="maidDetail.languageCantoneseStatus">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  Average
+                  <input type="radio" name="cantonese" value="Average" [(ngModel)]="maidDetail.languageCantoneseStatus">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  Good
+                  <input type="radio" name="cantonese" value="Good" [(ngModel)]="maidDetail.languageCantoneseStatus">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">English</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Learning
+                  <input type="radio" name="english" value="Learning" [(ngModel)]="maidDetail.languageEnglishStatus">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  Average
+                  <input type="radio" name="english" value="Average" [(ngModel)]="maidDetail.languageEnglishStatus">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  Good
+                  <input type="radio" name="english" value="Good" [(ngModel)]="maidDetail.languageEnglishStatus">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Mandarin</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Learning
+                  <input type="radio" name="mandarin" value="Learning" [(ngModel)]="maidDetail.languageMandarinStatus">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  Average
+                  <input type="radio" name="mandarin" value="Average" [(ngModel)]="maidDetail.languageMandarinStatus">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  Good
+                  <input type="radio" name="mandarin" value="Good" [(ngModel)]="maidDetail.languageMandarinStatus">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <h2>Countries Experience</h2>
+
+          <!--Form Field Main Block-->
+          <div class="formBlockInner CountriesExperienceField">
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="hkcefield" placeholder="Hong Kong" [(ngModel)]="maidDetail.hkExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="mcefield" placeholder="Malaysia" [(ngModel)]="maidDetail.malaysiaExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="tcefield" placeholder="Taiwan" [(ngModel)]="maidDetail.taiwanExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="sacefield" placeholder="Saudi Arabia" [(ngModel)]="maidDetail.saudiArabiaExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="mecefield" placeholder="Middle East" [(ngModel)]="maidDetail.middleEastExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="pcefield" placeholder="Philippines" [(ngModel)]="maidDetail.philippinesExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="icefield" placeholder="Indonesia" [(ngModel)]="maidDetail.indonesiaExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="scefield" placeholder="Singapore" [(ngModel)]="maidDetail.singaporeExp" />
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <input type="text" name="ocefield" placeholder="Others" [(ngModel)]="maidDetail.otherExp" />
+              </div>
+            </div>
+
+          </div>
+
+          <!--Form Field Main Block-->
+          <div class="formBlockInner">
+            <!--Field-->
+            <div class="formField checkboxBtns">
+              <label class="mainLabel">Duties Performed</label>
+
+              <div class="customInput">
+                <label class="containerCheckbox">
+                  Taking care of babies
+                  <input type="checkbox" value="Taking care of babies" [(ngModel)]="maidDetail.babies">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerCheckbox">
+                  Taking care of children
+                  <input type="checkbox" value="Taking care of children" [(ngModel)]="maidDetail.children">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerCheckbox">
+                  Taking care of elderly
+                  <input type="checkbox" value="Taking care of elderly" [(ngModel)]="maidDetail.elderly">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerCheckbox">
+                  Taking care of disabled
+                  <input type="checkbox" value="Taking care of disabled" [(ngModel)]="maidDetail.disabled">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerCheckbox">
+                  Pet care
+                  <input type="checkbox" value="Pet care" [(ngModel)]="maidDetail.petCare">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerCheckbox">
+                  Cooking
+                  <input type="checkbox" value="Cooking" [(ngModel)]="maidDetail.cooking">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!--Questions-->
-        <div class="blockItemNew" id="blockItemNew4" *ngIf="tabselectornew == 'questionstab'">
-          <div class="formBlock">
-
-            <h2>General questions</h2>
-
-            <!--Form Field Main Block-->
-            <div class="formBlockInner questionsBlck">
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">would you like to work on holiday, Exchange with money?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesOne" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesOne" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesOnePleaseSpecify" id="quesOnePleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-              <!--Field-->
-              <div class="formField radioBtns">
-                <label class="mainLabel">Do you eat pork?</label>
-
-                <div class="customInput">
-                  <label class="containerRadio">
-                    Yes
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label class="containerRadio">
-                    No
-                    <input type="radio" name="quesTwo" [(ngModel)]="maidDetail.referralName">
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <input type="text" name="quesTwoPleaseSpecify" id="quesTwoPleaseSpecify" placeholder="Please Specify" [(ngModel)]="maidDetail.referralName"/>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="btnsBlock">
-            <button class="backBtn" (click)="previous('experiencetab')">Back</button>
-            <button class="nextBtn" (click)="saveMaidGeneralquestions()">Next</button>
-          </div>
-
-        </div>
-
-          <!--Save-->
-        <div class="blockItemNew" id="blockItemNew5" *ngIf="tabselectornew == 'savetab'">
-          <div class="formBlock">
-
-            <h2>Photo</h2>
-
-            <!--Form Field Main Block-->
-            <div class="formBlockInner">
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <label class="file">
-                    <input type="file" id="file" aria-label="File browser example" [(ngModel)]="maidDetail.referralName">
-                    <span class="file-custom"></span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <h2>Signatire</h2>
-
-            <!--Form Field Main Block-->
-            <div class="formBlockInner">
-              <!--Field-->
-              <div class="formField">
-                <div class="customInput">
-                  <textarea>Please Sign Here</textarea>
-
-                  <button class="clearBtn">Clear</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-            <div class="btnsBlock">
-              <button class="backBtn" (click)="previous('questionstab')">Back</button>
-              <button class="nextBtn" (click)="saveMaidPhoto()">Next</button>
-            </div>
-          </div>
+        <div class="btnsBlock">
+          <button class="backBtn" (click)="previous('basictab')">Back</button>
+          <button class="nextBtn" (click)="saveMaidSkills()">Next</button>
         </div>
       </div>
 
+      <!--Experience-->
+      <!--<div class="blockItemNew" id="blockItemNew3" *ngIf="tabselectornew == 'experiencetab'">
+        <div class="formBlock">
+
+          <h2>Working experience (1)</h2>-->
+      <!--Form Field Main Block-->
+      <!--<div class="formBlockInner">-->
+      <!--Field-->
+      <!--<div class="formField">
+        <div class="customInput">
+          <input type="text" name="workExpFrmField" placeholder="Working period (from)" [(ngModel)]="maidDetail.referralName"/>
+        </div>
+      </div>-->
+      <!--Field-->
+      <!--<div class="formField">
+          <div class="customInput">
+            <input type="text" name="workExpToField" placeholder="Working period (to)" [(ngModel)]="maidDetail.referralName"/>
+          </div>
+        </div>
+      </div>-->
+      <!--Form Field Main Block-->
+      <!--<div class="formBlockInner">-->
+      <!--Field-->
+      <!--<div class="formField">
+        <div class="customInput">
+          <input type="text" name="workExpLocationField" placeholder="Location" [(ngModel)]="maidDetail.referralName"/>
+        </div>
+      </div>-->
+      <!--Field-->
+      <!--<div class="formField">
+        <div class="customInput">
+          <input type="text" name="workExpHouseSizeField" placeholder="Size of house" [(ngModel)]="maidDetail.referralName"/>
+        </div>
+      </div>-->
+      <!--Field-->
+      <!--<div class="formField">
+          <div class="customInput">
+            <input type="text" name="workExpLastSalaryField" placeholder="Last salary" [(ngModel)]="maidDetail.referralName"/>
+          </div>
+        </div>
+      </div>-->
+      <!--Form Field Main Block-->
+      <!--<div class="formBlockInner addMinusFieldMain">-->
+      <!--Field-->
+      <!--<div class="formField addMinusBtnBlck">
+        <label class="mainLabel">No of person served</label>
+
+        <div class="customInput">
+          <button class="addMinsBtn">-</button><input type="text" name="workExpPrsnSrvdField" id="workExpPrsnSrvdField" placeholder="0" [(ngModel)]="maidDetail.referralName"/><button class="addMinsBtn">+</button>
+        </div>
+      </div>-->
+      <!--Field-->
+      <!--<div class="formField addMinusBtnBlck">
+          <label class="mainLabel">No. of Maid in the family</label>
+
+          <div class="customInput">
+            <button class="addMinsBtn">-</button><input type="text" name="workExpMaidCountField" id="workExpMaidCountField" placeholder="0" [(ngModel)]="maidDetail.referralName"/><button class="addMinsBtn">+</button>
+          </div>
+        </div>
+
+      </div>-->
+      <!--Form Field Main Block-->
+      <!--<div class="formBlockInner">-->
+      <!--Field-->
+      <!--<div class="formField">
+        <div class="customInput">
+          <input type="text" name="workExpHolidayArrangementField" placeholder="Holiday arrangement" [(ngModel)]="maidDetail.referralName"/>
+        </div>
+      </div>-->
+      <!--Field-->
+      <!--<div class="formField">
+          <div class="customInput">
+            <input type="text" name="workExpReasonLeavingField" placeholder="Reason of leaving" [(ngModel)]="maidDetail.referralName"/>
+          </div>
+        </div>
+      </div>-->
+      <!--Form Field Main Block-->
+      <!--<div class="formBlockInner multiCheckboxesBlock">-->
+      <!--Field-->
+      <!--<div class="formField checkboxBtns">
+          <label class="mainLabel">Currently based in</label>
+
+          <div class="customInput">
+            <label class="containerCheckbox">
+              Taking care of babies
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Taking care of children
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Taking care of elderly
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Taking care of disabled
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Pet care
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Car washing
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              House work
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Hand-Washing Clothes
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Go to market
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Cooking (chinese)
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="containerCheckbox">
+              Cooking (western)
+              <input type="checkbox" [(ngModel)]="maidDetail.referralName">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>-->
+      <!--Form Field Main Block-->
+      <!--<div class="formBlockInner">-->
+      <!--Field-->
+      <!--<div class="formField">
+              <div class="customInput">
+                <input type="text" name="workExpOthersField" placeholder="Others" [(ngModel)]="maidDetail.referralName"/>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="btnsBlock">
+          <button class="backBtn" (click)="previous('skillstab')">Back</button>
+          <button class="nextBtn" (click)=" saveMaidExperience()">Next</button>
+        </div>
+      </div>-->
+      <!--Questions-->
+      <div class="blockItemNew" id="blockItemNew4" *ngIf="tabselectornew == 'questionstab'">
+        <div class="formBlock">
+
+          <h2>General questions</h2>
+
+          <!--Form Field Main Block-->
+          <div class="formBlockInner questionsBlck">
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">would you like to work on holiday, Exchange with money?</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="workOnHoliday" group="workOnHoliday" value="true" [(ngModel)]="maidDetail.workOnHoliday">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="workOnHoliday1" group="workOnHoliday" value="false" [(ngModel)]="maidDetail.workOnHoliday">
+                  <span class="checkmark"></span>
+                </label>
+
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Do you eat pork?</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="eatPork" group="eatPork" value="true" [(ngModel)]="maidDetail.eatPork">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="eatPork1" group="eatPork" value="false" [(ngModel)]="maidDetail.eatPork">
+                  <span class="checkmark"></span>
+                </label>
+
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">can you take care of big dogs or big pets？</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="careBigPet" group="careBigPet" value="true" [(ngModel)]="maidDetail.careBigPet">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="careBigPet1" group="careBigPet" value="false" [(ngModel)]="maidDetail.careBigPet">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Have you been vaccinated 3 TIME?</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="vaccinated3Times" group="vaccinated3Times" value="true" [(ngModel)]="maidDetail.vaccinated3Times">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="vaccinated3Times1" group="vaccinated3Times" value="false" [(ngModel)]="maidDetail.vaccinated3Times">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Can You share job with other helpers ？</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="shareJobWithOtherHelpers" group="shareJobWithOtherHelpers" value="true" [(ngModel)]="maidDetail.shareJobWithOtherHelpers">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="shareJobWithOtherHelpers1" group="shareJobWithOtherHelpers" value="false" [(ngModel)]="maidDetail.shareJobWithOtherHelpers">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Can you take care of disable elderly, help them to take a bath, change diaper , go to the toilet and take care them go to hospital？</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="takeCareDisabledElderly" group="takeCareDisabledElderly" value="true" [(ngModel)]="maidDetail.takeCareDisabledElderly">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="takeCareDisabledElderly1" group="takeCareDisabledElderly" value="false" [(ngModel)]="maidDetail.takeCareDisabledElderly">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Can you share room with kids or elderly?</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="shareRoomWithElderly" group="shareRoomWithElderly" value="true" [(ngModel)]="maidDetail.shareRoomWithElderlyKids">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="shareRoomWithElderly1" group="shareRoomWithElderly" value="false" [(ngModel)]="maidDetail.shareRoomWithElderlyKids">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <!--Field-->
+            <div class="formField radioBtns">
+              <label class="mainLabel">Do you need to go back home for holiday before start working?</label>
+
+              <div class="customInput">
+                <label class="containerRadio">
+                  Yes
+                  <input type="radio" name="goOnHoliday" group="workOnHoliday" value="true" [(ngModel)]="maidDetail.goOnHoliday">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="containerRadio">
+                  No
+                  <input type="radio" name="goOnHoliday1" group="workOnHoliday" value="false" [(ngModel)]="maidDetail.goOnHoliday">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="btnsBlock">
+          <button class="backBtn" (click)="previous('skillstab')">Back</button>
+          <button class="nextBtn" (click)="saveMaidGeneralquestions()">Next</button>
+        </div>
+
+      </div>
+
+      <!--Save-->
+      <div class="blockItemNew" id="blockItemNew5" *ngIf="tabselectornew == 'savetab'">
+        <div class="formBlock">
+
+          <h2>Photo</h2>
+
+          <!--Form Field Main Block-->
+          <div class="formBlockInner">
+            <!--Field-->
+            <div class="formField">
+              <div class="customInput">
+                <label class="file">
+                  <input type="file" id="file" aria-label="File browser example" (change)="handleFileInput($event.target.files)">
+                  <!--<file-upload name="uploadedFiles" id="uploadedFiles" [(ngModel)]="uploadedFiles" style="min-height:80px!important" [ngClass]="{'errorStyle': isNoFileSelected}"
+                               (change)="onFileChange()" multiple="false" accept=".doc, .docx, .pdf"></file-upload>-->
+                  <span class="file-custom"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!--<h2>Signatire</h2>-->
+          <!--Form Field Main Block-->
+          <!--<div class="formBlockInner">-->
+          <!--Field-->
+          <!--<div class="formField">
+              <div class="customInput">
+                <textarea>Please Sign Here</textarea>
+
+                <button class="clearBtn">Clear</button>
+              </div>
+            </div>
+          </div>-->
+          <!--</div>-->
+
+          <div class="btnsBlock">
+            <button class="backBtn" (click)="previous('questionstab')">Back</button>
+            <button class="nextBtn" (click)="saveMaidPhoto()">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <app-footer></app-footer>
+
+

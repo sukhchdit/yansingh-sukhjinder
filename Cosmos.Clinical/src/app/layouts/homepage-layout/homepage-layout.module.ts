@@ -14,6 +14,7 @@ import { MaidService } from '../../core/services/maid/maid.service';
 import { FormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contactus/contactus.component';
 import { AboutUsComponent } from './aboutus/aboutus.component';
+import { ToastNotificationService } from '../../core/services/toastnotification.service';
 
 
 @NgModule({
@@ -32,11 +33,11 @@ import { AboutUsComponent } from './aboutus/aboutus.component';
     HomePageLayoutRoutingModule,
     HttpClientModule,
     FontAwesomeModule
-    
   ],
   providers: [
     EndPointService,
-    MaidService
+    MaidService,
+    ToastNotificationService
   ]
 })
 export class HomePageLayoutModule { }

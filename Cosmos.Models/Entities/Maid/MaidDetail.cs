@@ -52,12 +52,31 @@ namespace Cosmos.Models.Entities.Maid
         public bool shareJobWithOtherHelpers { get; set; }
         public bool takeCareDisabledElderly { get; set; }
         public bool shareRoomWithElderlyKids { get; set; }
+        public bool goOnHoliday { get; set; }
         public string chineseZodiac { get; set; }
         public string maidCode { get; set; }
         public DateTime lastFinishContractDate { get; set; }
         public bool maidEmployementStatus { get; set; }
 
+        //countries experience
+        public string hkExp { get; set; }
+        public string singaporeExp { get; set; }
+        public string taiwanExp { get; set; }
+        public string malaysiaExp { get; set; }
+        public string middleEastExp { get; set; }
+        public string saudiArabiaExp { get; set; }
+        public string indonesiaExp { get; set; }
+        public string philippinesExp { get; set; }
+        public string otherExp { get; set; }
+
+        //maid duties
+        public bool babies { get; set; }
+        public bool children { get; set; }
+        public bool elderly { get; set; }
+        public bool disabled { get; set; }
+        public bool petCare { get; set; }
+        public bool cooking { get; set; }
+
         public IList<MaidExperience> maidExperienceJobDuty { get; set; }
-        public IList<MaidDuty> maidDuty { get; set; }
     }
 }

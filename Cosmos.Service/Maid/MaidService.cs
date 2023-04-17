@@ -19,7 +19,14 @@ namespace Cosmos.Service.Maid
 
         public async Task<MaidDetail> CreateMaidDetail(MaidDetail model)
         {
-            _unitOfWork.MaidDetailRepository.Add(model);
+            if (model.id == 0)
+            {
+                _unitOfWork.MaidDetailRepository.Add(model);
+            }
+            else
+            {
+                _unitOfWork.MaidDetailRepository.Update(model);
+            }
             await _unitOfWork.Commit();
             return model;
         }

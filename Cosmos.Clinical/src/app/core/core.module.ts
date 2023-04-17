@@ -9,6 +9,7 @@ import { AuthGuard } from '../account/services/auth-guard.service';
 import { EndPointService } from './services/endpoint.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MaidService } from './services/maid/maid.service';
+import { ToastNotificationService } from './services/toastnotification.service';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MaidService } from './services/maid/maid.service';
     LocalStoreManager,
     AuthGuard,
     EndPointService,
-    MaidService
+    MaidService,
+    ToastNotificationService
   ]
 })
 export class CoreModule { }
