@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contactus/contactus.component';
 import { AboutUsComponent } from './aboutus/aboutus.component';
 import { ToastNotificationService } from '../../core/services/toastnotification.service';
+import { RegisterEmployerComponent } from './registeremployer/registeremployer.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ToastNotificationService } from '../../core/services/toastnotification.
     RegisterMaidComponent,
     MaidDetailsComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    RegisterEmployerComponent
   ],
   imports: [
     FormsModule,
