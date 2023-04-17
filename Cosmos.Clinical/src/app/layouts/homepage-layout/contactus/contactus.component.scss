@@ -7,18 +7,38 @@
 
 #innerBanner {
     /*background: url('../../assets/registrationBgImage.jpg') no-repeat;*/
-    background: url(../../../../assets/images/maidDetailBanner.jpg) no-repeat;
+    background: url(../../../../assets/images/contactUsBanner.jpg) no-repeat;
     background-size: cover;
     min-height: 460px;
+    position: relative;
+    background-position: center;
     @include dflex(column, center, center);
     padding-top: 155px;
-  
+    @media (max-width:1400px){
+        padding-top: 70px;
+    }
+    @media (max-width:1200px){
+        padding-top: 40px;
+    }
+    @media (max-width:991px){
+        padding-top: 20px;
+    }
+    @media (max-width:767px){
+        padding-top: 0px;
+    }
+    
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #00000045;
+        top: 0;
+        z-index: 0;
+    }
     .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-  
+        @include dflex(column, center, center);
+        z-index: 1;
       h2 {
         font-family: 'Inter';
         font-style: normal;
@@ -26,19 +46,18 @@
         font-size: 60px;
         line-height: 73px;
         color: #FFFFFF;
-		@media (max-width:767px) {
-			font-size: 42px;
-        	line-height: 48px;
-		}
-		@media (max-width:991px) {
-			font-size: 48px;
-        	line-height: 54px;
-		}
-		@media (max-width:1200px) {
+        @media (max-width:1200px) {
 			font-size: 52px;
         	line-height: 60px;
 		}
-	  
+        @media (max-width:991px) {
+			font-size: 48px;
+        	line-height: 54px;
+		}
+		@media (max-width:767px) {
+			font-size: 42px;
+        	line-height: 48px;
+		}	  
       }
   
       h5 {
@@ -55,12 +74,22 @@
     background: white;
     padding: 100px 0px;
     @include dflex(column, center, center);
+        @media (max-width:767px){
+            padding: 40px 0px;
+        }
     .row {
       @include dflex(row, top, space-between);
+      @media (max-width:767px){
+        @include dflex(column-reverse, center, center);
+    }
       .leftCol {
         width: 50%;
         @include dflex(column, flex-start, flex-start);
         gap: 10px;
+        @media (max-width:767px){
+            width: 100%;
+            padding: 0 20px;
+        }
         h2{
             font-family: 'Inter';
             font-style: normal;
@@ -68,9 +97,23 @@
             font-size: 36px;
             line-height: 36px;
             margin-bottom: 4px;
+            @media (max-width:1200px){
+                font-size: 34px;
+                line-height: 36px;
+            }
+            @media (max-width:991px){
+                font-size: 32px;
+                line-height: 42px;
+            }
+            @media (max-width:767px){
+                font-size: 30px;
+                line-height: 36px;
+            }
         }
         p{
-
+            @media (max-width:767px){
+                font-size: 14px;
+            }
         }
         ul{
             padding-left: 0px;
@@ -105,6 +148,12 @@
         @include dflex(column, flex-start, center);
         position: relative;
          top: -160px;
+         @media (max-width:767px){
+            width: 100%;
+            margin-top: -100px;
+            top:0px;
+            margin-bottom: 30px;
+        }
         form{
             width: 100%;
             @include dflex(column, flex-start, center);
@@ -114,6 +163,10 @@
             box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
             border-radius: 8px;
             padding: 30px;
+            @media (max-width:767px){
+              padding: 20px;
+               
+            }
             h5{
                 font-family: 'Inter';
                 font-style: normal;
@@ -122,6 +175,9 @@
                 line-height: 24px;
                 color: #DA1F26;
                 margin-bottom: 4px;
+                @media (max-width:767px){
+                    font-size: 14px;
+                }
             }
             h2{
                 font-family: 'Inter';
@@ -130,6 +186,22 @@
                 font-size: 40px;
                 line-height: 48px;
                 color: #000000;
+                @media (max-width:1400px){
+                    font-size: 42px;
+                    line-height: 48px;
+                }
+                @media (max-width:1200px){
+                    font-size: 36px;
+                    line-height: 42px;
+                }
+                @media (max-width:991px){
+                    font-size: 34px;
+                    line-height: 38px;
+                }
+                @media (max-width:767px){
+                    font-size: 30px;
+                    line-height: 36px;
+                }
             }
             .formField{
                 width: 100%;

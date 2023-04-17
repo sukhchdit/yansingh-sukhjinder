@@ -7,17 +7,37 @@
 
 #innerBanner {
     /*background: url('../../assets/registrationBgImage.jpg') no-repeat;*/
-    background: url(../../../../assets/images/maidDetailBanner.jpg) no-repeat;
+    background: url(../../../../assets/images/aboutsus.jpg) no-repeat;
     background-size: cover;
     min-height: 460px;
+    position: relative;
+    background-position: top;
     @include dflex(column, center, center);
     padding-top: 155px;
-  
+    @media (max-width:1400px){
+      padding-top: 70px;
+      }
+      @media (max-width:1200px){
+          padding-top: 40px;
+      }
+      @media (max-width:991px){
+          padding-top: 20px;
+      }
+      @media (max-width:767px){
+          padding-top: 0px;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #00000045;
+        top: 0;
+        z-index: 0;
+    }
     .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include dflex(column, center, center);
+      z-index:1;
   
       h2 {
         font-family: 'Inter';
@@ -56,12 +76,21 @@
     background: white;
     padding: 100px 0px;
     @include dflex(column, center, center);
+    @media (max-width:767px){
+      padding: 40px 0px;
+  }
     .row {
       @include dflex(row, center, space-between);
+      @media (max-width:767px){
+        @include dflex(column, center, center);
+    }
       .colRight {
         width: 50%;
         @include dflex(column, flex-start, center);
-  
+        @media (max-width:767px){
+          width: 100%;
+          padding: 0 20px;
+      }
         h3 {
           font-family: 'Inter';
           font-style: normal;
@@ -70,6 +99,10 @@
           line-height: 24px;
           color: #DA1F26;
           margin-bottom: 4px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+        }
         }
   
         h2 {
@@ -79,6 +112,18 @@
           font-size: 40px;
           line-height: 48px;
           color: #000000;
+          @media (max-width:1200px){
+            font-size: 34px;
+            line-height: 36px;
+        }
+        @media (max-width:991px){
+            font-size: 32px;
+            line-height: 42px;
+        }
+        @media (max-width:767px){
+            font-size: 30px;
+            line-height: 36px;
+        }
         }
   
         .saperator {
@@ -97,6 +142,10 @@
           line-height: 30px;
           color: #808080;
           margin-bottom: 43px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+        }
         }
   
         h4 {
@@ -107,9 +156,16 @@
           line-height: 24px;
           color: #DA1F26;
           margin-bottom: 4px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+        }
         }
   
         ul {
+          @media (max-width:767px){
+            padding-left: 10px;
+        }
           li {
             list-style-type: none;
             font-family: 'Inter';
@@ -118,11 +174,19 @@
             font-size: 16px;
             line-height: 30px;
             color: #808080;
+            @media (max-width:767px){
+              font-size: 14px;
+              line-height: 24px;
+          }
           }
         }
       }
       .colLeft{
         width: 50%;
+        @media (max-width:767px){
+          width: 100%;
+          padding: 0 20px;
+      }
         .aboutUsImageBox {
             position: relative;
             @include dflex(row, flex-start, flex-end);
@@ -167,6 +231,10 @@
           line-height: 24px;
           color: #DA1F26;
           margin-bottom: 4px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+        }
         }
   
         h2 {
@@ -176,6 +244,18 @@
           font-size: 40px;
           line-height: 48px;
           color: #000000;
+          @media (max-width:1200px){
+            font-size: 34px;
+            line-height: 36px;
+          }
+          @media (max-width:991px){
+              font-size: 32px;
+              line-height: 42px;
+          }
+          @media (max-width:767px){
+              font-size: 30px;
+              line-height: 36px;
+          }
         }
   
         .saperator {
@@ -194,6 +274,11 @@
           line-height: 30px;
           color: #808080;
           margin-bottom: 43px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
         }
   
         h5 {
@@ -245,11 +330,18 @@
   #testimonials {
     background: #ffffff;
     padding: 100px 0px;
+    @media (max-width:767px){
+      @include dflex(column, center, center);
+      padding: 40px 0px;
+  }
     @include dflex(column, center, center);
     .testimonialHeading {
         width: 100%;
         @include dflex(column, center, center);
-  
+        @media (max-width:767px){
+          @include dflex(column, flex-start, flex-start);
+          padding: 40px 0px;
+      }
         h3 {
           font-family: 'Inter';
           font-style: normal;
@@ -258,6 +350,10 @@
           line-height: 24px;
           color: #DA1F26;
           margin-bottom: 4px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+        }
         }
   
         h2 {
@@ -267,6 +363,18 @@
           font-size: 40px;
           line-height: 48px;
           color: #000000;
+          @media (max-width:1200px){
+            font-size: 34px;
+            line-height: 36px;
+          }
+          @media (max-width:991px){
+              font-size: 32px;
+              line-height: 42px;
+          }
+          @media (max-width:767px){
+              font-size: 30px;
+              line-height: 36px;
+          }
         }
   
         .saperator {
@@ -285,6 +393,11 @@
           line-height: 30px;
           color: #808080;
           margin-bottom: 43px;
+          @media (max-width:767px){
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
         }
   
         h5 {
@@ -321,7 +434,13 @@
           }
         }
         .carousel-item{
-            padding: 50px
+            padding: 50px;
+            @media (max-width:991px){
+              padding: 20px;
+           }
+            @media (max-width:767px){
+              padding: 10px;
+           }
         }
         .contentBox{
             @include dflex(row, center, center);
@@ -329,8 +448,18 @@
             background-color: #fff;
             margin-top: 30px;
             box-shadow: 0 16px 24px #343d561a;
+            @media (max-width:767px){
+              @include dflex(column, center, center);
+              padding: 20px;
+              margin-top: 0px;
+          }
             .leftCol{
                 width: 30%;
+                @media (max-width:767px){
+                  width: 100%;
+                  @include dflex(row, center, center);
+                  margin-bottom: 20px;
+              }
                 .avtar{
                     height: 200px;
                     width: 200px;
@@ -345,7 +474,13 @@
             }
             .rightCol{
                 width: 70%;
+                @media (max-width:767px){
+                  width: 100%;
+               }
                 .feedback{
+                  @media (max-width:767px){
+                    margin-bottom: 30px;
+                 }
                     p{
                         font-family: 'Inter';
                         font-style: normal;
@@ -354,6 +489,13 @@
                         line-height: 30px;
                         color: #808080;
                         margin-bottom: 43px;
+                        @media (max-width:767px){
+                          font-size: 14px;
+                          line-height: 24px;
+                          margin-bottom: 20px;
+                          @include dflex(row, center, center);
+                          text-align: center;
+                      }
                     }
                     h3{
                         font-family: 'Inter';
@@ -363,6 +505,9 @@
                         line-height: 24px;
                         color: #000000;
                         margin-bottom: 4px;
+                        @media (max-width:767px){
+                          @include dflex(row, center, center);
+                      }
                     }
                     h6{
                         font-family: 'Inter';
@@ -372,6 +517,9 @@
                         line-height: 24px;
                         color: #DA1F26;
                         margin-bottom: 4px;
+                        @media (max-width:767px){
+                          @include dflex(row, center, center);
+                      }
                     }
                 }
             }
