@@ -6,6 +6,8 @@ import { HomePageLayoutComponent } from './homepage-layout.component';
 import { MaidDetailsComponent } from './maiddetails/maiddetails.component';
 import { RegisterEmployerComponent } from './registeremployer/registeremployer.component';
 import { RegisterMaidComponent } from './registermaid/registermaid.component';
+import { findjobComponent } from './findjob/findjob.component';
+import { findjobDetailsComponent } from './findjobDetails/findjobDetails.component';
 
 
 const routes: Routes = [{
@@ -30,7 +32,16 @@ const routes: Routes = [{
 {
   path: 'registeremployer',
   component: RegisterEmployerComponent
+},
+{
+  path: 'findjob',
+  component: findjobComponent
+},
+{
+  path: 'findjobDetails',
+  component: findjobDetailsComponent
 }
+
 
 ];
 

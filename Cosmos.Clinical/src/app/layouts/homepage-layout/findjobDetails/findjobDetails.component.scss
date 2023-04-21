@@ -1,0 +1,628 @@
+﻿@mixin dflex($fdir, $aitems, $jcontent) {
+    display:flex;
+    flex-direction:$fdir;
+    align-items:$aitems;
+    justify-content:$jcontent;
+}
+#innerBanner {
+    /*background: url('../../assets/registrationBgImage.jpg') no-repeat;*/
+    background: url(../../../../assets/images/employeRegistration.jpg) no-repeat;
+    background-size: cover;
+    min-height: 460px;
+    position: relative;
+    background-position: center;
+    @include dflex(column, center, center);
+    padding-top: 135px;
+    @media (max-width:1400px){
+        padding-top: 70px;
+    }
+    @media (max-width:1200px){
+        padding-top: 40px;
+    }
+    @media (max-width:991px){
+        padding-top: 20px;
+    }
+    @media (max-width:767px){
+        padding-top: 0px;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: rgb(0 0 0 / 48%);
+        top: 0;
+        z-index: 0;
+    }
+    .container {
+        @include dflex(column, center, center);
+        z-index: 1;
+      h2 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 73px;
+        color: #FFFFFF;
+        @media (max-width:1200px) {
+			font-size: 52px;
+        	line-height: 60px;
+		}
+        @media (max-width:991px) {
+			font-size: 48px;
+        	line-height: 54px;
+		}
+		@media (max-width:767px) {
+			font-size: 42px;
+        	line-height: 48px;
+		}	  
+      }
+  
+      h5 {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+      }
+    }
+}
+
+#jobSearchingPage{
+    background: white;
+    padding: 60px 0px;
+    @include dflex(column, center, center);
+        @media (max-width:767px){
+            padding: 40px 0px;
+        }
+    .container{
+        .row{
+            gap: 30px;
+            @include dflex(row, flex-start, space-between);
+            @media (max-width:1400px){
+                gap: 20px;
+            }
+            @media (max-width:1200px){
+                gap: 10px;
+            }
+            @media (max-width:991px){
+                gap: 10px;
+            }
+            @media (max-width:767px){
+                @include dflex(column, center, center);
+                gap: 20px;
+            }
+           
+            .leftCol{
+                width: calc(60% - 40px); 
+                border: 1px solid rgba(52, 61, 86, 0.04);
+                box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+                padding: 18px;
+                border-radius: 8px;
+                @media (max-width:1400px){
+                    width: calc(60% - 25px); 
+                }
+                @media (max-width:1200px){
+                    width: calc(60% - 20px); 
+                }
+                @media (max-width:991px){
+                    width: calc(60% - 15px); 
+                }
+                @media (max-width:767px){
+                    width:100%; 
+                }
+                .leftInner{
+                    padding: 20px 7px;
+                    h3 {
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 900;
+                        font-size: 35px;
+                        line-height: 42px;
+                        text-transform: uppercase;
+                        color: #DA1F26;
+                      }
+                }
+                .jobsListBox{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .jobsCard{
+                        padding: 20px;
+                        background: #FFFFFF;
+                        border: 1px solid rgba(52, 61, 86, 0.04);
+                        border-radius: 8px;
+                        transition: all ease .5s;
+                        .title{
+                            font-family: "Inter";
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 19px;
+                            text-transform: uppercase;
+                            color: #DA1F26;
+                            margin-bottom: 10px;
+                        }
+                        .content{
+                            font-family: "Inter";
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 15px;
+                            line-height: 25px;
+                            color: rgb(0 0 0 / 70%);
+                            width: 100px;
+                            min-width: 100px;
+                            max-width: 100px;
+                            @include dflex(column, flex-start, flex-start);
+                            ul{
+                                display: flex;
+                                gap: 5px;
+                                align-items: flex-start;
+                                padding-left: 0px;
+                                margin-bottom: 0;
+                                li{
+                                    list-style-type: none;
+                                    font-size: 14px;
+                                    font-family: "Inter";
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    flex-wrap: wrap;
+                                    border: 1px solid #d5d5d5;
+                                    border-radius: 5px;
+                                    padding: 0 5px;
+                                    white-space: nowrap;
+                                }
+                            }
+                        }
+                       
+                        a{
+                            color: #232322;
+                            text-decoration: none;
+                            @include dflex(column, flex-start, flex-start);
+                            gap: 7px;
+                        }
+                        .flexRow{
+                            @include dflex(row, flex-start, flex-start);
+                            gap: 20px;
+                            .label{
+                                font-family: "Inter";
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 15px;
+                                line-height: 25px;
+                                color: rgb(0 0 0);
+                                width: 150px;
+                                min-width: 100px;
+                                max-width: 150px;
+                            }
+                            .content{
+                                font-family: "Inter";
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 15px;
+                                line-height: 25px;
+                                color: rgb(0 0 0 / 70%);
+                                width: 100px;
+                                min-width: 100px;
+                                max-width: 100px;
+                                white-space: nowrap;
+                                @include dflex(column, flex-start, flex-start);
+                                ul{
+                                    display: flex;
+                                    gap: 5px;
+                                    align-items: flex-start;
+                                    padding-left: 0px;
+                                    li{
+                                        list-style-type: none;
+                                        font-size: 12px;
+                                        font-family: "Inter";
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        flex-wrap: wrap;
+                                        border: 1px solid #d5d5d5;
+                                        border-radius: 5px;
+                                        padding: 0 5px;
+                                        white-space: nowrap;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .rightCol{
+                width: 40%;
+               padding: 0px;
+               @media (max-width:767px){
+                width:100%; 
+                padding: 15px;
+            }
+                form{
+                    background: #FFFFFF;
+                    border: 1px solid rgba(52, 61, 86, 0.04);
+                    box-shadow: 0px 16px 24px rgba(52, 61, 86, 0.1);
+                    border-radius: 8px;
+                    padding: 0;
+                    @media (max-width:767px){
+                    }
+                    .formBlock{
+                      display: flex;
+                      flex-direction: column;
+                      width: 100%;
+                      gap: 10px;
+                      padding: 20px;
+                      h2 {
+                          font-family: "Inter";
+                              font-style: normal;
+                              font-weight: 600;
+                              font-size: 16px;
+                              line-height: 19px;
+                              text-transform: uppercase;
+                              color: #DA1F26;
+                      }
+                      .saperator {
+                          width: 120px;
+                          height: 2px;
+                          background: #DA1F26;
+                          border-radius: 20px;
+                          margin: 12px 0 30px;
+                      }
+                      .formField {
+                          width: 100%;
+                          label{
+                              font-family: "Inter";
+                              font-style: normal;
+                              font-weight: 500;
+                              font-size: 14px;
+                              line-height: 25px;
+                              color: rgba(54, 63, 87, 0.5);
+                            
+                            @media (max-width:991px){
+                                width: 43%;
+                            }
+                            
+                            @media (max-width:767px){
+                                width: 43%;
+                            }
+                          }
+                          select{
+                              width: 100%;
+                              height: 60px;
+                              background: rgba(243, 244, 244, 0.24);
+                              border: 1px solid #EAEBEE;
+                              border-radius: 8px;
+                              padding: 0 20px;
+                              font-family: "Inter";
+                              font-style: normal;
+                              font-weight: 500;
+                              font-size: 14px;
+                              line-height: 25px;
+                              color: rgb(54, 63, 87);
+                              @media (max-width:1200px){
+                                height: 50px;
+                                border-radius: 5px;
+                                padding: 0 12px;
+                                font-size: 12px;
+                             }
+                            @media (max-width:991px){
+                                height: 46px;
+                                border-radius: 5px;
+                                padding: 0 12px;
+                                font-size: 12px;
+                             }
+                            
+                            @media (max-width:767px){
+                                    height: 40px;
+                                    border-radius: 5px;
+                                    padding: 0 12px;
+                                    font-size: 12px;
+                            }
+                          }
+                          input{
+                              width: 100%;
+                              height: 60px;
+                              background: rgba(243, 244, 244, 0.24);
+                              border: 1px solid #EAEBEE;
+                              border-radius: 8px;
+                              padding: 0 20px;
+                              font-family: "Inter";
+                              font-style: normal;
+                              font-weight: 500;
+                              font-size: 14px;
+                              line-height: 25px;
+                              color: rgb(54, 63, 87);
+                              @media (max-width:1200px){
+                                height: 50px;
+                                border-radius: 5px;
+                                padding: 0 12px;
+                                font-size: 12px;
+                             }
+                            @media (max-width:991px){
+                                height: 46px;
+                                border-radius: 5px;
+                                padding: 0 12px;
+                                font-size: 12px;
+                             }
+                            
+                            @media (max-width:767px){
+                                    height: 40px;
+                                    border-radius: 5px;
+                                    padding: 0 12px;
+                                    font-size: 12px;
+                            }
+                          }
+                          textarea{
+                              width: 100%;
+                              background: rgba(243, 244, 244, 0.24);
+                              border: 1px solid #EAEBEE;
+                              border-radius: 8px;
+                              padding: 0 20px;
+                              font-family: "Inter";
+                              font-style: normal;
+                              font-weight: 500;
+                              font-size: 14px;
+                              line-height: 25px;
+                              color: rgb(54, 63, 87);
+                          }
+                        }
+  
+                      .formBlockInner {
+                          display: flex;
+                          flex-direction: row;
+                          gap: 30px;
+                          width: 100%;
+                          justify-content: space-between;
+                          flex-wrap: wrap;
+                          @media (max-width:1200px){
+                            gap: 15px;
+                         }
+                          @media (max-width:991px){
+                            gap: 15px;
+                         }
+                          @media (max-width:767px){
+                            gap: 15px;
+                         }
+                          .formField {
+                              width: 100%;
+                              label{
+                                  font-family: "Inter";
+                                  font-style: normal;
+                                  font-weight: 500;
+                                  font-size: 14px;
+                                  line-height: 25px;
+                                  color: rgba(54, 63, 87, 0.5);
+                                   
+                                    @media (max-width:991px){
+                                        width: 43%;
+                                    }
+                                    
+                                    @media (max-width:767px){
+                                        width: 43%;
+                                    }
+                              }
+                              select{
+                                  width: 100%;
+                                  height: 60px;
+                                  background: rgba(243, 244, 244, 0.24);
+                                  border: 1px solid #EAEBEE;
+                                  border-radius: 8px;
+                                  padding: 0 20px;
+                                  font-family: "Inter";
+                                  font-style: normal;
+                                  font-weight: 500;
+                                  font-size: 14px;
+                                  line-height: 25px;
+                                  color: rgb(54, 63, 87);
+                                  @media (max-width:1200px){
+                                    height: 50px;
+                                    border-radius: 5px;
+                                    padding: 0 12px;
+                                    font-size: 12px;
+                                 }
+                                @media (max-width:991px){
+                                    height: 46px;
+                                    border-radius: 5px;
+                                    padding: 0 12px;
+                                    font-size: 12px;
+                                 }
+                                
+                                @media (max-width:767px){
+                                        height: 40px;
+                                        border-radius: 5px;
+                                        padding: 0 12px;
+                                        font-size: 12px;
+                                }
+                                  
+                              }
+                              input{
+                                  width: 100%;
+                                  height: 60px;
+                                  background: rgba(243, 244, 244, 0.24);
+                                  border: 1px solid #EAEBEE;
+                                  border-radius: 8px;
+                                  padding: 0 20px;
+                                  font-family: "Inter";
+                                  font-style: normal;
+                                  font-weight: 500;
+                                  font-size: 14px;
+                                  line-height: 25px;
+                                  color: rgb(54, 63, 87);
+                                  @media (max-width:1200px){
+                                    height: 50px;
+                                    border-radius: 5px;
+                                    padding: 0 12px;
+                                    font-size: 12px;
+                                 }
+                                @media (max-width:991px){
+                                    height: 46px;
+                                    border-radius: 5px;
+                                    padding: 0 12px;
+                                    font-size: 12px;
+                                 }
+                                
+                                @media (max-width:767px){
+                                        height: 40px;
+                                        border-radius: 5px;
+                                        padding: 0 12px;
+                                        font-size: 12px;
+                                }
+                              }
+                            }
+  
+                            .radioBtns, .formField.addMinusBtnBlck, .checkboxBtns {
+                              display: flex;
+                              flex-direction: column;
+                              gap: 10px;
+                              @media (max-width:1200px){
+                                gap: 5px;
+                             }
+                              @media (max-width:991px){
+                                gap: 5px;
+                             }
+                              @media (max-width:767px){
+                                gap: 5px;
+                             }
+                              label{
+                                  font-family: "Inter";
+                                  font-style: normal;
+                                  font-weight: 500;
+                                  font-size: 14px;
+                                  line-height: 25px;
+                                  color: rgba(54, 63, 87, 0.5);
+                              }
+                              .customInput{
+                                  display: flex;
+                                  flex-direction: row;
+                                  gap: 6px 20px;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                  
+                                  .containerRadio{
+                                      display: block;
+                                      position: relative;
+                                      padding-left: 25px;
+                                      cursor: pointer;
+                                      -webkit-user-select: none;
+                                      user-select: none;
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      font-size: 14px;
+                                      line-height: 25px;
+                                      color: #363F57;
+                                      input {
+                                          position: absolute;
+                                          opacity: 0;
+                                          cursor: pointer;
+                                          &:checked ~ .checkmark {
+                                              background-color: #DA1F26;
+                                              border-color: #DA1F26;
+                                              &:after {
+                                                  display: block;
+                                              }
+                                          }
+                                      }
+                                      .checkmark{
+                                          position: absolute;
+                                          top: 3px;
+                                          left: 0;
+                                          width: 20px;
+                                          height: 20px;
+                                          background: #FFFFFF;
+                                          border: 1px solid #EAEBEE;
+                                          border-radius: 100px;
+                                          border-radius: 50%;
+                                          &:after {
+                                              top: 50%;
+                                              left: 50%;
+                                              width: 8px;
+                                              height: 8px;
+                                              border-radius: 50%;
+                                              background: #fff;
+                                              transform: translate(-50%, -50%);
+                                          }
+                                          &:after {
+                                              content: "";
+                                              position: absolute;
+                                              display: none;
+                                          }
+                                      }
+                                      &:hover input ~ .checkmark {
+                                          background-color: #ccc
+                                        }
+                                  }
+                              }
+                          } 
+                        }
+                    }  
+                      
+                  }
+            }
+        }
+    }
+}
+
+.containerCheckbox{
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: #363F57;
+    -webkit-user-select: none;
+    user-select: none;
+    @media (max-width:767px){
+        width: 42%;
+    }
+    @media (max-width:575px){
+        width: 100%;
+    }
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        left: 0;
+        &:checked ~ .checkmark {
+            background-color: #DA1F26;
+            border-color: #DA1F26;
+        }
+    }
+    .checkmark{
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: #FFFFFF;
+        border: 1px solid #EAEBEE;
+        border-radius: 5px;
+    }
+}
+
+
+.btnsBlock {
+    @include dflex(row, center, flex-start);
+    padding: 10px 0px;
+    padding: 12px 0px;
+    gap: 20px;
+    .nextBtn {
+        width: 100px;
+        height: 45px;
+        background: #DA1F26;
+        border-radius: 8px;
+        cursor: pointer;
+        @include dflex(row, center, center);
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #ffffff;
+        border: 0px;
+      }
+  }
