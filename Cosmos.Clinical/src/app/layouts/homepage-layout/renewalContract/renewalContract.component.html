@@ -1,0 +1,386 @@
+<app-header></app-header>
+<section id="innerBanner">
+  <div class="container">
+    <h2>Helpers Contract Renewal</h2>
+  </div>
+</section>
+
+<section id="contractPanel">
+  <div class="container">
+    <div class="row">
+        <div class="stepsPanel">
+       
+
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  申請所需文件 / Required Documents for Application
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="contentBox">
+                      <h3 class="mb-3">申請所需文件 / Required Documents for Application</h3>
+                      <div class="rowBox">
+                        <div class="requiredDocsList">
+                            <ul>
+                                <li>
+                                    1.)  香港身分證 / HKID
+                                </li>
+                                <li>
+                                  2.)  住址證明 / Residential Proof of Address
+                                    <ul class="sublist">
+                                      <li>水費賬單樣本 / water bill sample</li>
+                                      <li>電費賬單樣本 / electric bill sample</li>
+                                      <li>煤氣費賬單樣本 / gas bill sample</li>
+                                      <li>差餉樣本 / government rate demand note</li>
+                                    </ul>
+                              </li>
+                              <li>
+                                  3.)  合約 / Current Employment Contract
+                              </li>
+                                <li>
+                                  4.) 外傭香港身分證 / Domestic helper's HKID
+                              </li>
+                                <li>
+                                  5.) 外傭護照 / Domestic helper's Passport
+                              </li>
+
+                            </ul>
+                        </div>
+                        <div class="paymentMode">
+                            <h4>價錢 / Price : $3200 (使用信用卡支付 / Pay With Credit Card)</h4>
+                            <div class="paymentWay">
+                                <div class="paymentModeImage">
+                                  <img src="../../../../assets/images/stripe-badge-transparent.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btnsBlock"><button  class="nextBtn">Next</button></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  僱主基本資料 / Employer Information
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="contentBox">
+                    <h3 class="mb-3">  僱主基本資料 / Employer Information</h3>
+
+                      <div class="informationPanel">
+                        <form>
+                          <div class="formBlock">
+                                  <!--Form Field Main Block-->
+                              <div class="formBlockInner">
+
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="formField">
+                                          <label class="mainLabel">姓名(英文) / English Name*</label>
+                                          <div class="customInput">
+                                              <input type="text" name="EnglishName" id="EnglishName" placeholder="Full Name"  />
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                      <div class="formField">
+                                        <label class="mainLabel">姓名(中文) / Chinese Name</label>
+                                        <div class="customInput">
+                                            <input type="text" name="EnglishName" id="EnglishName" placeholder="Chinese Name"  />
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField radioBtns">
+                                      <label class="mainLabel">性別 / Gender*</label>
+                      
+                                      <div class="customInput">
+                                        <label class="containerRadio">
+                                          Male
+                                          <input type="radio" name="Male" id="Male" value="Male">
+                                          <span class="checkmark"></span>
+                                        </label>
+                      
+                                        <label class="containerRadio">
+                                          Female
+                                          <input type="radio" name="Female" value="Female" id="Female" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField radioBtns">
+                                      <label class="mainLabel">婚姻狀況 / Marital status*</label>
+                      
+                                      <div class="customInput">
+                                        <label class="containerRadio">
+                                        Single
+                                          <input type="radio" name="Single" id="Single" value="未婚 / Single">
+                                          <span class="checkmark"></span>
+                                        </label>
+                      
+                                        <label class="containerRadio">
+                                          Married
+                                          <input type="radio" name="Married" value=" 已婚 / Married" id="Married" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                        <label class="containerRadio">
+                                         Widowed
+                                          <input type="radio" name="Widowed" value=" 喪偶 / Widowed" id="Widowed" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                        <label class="containerRadio">
+                                          Divorced
+                                          <input type="radio" name="Divorced" value=" 離婚 / Divorced" id="Divorced" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField">
+                                      <label class="mainLabel">國籍 / Nationality*</label>
+                                      <div class="customInput">
+                                          <select type="text" name="EnglishName" id="EnglishName" placeholder="Nationality"  >
+                                            <option value="Hong Kong" selected="selected">Hong Kong</option><option value="Afghanistan">Afghanistan</option><option value="Åland Islands">Åland Islands</option><option value="Albania">Albania</option>
+                                          </select>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">僱主香港身分證號碼 / HKID No.*</label>
+                                    <div class="customInput">
+                                        <input type="text" name="HKID" id="HKID" placeholder="HKID No."  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">
+                                      上載香港身分證 / Upload HKID*</label>
+                                    <div class="customInput">
+                                        <input type="file" name="HKID" id="HKID" placeholder="HKID No."  />
+                                    </div>
+                                    <span>Accepted file types: jpg, jpeg, gif, png, pdf, Max. file size: 2 MB.</span>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">聯絡電話 / Mobile*</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Mobile" id="Mobile" placeholder="Mobile"  />
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <div class="formField">
+                                  <label class="mainLabel">
+                                    電郵地址 / Email*</label>
+                                  <div class="customInput">
+                                      <input type="email" name="Email" id="Email" placeholder="Email"  />
+                                  </div>
+                                </div>
+                            </div>
+                              <div class="col-12 col-md-6">
+                                <div class="formField">
+                                  <label class="mainLabel">地址 / Address*</label>
+                                  <div class="customInput">
+                                      <input type="text" name="HKID" id="HKID" placeholder="Address "  />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <div class="formField radioBtns">
+                                  <label class="mainLabel">
+                                    地址與舊合約相同? / Address same as old contract?*</label>
+                  
+                                  <div class="customInput">
+                                    <label class="containerRadio">
+                                      是 / Y
+                                      <input type="radio" name="Y" id="Y" value="y">
+                                      <span class="checkmark"></span>
+                                    </label>
+                  
+                                    <label class="containerRadio">
+                                      否 / N
+                                      <input type="radio" name="n" value="N" id="n" >
+                                      <span class="checkmark"></span>
+                                    </label>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                                </div>
+
+                                <h3>  合約內容 / Contract Information</h3>
+
+                                <div class="row">
+                                  <div class="col-12 col-md-12">
+                                    <div class="formField">
+                                      <label class="mainLabel">
+                                        上載舊合約 / Upload Old Contract*</label>
+                                      <div class="customInput">
+                                          <input type="file" name="HKID" id="HKID" placeholder="HKID No."  />
+                                      </div>
+                                      <span>Accepted file types: jpg, jpeg, gif, png, pdf, Max. file size: 2 MB.</span>
+                                    </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                      <div class="formField">
+                                        <label class="mainLabel">外傭薪金 (HKD) (最低工資$4630) / Salary(HKD)(Min $4630)*</label>
+                                        <div class="customInput">
+                                            <input type="text" name="EnglishName" id="EnglishName" placeholder="Salary"  />
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField">
+                                      <label class="mainLabel">食物津貼 (HKD) (最低津貼$1173) / Food Allowance(HKD)(Min $1173)</label>
+                                      <div class="customInput">
+                                          <input type="text" name="EnglishName" id="EnglishName" placeholder="Food Allowance"  />
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField radioBtns">
+                                    <label class="mainLabel">
+                                      住宅類型 / Type of Housing*</label>
+                    
+                                    <div class="customInput">
+                                      <label class="containerRadio">
+                                        單位 / Flat
+                                        <input type="radio" name="Flat" id="Flat" value="Flat">
+                                        <span class="checkmark"></span>
+                                      </label>
+                    
+                                      <label class="containerRadio">
+                                        獨立屋 / House
+                                        <input type="radio" name="House" value="House" id="House" >
+                                        <span class="checkmark"></span>
+                                      </label>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">實用面積 (平方呎) / Size (sq feet)*</label>
+                                    <div class="customInput">
+                                        <input type="text" name="EnglishName" id="EnglishName" placeholder=""  />
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <div class="formField">
+                                  <label class="mainLabel">
+                                    睡房數目 / No. of Bedrooms*</label>
+                                  <div class="customInput">
+                                      <input type="text" name="EnglishName" id="EnglishName" placeholder=""  />
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                              <div class="formField radioBtns">
+                                <label class="mainLabel">
+                                  有沒有獨立工人房? / Servant Room?*</label>
+                
+                                <div class="customInput">
+                                  <label class="containerRadio">
+                                    有 / Y
+                                    <input type="radio" name="Flat" id="y" value="有 / Y">
+                                    <span class="checkmark"></span>
+                                  </label>
+                
+                                  <label class="containerRadio">
+                                    沒有 / N
+                                    <input type="radio" name="House" value="沒有 / N" id="n" >
+                                    <span class="checkmark"></span>
+                                  </label>
+                                 
+                                </div>
+                              </div>
+                            </div>
+
+                                </div> 
+                                
+                                <h3>  住戶資料 / Family Information</h3>
+                                <div class="row">
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField">
+                                      <label class="mainLabel">家庭成員數目 / No. of Family Member(s)*</label>
+                                      <div class="customInput">
+                                          <input type="text" name="EnglishName" id="EnglishName" placeholder="Family Member"  />
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">
+                                      洗車架數 / No. of Car Washing*</label>
+                                    <div class="customInput">
+                                        <input type="text" name="EnglishName" id="EnglishName" placeholder="Car Washing"  />
+                                    </div>
+                                  </div>
+                              </div>
+  
+                              <div class="col-12 col-md-6">
+                                <div class="formField radioBtns">
+                                  <label class="mainLabel">
+                                    有沒有寵物? / Have Pets?*</label>
+                  
+                                  <div class="customInput">
+                                    <label class="containerRadio">
+                                      有 / Y
+                                      <input type="radio" name="Flat" id="y" value="有 / Y">
+                                      <span class="checkmark"></span>
+                                    </label>
+                  
+                                    <label class="containerRadio">
+                                      沒有 / N
+                                      <input type="radio" name="House" value="沒有 / N" id="n" >
+                                      <span class="checkmark"></span>
+                                    </label>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <div class="formField">
+                                  <label class="mainLabel">預產嬰兒數目 / No. of Expecting Baby</label>
+                                  <div class="customInput">
+                                      <input type="text" name="EnglishName" id="EnglishName" placeholder="Expecting Baby"  />
+                                  </div>
+                                </div>
+                            </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                      </div>
+
+                      <div class="btnsBlock"><button  class="nextBtn">Previous</button><button  class="nextBtn">Next</button></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -8,6 +8,7 @@ import { RegisterEmployerComponent } from './registeremployer/registeremployer.c
 import { RegisterMaidComponent } from './registermaid/registermaid.component';
 import { findjobComponent } from './findjob/findjob.component';
 import { findjobDetailsComponent } from './findjobDetails/findjobDetails.component';
+import { renewalContractComponent } from './renewalContract/renewalContract.component';
 
 
 const routes: Routes = [{
@@ -40,6 +41,10 @@ const routes: Routes = [{
 {
   path: 'findjobDetails',
   component: findjobDetailsComponent
+},
+{
+  path: 'renewalContract',
+  component: renewalContractComponent
 }
 
 
