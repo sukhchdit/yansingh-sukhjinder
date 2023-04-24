@@ -72,7 +72,8 @@ namespace Cosmos.Infrastructure.Repository
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
+                //throw ex;
             }
         }
 
