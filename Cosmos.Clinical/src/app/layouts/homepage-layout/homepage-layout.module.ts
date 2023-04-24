@@ -16,6 +16,8 @@ import { ContactUsComponent } from './contactus/contactus.component';
 import { AboutUsComponent } from './aboutus/aboutus.component';
 import { ToastNotificationService } from '../../core/services/toastnotification.service';
 import { RegisterEmployerComponent } from './registeremployer/registeremployer.component';
+import { findjobComponent } from './findjob/findjob.component';
+import { findjobDetailsComponent } from './findjobDetails/findjobDetails.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { RegisterEmployerComponent } from './registeremployer/registeremployer.c
     MaidDetailsComponent,
     ContactUsComponent,
     AboutUsComponent,
-    RegisterEmployerComponent
+    RegisterEmployerComponent,
+    findjobComponent,
+    findjobDetailsComponent
   ],
   imports: [
     FormsModule,

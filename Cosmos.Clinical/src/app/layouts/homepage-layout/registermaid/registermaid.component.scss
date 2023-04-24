@@ -35,6 +35,18 @@ body {
       font-size: 60px;
       line-height: 73px;
       color: #FFFFFF;
+      @media (max-width:1200px) {
+        font-size: 52px;
+            line-height: 60px;
+      }
+          @media (max-width:991px) {
+        font-size: 48px;
+            line-height: 54px;
+      }
+      @media (max-width:767px) {
+        font-size: 42px;
+            line-height: 48px;
+      }	
     }
 
     h5 {
@@ -59,6 +71,9 @@ body {
   align-content: center;
   gap: 10px;
   position: relative;
+  @media (max-width:767px){
+    gap:7px;
+  }
 }
 
 .newTabsBtns .blckBtn {
@@ -78,6 +93,10 @@ body {
   color: #000000;
   cursor: pointer;
   border:0px;
+  @media (max-width:767px){
+    padding: 0 10px;
+    font-size: 12px;
+  }
 }
 
 .newTabsBtns .blckBtn.active, .newTabsBtns .blckBtn:hover {
@@ -117,6 +136,18 @@ body {
   gap: 30px;
   width: 100%;
   justify-content: space-between;
+  @media (max-width:1200px){
+    flex-direction: column;
+    gap:15px;
+  }
+  @media (max-width:991px){
+    flex-direction: column;
+    gap:15px;
+  }
+  @media (max-width:767px){
+    flex-direction: column;
+    gap:15px;
+  }
 }
 
 .formBlock .formBlockInner.addMinusFieldMain {
@@ -125,6 +156,10 @@ body {
   gap: 30px;
   width: 100%;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  @media (max-width:767px){
+    gap:15px;
+  }
 }
 
 .formBlock .formBlockInner.addMinusFieldMain .formField {
@@ -137,12 +172,16 @@ body {
 
 .CountriesExperienceField .formField, .questionsBlck .formField {
   width: 48.5%;
+  @media (max-width:767px){
+    width: 100%;
+  }
 }
 
 .radioBtns, .formField.addMinusBtnBlck, .checkboxBtns {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .radioBtns label.mainLabel, .checkboxBtns label.mainLabel, .formField.addMinusBtnBlck label.mainLabel {
@@ -159,6 +198,7 @@ body {
   flex-direction: row;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .questionsBlck .formField {
@@ -182,6 +222,25 @@ body {
   font-size: 14px;
   line-height: 25px;
   color: rgba(54, 63, 87, 1);
+  @media (max-width:1200px){
+    height: 50px;
+    border-radius: 5px;
+    padding: 0 12px;
+    font-size: 12px;
+ }
+@media (max-width:991px){
+    height: 46px;
+    border-radius: 5px;
+    padding: 0 12px;
+    font-size: 12px;
+ }
+
+@media (max-width:767px){
+        height: 40px;
+        border-radius: 5px;
+        padding: 0 12px;
+        font-size: 12px;
+}
 }
 
 .formField textarea {
@@ -315,7 +374,8 @@ body {
 .containerRadio input {
   position: absolute;
   opacity: 0;
-  cursor: pointer
+  cursor: pointer;
+  left:0;
 }
 
 .containerRadio .checkmark {
