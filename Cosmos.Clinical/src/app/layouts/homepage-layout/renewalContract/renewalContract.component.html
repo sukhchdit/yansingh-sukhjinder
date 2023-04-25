@@ -376,6 +376,497 @@
                 </div>
               </div>
             </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  外傭基本資料 / Domestic helper - Basic information
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="contentBox">
+                    <h3 class="mb-3">外傭基本資料 / Domestic helper - Basic information</h3>
+                    <div class="informationPanel">
+                      <form>
+                        <div class="formBlock">
+                                <!--Form Field Main Block-->
+                            <div class="formBlockInner">
+
+                              <div class="row">
+                                  <div class="col-12 col-md-8">
+                                      <div class="formField">
+                                        <label class="mainLabel">姓名 / Name</label>
+                                        <div class="customInput">
+                                            <input type="text" name="Name" id="Name" placeholder="Full name"  />
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField radioBtns">
+                                      <label class="mainLabel">性別 / Gender*</label>
+                      
+                                      <div class="customInput">
+                                        <label class="containerRadio">
+                                          Male
+                                          <input type="radio" name="Male" id="Male" value="Male">
+                                          <span class="checkmark"></span>
+                                        </label>
+                      
+                                        <label class="containerRadio">
+                                          Female
+                                          <input type="radio" name="Female" value="Female" id="Female" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField radioBtns">
+                                      <label class="mainLabel">婚姻狀況 / Marital status*</label>
+                      
+                                      <div class="customInput">
+                                        <label class="containerRadio">
+                                        Single
+                                          <input type="radio" name="Single" id="Single" value="未婚 / Single">
+                                          <span class="checkmark"></span>
+                                        </label>
+                      
+                                        <label class="containerRadio">
+                                          Married
+                                          <input type="radio" name="Married" value=" 已婚 / Married" id="Married" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                        <label class="containerRadio">
+                                         Widowed
+                                          <input type="radio" name="Widowed" value=" 喪偶 / Widowed" id="Widowed" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                        <label class="containerRadio">
+                                          Divorced
+                                          <input type="radio" name="Divorced" value=" 離婚 / Divorced" id="Divorced" >
+                                          <span class="checkmark"></span>
+                                        </label>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-md-6">
+                                    <div class="formField">
+                                      <label class="mainLabel">國籍 / Nationality*</label>
+                                      <div class="customInput">
+                                          <select type="text" name="EnglishName" id="EnglishName" placeholder="Nationality"  >
+                                            <option value="Hong Kong" selected="selected">Hong Kong</option><option value="Afghanistan">Afghanistan</option><option value="Åland Islands">Åland Islands</option><option value="Albania">Albania</option>
+                                          </select>
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">
+                                      上載香港身分證 / Upload HKID*</label>
+                                    <div class="customInput">
+                                        <input type="file" name="HKID" id="HKID" placeholder="HKID No."  />
+                                    </div>
+                                    <span>Accepted file types: jpg, jpeg, gif, png, pdf, Max. file size: 2 MB.</span>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                  <div class="formField radioBtns">
+                                    <label class="mainLabel">電話代碼 / Phone Code*</label>
+                    
+                                    <div class="customInput">
+                                      <label class="containerRadio">
+                                        +63
+                                        <input type="radio" name="+63" id="+63" value="+63">
+                                        <span class="checkmark"></span>
+                                      </label>
+                    
+                                      <label class="containerRadio">
+                                        +852
+                                        <input type="radio" name="+852" value="+852" id="+852" >
+                                        <span class="checkmark"></span>
+                                      </label>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">聯絡電話 Phone No. / Whatsapp*</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Whatsapp" id="Whatsapp" placeholder="Whatsapp"  />
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-md-12">
+                                <div class="formField">
+                                  <label class="mainLabel">完整的菲律賓地址 / Full Philippines Address*</label>
+                                  <div class="customInput mb-3">
+                                      <input type="text" name="Address" id="Address" placeholder="Address 1"  />
+                                  </div>
+                                  <div class="customInput">
+                                    <input type="text" name="Address" id="Address" placeholder="Address 2"   />
+                                </div>
+                                </div>
+                              </div>
+                                <div class="col-12 col-md-8">
+                                  <div class="formField">
+                                    <label class="mainLabel">僱傭OWWA號碼(如適用) / OWWA No. (Optional)</label>
+                                    <div class="customInput">
+                                        <input type="text" name="OWWA" id="OWWA" placeholder="OWWA No"  />
+                                    </div>
+                                  </div>
+                              </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">電郵地址 / Email</label>
+                                    <div class="customInput">
+                                        <input type="Email" name="Email" id="Email" placeholder="Email"  />
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="col-12 col-md-6">
+                                <div class="formField">
+                                  <label class="mainLabel">密碼 / Password</label>
+                                  <div class="customInput">
+                                      <input type="Password" name="Password" id="Password" placeholder="Password"  />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <h3>  領事館要求提供以下的資料 / Information requested by Consulate</h3>
+                            <h4>母親資料 / Mother's Information*</h4>
+                            <div class="row">
+                              <div class="col-12 col-md-4">
+                                <div class="formField">
+                                  <label class="mainLabel">母親姓名 / Mother's Name</label>
+                                  <div class="customInput">
+                                      <input type="text" name="Name" id="Name" placeholder="Mother's Name"  />
+                                  </div>
+                                  <label class="mainLabel">如母親去世，請填上N/A / If mother has passed away, please fill in N/A</label>
+                                </div>
+                              </div>
+                              <div class="col-12 col-md-4">
+                                <div class="formField">
+                                  <label class="mainLabel">母親中間名 / Mother's Middle Name</label>
+                                  <div class="customInput">
+                                      <input type="text" name="Name" id="Name" placeholder="Mother's Middle Name"  />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12 col-md-4">
+                                <div class="formField">
+                                  <label class="mainLabel">母親電話號碼 / Mother's Phone No.</label>
+                                  <div class="customInput">
+                                      <input type="text" name="Name" id="Name" placeholder="Mother's Phone No."  />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                              <h4>法定受益人資料 / Legal Beneficiaries*</h4>
+                              <div class="row">
+                                <div class="col-12 col-md-3">
+                                  <div class="formField">
+                                    <label class="mainLabel">姓名 / Full Name</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Name" id="Name" placeholder="Mother's Middle Name"  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                  <div class="formField">
+                                    <label class="mainLabel">關係 / Relationship</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Name" id="Name" placeholder="Mother's Middle Name"  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                  <div class="formField">
+                                    <label class="mainLabel">電話號碼 / Phone No.</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Name" id="Name" placeholder="Mother's Middle Name"  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                  <div class="formField">
+                                    <label class="mainLabel">家鄉地址 / Address in Hometown</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Name" id="Name" placeholder="Mother's Middle Name"  />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <h3>護照資料 / Passport Information</h3>
+
+                              <div class="row">
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">
+                                      上載護照 / Upload Passport*</label>
+                                    <div class="customInput">
+                                        <input type="file" name="Passport" id="Passport" placeholder="Passport"  />
+                                    </div>
+                                    <span>Accepted file types: jpg, jpeg, gif, png, pdf, Max. file size: 2 MB.</span>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">護照號碼 / Passport No.*</label>
+                                    <div class="customInput">
+                                        <input type="text" name="Passportn" id="Passportn" placeholder="Passport No."  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">護照簽發日期 / Passport Issue Date*</label>
+                                    <div class="customInput">
+                                        <input type="date" name="IssueDate" id="IssueDate" placeholder="Issue Date*"  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">護照到期日 / Passport Expiry Date*</label>
+                                    <div class="customInput">
+                                        <input type="date" name="IssueDate" id="IssueDate" placeholder="Issue Date*"  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                  <div class="formField">
+                                    <label class="mainLabel">工作簽証到期日 / Working Visa Expiry Date*</label>
+                                    <div class="customInput">
+                                        <input type="date" name="ExpiryDate" id="ExpiryDate" placeholder="Expiry Date*"  />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-12">
+                                  <div class="formField">
+                                    <label class="mainLabel">私隱政策聲明 / Privacy Policy*</label>
+                                    <div class="customInput">
+                                       <div class="privacyBox">
+                                        私隱政策聲明
+                                        請注意，本聲明事前毋須另行通知即可不時修訂，閣下應定期查閱最新版本。WEcarehelpers Employment Agency (下稱 “本公司”)承諾遵守《個人資料(私隱)條例》(下稱 “條例”)的責任及要求，屬下員工亦必須對本公司所收集及/或儲存及/或使用的所有個人資料保密，並致力妥善保存和遵照條例規定的責任及要求。
+                                        
+                                        收集個人資料目的及方式
+                                        簽署或辦理有關聘請外籍家庭傭工之所需及/或相關文件；
+                                        使用本公司之僱傭中介服務時；
+                                        使用或瀏覽本公司網站時；
+                                        聯絡本公司作出查詢或投訴時；
+                                        透過本公司參加各項推廣、比賽或抽獎等活動時；
+                                        為協助培訓員工、改善服務質素及查詢事宜，閣下與我們顧客服務部職員的談話內容可能會被錄音；
+                                        
+                                        個人資料種類
+                                        本公司收集的個人資料包括(但不限於)下列各項：
+                                        辦理聘請外籍家庭傭工申請時的所需文件或個人資料時，入境事務處及/或領事館要求的資料
+                                        核實閣下身份所須的資料，包括身份証明文件副本、號碼
+                                        閣下及家庭成員的中英文姓名、身份證號碼及出生日期
+                                        閣下的關係證明副本
+                                        聯絡電話/電郵地址等資料
+                                        閣下的住址證明，包括住址證明及/或租約副本
+                                        閣下的入息/資產證明，包括入息證明、銀行月結單或存摺、存款證、銀行或財務戶口資料等副本
+                                        閣下致電本公司熱線及電話面試的筆錄或錄音
+                                        閣下發給本公司的電郵或信件
+                                        
+                                        個人資料的保留
+                                        個人資料會保存至達到與收集上述資料之原來目的，或直接有關之目的為止；除非上述個人資料可根據任何適用法規或合約規定須予以保存；及
+                                        根據上述準則及本公司的內部程序，個人資料在特定的儲存期限後便會在本公司的電子、人手及其他儲存系統中被清洗。
+                                        
+                                        個人資料的保安
+                                        本公司認為有合理需要與閣下聯絡為閣下提供服務或因其他工作關係有合理需要的僱員才可得悉閣下的個人資料。 我們有一套保安措施附合保護個人資料的規定，以保障閣下的個人資料。
+                                        
+                                        個人資料的使用
+                                        本公司可以為包括(但不限於)以下各項之目的，使用和分析閣下之資料：
+                                        辦理聘請外籍家庭傭工申請時所需文件或個人資料，包括入境處/及領事館要求的額外文件 核實閣下身份 處理閣下的查詢，為閣下提供關於所查詢服務的進度/最新資訊 向閣下提供服務及處理閣下已經使用的服務 在閣下提出服務的查詢時為閣下提供協助，包括調查和解決影響服務質素的問題 向閣下發出關於使用本公司服務的帳單 回應閣下關於本公司服務的查詢或投訴
+                                        備存記錄以作參考
+                                        本公司的任何服務之推廣和宣傳
+                                        協助本公司預防發生欺詐或罪案
+                                        在有需要時聯絡閣下
+                                        法例要求或准許之披露的事項
+                                        
+                                        個人資料的披露和共用
+                                        本公司將會為持有的一切個人資料保密，但可能會向以下各方披露關於閣下的資料：
+                                        執法機構、政府部門、監管部門、法院或法律要求的其他機構
+                                        海外供應商
+                                        銀行或信用卡公司
+                                        專業顧問(包括律師和核數師)
+                                        
+                                        網上收集個人資料
+                                        本公司致力保護由閣下提供之資料，唯基於互聯網的特性，本公司未能作出十足的保證。
+                                        我們部份網站或會向廣告商披露不能識別個人身份的網站訪客綜合統計數據，部份網站亦會收集關於瀏覽訪客的綜合資料，例如到訪次數等統計數字。這類資料可能包括但不限於瀏覽器類型及版本、操作系統、 IP 地址及/或域名。
+                                        除另行說明，否則閣下瀏覽本網站時我們只會收集你到訪的記錄，而不會收集閣下任何個人資料。我們網站任何部份所設的 Cookies(如有者)不會用於收集個人資料。 Cookies 是可保存於網頁使用者電腦內的小型電腦檔案，功用是獲取配置資料及分析網頁使用者的瀏覽習慣。使用者儲存 Cookies 後，再次瀏覽網站便不必重新註冊。網站常會用 Cookies 追蹤使用者喜好的網站主題，閣下可修改相關的互聯網選項或電腦系統的瀏覽喜好設定，拒絕儲存 Cookies ，然而閣下可能因此無法使用或啟動本網站提供的某些功能。我們網站可能會攔截不接受 Cookies 的使用者。
+                                        為了向瀏覽者提供更多資訊及服務，本公司會與其它網站(“第三者”)連結，這些第三者會於瀏覽者使用其服務時收集瀏覽者之個人資料(如閣下之姓名、電話、電郵地址)，他們於收集個人資料時會遵守其《私隱政策》，本公司之私隱政策並不約束這些第三者。我們網站可能會攔截不接受 Cookies 的使用者。
+                                        
+                                        查閱及更正個人資料
+                                        根據條例，除當中載明的例外情況之外，各顧客有權作出以下事項：
+                                        查核本公司是否持有關於自己的個人資料，並且取得該等資料的副本
+                                        要求本公司更正關於自己的不準確個人資料
+                                        確知本公司關於個人資料的政策和常規，並且獲告知本公司持有的個人
+                                        資料性質
+                                        根據條例之規定，本公司有權為受理資料查核要求而收取合理費用
+                                        關於要求查核個人資料、更正個人資料或關於本公司持有資料性質查詢，應以書面方式提出，並以圖文傳真或郵寄信件至：
+                                        
+                                        查詢
+                                        如閣下對本聲明有任何查詢，歡迎與我們聯絡
+                                        
+                                        WEcarehelpers Employment Agency
+                                        Email: wecare@wecarehelpers.com
+                                        
+                                        Privacy Policy Declaration
+                                        Please note that this Declaration can be edited without further notice, and you should regularly check and read the latest version. WEcarehelpers Employment Agency (the Company) promises to abide by the requirements and fulfil the responsibilities outlined by the Personal Data (Privacy) Ordinance (the Ordinance). Our staff will keep secure and confidential all personal data collected/saved/used by the Company under instruction of the Ordinance.
+                                        
+                                        Methods and aims of personal data collection
+                                        Signing or processing documents required for employing foreign domestic helpers;
+                                        Using our employment referral services;
+                                        Browsing the Company website;
+                                        Contacting the Company for enquiries or complaints;
+                                        Joining events such as promotional activities, competitions or lucky draws through the Company; and
+                                        Voice recording of conversation between client and the Company’s customer services staff for training and enquiry purposes.
+                                        
+                                        Types of personal data collected
+                                        The Company will collect personal data including but not limited to:
+                                        Personal information provided on documents required for employing foreign domestic helper or upon the request of Immigration Department and/or the consulate;
+                                        HKID card copy and number used for identity verification;
+                                        Employer and his/her family member(s) full name in Chinese and English, HKID card numbers and dates of birth;
+                                        Copy of proof of relationship of clients;
+                                        Contact number and email address of clients;
+                                        Proof of address and/or copy of tenancy agreement of clients;
+                                        Proof of income which may include copies of monthly bank statements, passbook and bank account details;
+                                        Recording of clients’ call to the Company in the form of notes or voice recording; and
+                                        Emails or letters sent to the Company
+                                        
+                                        Storage of personal data
+                                        All personal data will be stored until the original/directly related aims of collecting such data have been reached. This excludes any personal data that are required to be stored according to any applicable law or contract terms.
+                                        According to this principle as well as the Company’s internal procedures, personal data will be deleted from the Company’s storage systems after a designated storage time.
+                                        
+                                        Security of personal data
+                                        Only Company staff which, from the Company’s viewpoint, is required to provide suitable service or will conduct related work processes are allowed to use clients’ personal data. We have a set of security precautions and measures drafted in accordance to legal requirements in order to protect clients’ personal data.
+                                        
+                                        Use of personal data
+                                        The Company is entitled to use and analyse personal data for purposes including but not limited to:
+                                        Personal information provided on documents required for employing foreign domestic helper or upon the request of Immigration Department and/or the consulate;
+                                        HKID card copy and number used for identity verification;
+                                        Processing clients’ enquiries and providing relative progress/ newest information;
+                                        Providing or processing services purchased by client;
+                                        Providing assistance in response to clients’ enquiry, including investigation or solving problems that have affected service quality;
+                                        Issuing bills regarding the use of the Company’s services;
+                                        Responding to enquiries/complaints;
+                                        Keeping records for future reference;
+                                        Promotional services of the Company;
+                                        Assisting the company in preventing fraud or crime;
+                                        Contacting the client when necessary; and
+                                        Disclosable items allowed or demanded by law.
+                                        
+                                        Disclosure/sharing of personal data
+                                        The Company will keep all personal data confidential, but may disclose information to the following parties:
+                                        Authorities, government departments, regulators, courts or organizations appointed by law;
+                                        Overseas suppliers;
+                                        Banks or credit card companies; and
+                                        Professional consultants, including lawyers and auditors.
+                                        
+                                        Collection of personal data through Internet
+                                        The Company strives to protect clients’ personal data; however total security cannot be guaranteed due to features of the Internet. Our websites may disclose collected visitor counts and/or related statistics that cannot identify personal information to advertisers. Our websites may collect information including but not limited to visitor count, internet browser type and version, system of operation, IP address and/or domain.
+                                        
+                                        Unless stated otherwise, the Company will only collect record of your visit to our websites but not any of your personal data. Cookies (if applied on our websites) will not be used to collect any personal data. Cookies are small computer files that can be saved in the website users’ personal computer, and are used to save configuration data and analyse/track browsing behaviour of the user on the website. After cookies are saved, they will not be re-applied if the user browses the website again. You may edit your internet or browser settings to disable cookies, but this may cause you to be unable to browse or launch certain features on our websites. Our websites may block users that have disabled cookies.
+                                        
+                                        To provide more information and services to our users, our Company websites may link with other websites (third parties). Third parties may collect users’ personal data, including but not limited to name, contact number and email address upon usage of their services. They may collect personal data in accordance to their own privacy policies but they are not regulated by the Company’s own privacy policy.
+                                        
+                                        Access and correction of personal data
+                                        
+                                        According to regulations, unless in certain exempted circumstances, all clients are entitled to the following rights:
+                                        
+                                        Enquiring if the Company holds their personal data, and requesting for a copy of such data;
+                                        Requesting the Company to correct any incorrect personal data; and
+                                        Understanding the Company’s policies and rules of thumb regarding personal data as well as the type(s) of personal data the Company holds.
+                                        The company is allowed to charge a reasonable fee regarding the handling of personal data access requested by the client. All such requests must be made in written form and faxed to us/emailed to wecare@wecarehelpers.com.
+                                        
+                                        Enquiries
+                                        You are welcome to make any enquiries regarding the above declaration.
+                                        
+                                        WEcarehelpers Employment Agency
+                                        Email: info@yansingh.com
+                                       </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12 col-md-12">
+                                  <div class="formField checkboxBtns">
+                                    <div class="customInput">
+                                      <label class="containerCheckbox">
+                                        本人已閱讀及同意服務條款及細則 / I have read and agreed above terms and conditions
+                                        <input type="checkbox" value=" 本人已閱讀及同意服務條款及細則 / I have read and agreed above terms and conditions" >
+                                        <span class="checkmark"></span>
+                                      </label>
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                        </div>
+                      </form>
+                    </div>  
+                    <div class="btnsBlock"><button  class="nextBtn">Previous</button><button  class="nextBtn">Next</button></div>
+                  </div>
+                 </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Final Step
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="contentBox">
+                    <h3 class="mb-3">Coupon</h3>
+                    <div class="informationPanel">
+                      <form>
+                        <div class="formBlock">
+                                <!--Form Field Main Block-->
+                            <div class="formBlockInner">
+
+                              <div class="row">
+                                  <div class="col-12 col-md-8">
+                                      <div class="formField">
+                                        <label class="mainLabel">Coupon</label>
+                                        <div class="customInput d-flex gap-3">
+                                            <input type="text" name="Coupon" id="Coupon" placeholder="Coupon"  />
+                                            <div class="btnsBlock mt-0 pt-0">
+                                              <button  class="nextBtn greenBtn">Apply</button>
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-md-4">
+                                    <div class="formField">
+                                      <label class="mainLabel">Total</label>
+                                      <div class="customInput">
+                                        <div class="totleAmount"> HK$3,200.00</div>
+                                      </div>
+                                    </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>  
+                        <div class="btnsBlock"><button  class="nextBtn">Previous</button><button  class="nextBtn">Submit</button></div>
+                    </div>
+                  </div>
+              </div>
+            </div>
           </div>
 
         </div>
