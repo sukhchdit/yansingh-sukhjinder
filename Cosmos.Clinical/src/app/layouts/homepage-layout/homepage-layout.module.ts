@@ -18,6 +18,7 @@ import { ToastNotificationService } from '../../core/services/toastnotification.
 import { RegisterEmployerComponent } from './registeremployer/registeremployer.component';
 import { findjobComponent } from './findjob/findjob.component';
 import { findjobDetailsComponent } from './findjobDetails/findjobDetails.component';
+import { renewalContractComponent } from './renewalContract/renewalContract.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { findjobDetailsComponent } from './findjobDetails/findjobDetails.compone
     AboutUsComponent,
     RegisterEmployerComponent,
     findjobComponent,
-    findjobDetailsComponent
+    findjobDetailsComponent,
+    renewalContractComponent
   ],
   imports: [
     FormsModule,
