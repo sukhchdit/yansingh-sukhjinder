@@ -31,27 +31,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YanSingh.Action", "YanSingh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YanSingh.IAction", "YanSingh.IAction\YanSingh.IAction.csproj", "{FDC11A63-43DA-4825-99CE-95C820C75FB5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CosmosClinical", "CosmosClinical", "{3D604BA9-6C77-465F-AB76-8C1A31D00788}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{3D604BA9-6C77-465F-AB76-8C1A31D00788}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "YanSingh.Clinical", "YanSingh.Clinical\", "{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "YanSingh.App", "YanSingh.App\", "{0AFA3E38-124D-4DB0-988F-6B34D5A8D3C0}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_51198"
-		Debug.AspNetCompiler.PhysicalPath = "YanSingh.Clinical\"
+		Debug.AspNetCompiler.PhysicalPath = "YanSingh.App\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51198\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_51198"
-		Release.AspNetCompiler.PhysicalPath = "YanSingh.Clinical\"
+		Release.AspNetCompiler.PhysicalPath = "YanSingh.App\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51198\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "51198"
-		SlnRelativePath = "YanSingh.Clinical\"
+		SlnRelativePath = "YanSingh.App\"
 	EndProjectSection
 EndProject
 Global

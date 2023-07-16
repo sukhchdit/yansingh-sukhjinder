@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cosmos-clinical-trials": {
+    "yansingh": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {}
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "cosmos-clinical-trials:build:production"
+              "browserTarget": "yansingh:build:production"
             },
             "development": {
-              "browserTarget": "cosmos-clinical-trials:build:development"
+              "browserTarget": "yansingh:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cosmos-clinical-trials:build"
+            "browserTarget": "yansingh:build"
           }
         },
         "test": {
